@@ -1,4 +1,4 @@
-import { Foo } from 'jingqb-component';
+import { Foo } from '../../../dist';
 
 export default function() {
     return (
