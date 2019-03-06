@@ -1,0 +1,28 @@
+{
+  "name": "jingqb-design",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "license": "MIT",
+  "dependencies": {
+    "umi": "^2.5.5",
+    "umi-plugin-library": "^1.1.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^16.7.0"
+  },
+  "scripts": {
+    "start": "cd example && umi dev",
+    "test": "umi test",
+    "dev": "umi lib build --watch",
+    "build": "umi lib build",
+    "pub": "yarn run test && yarn publish",
+    "doc:dev": "umi doc dev",
+    "doc:build": "umi doc build",
+    "doc:deploy": "umi doc deploy"
+  }
+}
