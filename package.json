@@ -17,12 +17,41 @@
   },
   "scripts": {
     "start": "cd example && umi dev",
-    "test": "umi test",
+    "test": "umi test --verbose=false --no-cache",
     "dev": "umi lib build --watch",
     "build": "umi lib build",
     "pub": "yarn run test && yarn publish",
     "doc:dev": "umi doc dev",
     "doc:build": "umi doc build",
-    "doc:deploy": "umi doc deploy"
+    "doc:deploy": "umi doc deploy",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint",
+    "lint-staged:ts": "tslint",
+    "prettier": "node ./scripts/prettier.js"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,json,jsx}": [
+      "node ./scripts/lint-prettier.js",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "yarn run lint-staged:js",
+    "**/*.{ts,tsx}": "yarn run lint-staged:ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged"
+    }
+  },
+  "devDependencies": {
+    "antd-tools": "^7.0.2",
+    "babel-eslint": "^10.0.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-compat": "^2.7.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5"
   }
 }
