@@ -1,12 +1,6 @@
 import React from 'react';
-import { Button } from '../../../dist';
+import { Icon } from '../../../dist';
 
 export default function() {
-  return (
-    <Button.Group>
-      <Button color="blue" primary>
-        确认
-      </Button>
-    </Button.Group>
-  );
+  return <Icon icon="correct" />;
 }

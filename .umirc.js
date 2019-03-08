@@ -1,3 +1,5 @@
+const url = require('postcss-url');
+
 export default {
   plugins: [
     [
@@ -7,6 +9,11 @@ export default {
         esm: 'rollup',
         cjs: 'rollup',
         cssModules: false,
+        extraPostCSSPlugins: [
+          url({
+            url: 'inline',
+          }),
+        ],
       },
     ],
   ],
