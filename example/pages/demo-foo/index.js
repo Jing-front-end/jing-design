@@ -1,6 +1,12 @@
 import React from 'react';
-import { Foo } from '../../../dist';
+import { Button } from '../../../dist';
 
 export default function() {
-  return <Foo size="large">hello, world</Foo>;
+  return (
+    <Button.Group>
+      <Button color="blue" primary>
+        确认
+      </Button>
+    </Button.Group>
+  );
 }
