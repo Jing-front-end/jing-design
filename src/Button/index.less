@@ -1,0 +1,104 @@
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+/*btn*/
+.Button { display:block; width:100%; height:2.25rem; margin-left:3%; padding:0 0.5rem; border:1px solid transparent; float:left; border-radius:.375rem; background-color:#fff; font-size:@am-l; cursor:pointer; overflow:hidden; .text-center;
+	/*first*/
+	&:first-child { margin-left:0!important;}
+	/*radius*/
+	&__type_circular { border-radius:128px !important;}
+	/*disable*/
+	&__state_disable,
+	&__state_disable:active { border:0!important; background-color:rgb(220,220,220)!important; color:#fff!important; cursor:not-allowed!important;}
+	/*primary*/
+	&__type_primary { border:none!important;}
+	/*sm*/
+	&__type_small { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.25rem;}
+	/*loading*/
+	&__state_loading { position:relative; opacity:.75; cursor:wait!important;}
+	&__state_loading:before { display:block; content:""; width:2rem; height:2rem; position:absolute; right:.125rem; top:.125rem; margin-top:-1px; background:url(../_images/unify/mob/icon-loading.png) 0 0 no-repeat; background-size:contain; .animation(iconLoading 1s linear infinite);}
+	&__type_small&__state_loading:before { width:1.07rem; height:1.07rem; margin-left:-.535rem;}
+	&__type_primary&__state_loading:before { background-image:url(../_images/unify/mob/icon-loading-w.png);}
+	/*red*/
+	&__color_red { border-color:@globalColorRed; color:@globalColorRed;}
+	&__color_red&__type_primary { background-color:@globalColorRed; color:#fff!important;}
+	&__color_red&__state_active { background-color:lighten(@globalColorRed,35%);}
+	&__color_red&__type_primary&__state_active { background-color:darken(@globalColorRed,5%); color:#fff;}
+	/*green*/
+	&__color_green { border-color:@globalColorGreen; color:@globalColorGreen;}
+	&__color_green&__type_primary { background-color:@globalColorGreen; color:#fff!important;}
+	&__color_green&__state_active { background-color:lighten(@globalColorGreen,50%);}
+	&__color_green&__type_primary&__state_active { background-color:darken(@globalColorGreen,5%); color:#fff;}
+	/*blue*/
+	&__color_blue { border-color:@globalColorBlue; color:@globalColorBlue;}
+	&__color_blue&__type_primary { background-color:@globalColorBlue; color:#fff!important;}
+	&__color_blue&__state_active { background-color:lighten(@globalColorBlue,42%);}
+	&__color_blue&__type_primary&__state_active { background-color:darken(@globalColorBlue,5%); color:#fff;}
+	/*orange*/
+	&__color_orange { border-color:@globalColorOrange; color:@globalColorOrange;}
+	&__color_orange&__type_primary { background:@globalColorOrange; color:#fff!important;}
+	&__color_orange&__state_active { background-color:lighten(@globalColorOrange,37%);}
+	&__color_orange&__type_primary&__state_active { background:darken(@globalColorOrange,10%);}
+}
+
+/*btn group*/
+.ButtonGroup { .am-con; float:none; padding-left:1rem; padding-right:1rem;
+	&.am-g-1>.Button { width:100%!important;}
+	&.am-g-2>.Button { width:48.5%!important;}
+	&.am-g-3>.Button { width:31.33333333%!important;}
+	&.am-g-4>.Button { width:22.75%!important;}
+	&.am-g-5>.Button { width:17.6%!important;}
+	&.am-g-4,
+	&.am-g-5{
+		&>.Button__state_loading { color:transparent!important;}
+		&>.Button__state_loading:before { left:50%; margin-left:-1rem;}
+		&>.Button__type_small.Button__state_loading:before { margin-left:-.5rem;}
+	}
+	&__type_small {
+		&.am-g-4,
+		&.am-g-5 {
+			&>.Button__state_loading:before { margin-left:-.5rem;}
+		}
+		&>.Button { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.25rem;}
+		&>.Button__state_loading:before { width:1.07rem; height:1.07rem; margin-left:-.535rem;}
+	}
+	&__type_full { padding:0!important; border:0!important;
+		.Button { border:1px solid @globalColorBorder; border-left:0; border-right:0; border-radius:0; height:2.75rem;}
+	}
+	&__type_kf {
+		.Button:not(.Button__type_primary) { width:10%!important; border:none; background-color:#ffa800; color:#fff; text-indent:-999rem;}
+		.Button .Icon { .am-pos-cc;}
+		.Button.Button__type_primary { width:87%!important;}
+		@media screen and (max-width:375px) { 
+		.Button:not(.Button__type_primary) { width:11%!important;}
+		.Button.Button__type_primary { width:86%!important;}
+		}
+		@media screen and (max-width:320px) { 
+		.Button:not(.Button__type_primary) { width:12%!important;}
+		.Button.Button__type_primary { width:85%!important;}
+		}
+	}
+	&__type_hc { padding:0!important; border-top:1px solid @globalColorBorder!important;
+		.Button .Icon { margin-right:.25rem;}
+		.Button { height:48px; margin:0; border:0; border-radius:0; font-size:@am-sm; color:@globalColorBlack0;}
+		.Button:not(.Button__type_primary) { width:30%!important;
+			&:after { content:''; width:1px; height:50%; .am-pos-lc; background-color:@globalColorBlackA10;}
+			&:first-child:after { display:none;}
+		}
+		.Button.Button__type_primary { width:40%!important;}
+	}
+	&__state_bottom { width:100%; padding:@globalGap; .am-card; border-bottom:0; .am-pos-fixb;}
+	&__state_top { width:100%; padding:@globalGap; .am-card; border-top:0; .am-pos-fixt;}
+}
+
+/*iconLoading*/
+@keyframes iconLoading { 
+0.000% { .transform(rotate(0deg));}		8.300% { .transform(rotate(0deg));}		8.310% { .transform(rotate(30deg));}
+16.60% { .transform(rotate(30deg));}	16.61% { .transform(rotate(60deg));}	24.90% { .transform(rotate(60deg));}
+24.91% { .transform(rotate(90deg));}	33.30% { .transform(rotate(90deg));}	33.31% { .transform(rotate(120deg));}
+41.60% { .transform(rotate(120deg));}	41.61% { .transform(rotate(150deg));}	49.80% { .transform(rotate(150deg));}
+49.81% { .transform(rotate(180deg));}	58.20% { .transform(rotate(180deg));}	58.21% { .transform(rotate(210deg));}
+66.50% { .transform(rotate(210deg));}	66.51% { .transform(rotate(240deg));}	74.80% { .transform(rotate(240deg));}
+74.81% { .transform(rotate(270deg));}	83.10% { .transform(rotate(270deg));}	83.11% { .transform(rotate(300deg));}
+91.50% { .transform(rotate(300deg));}	91.51% { .transform(rotate(330deg));}	100.0% { .transform(rotate(330deg));}
+}

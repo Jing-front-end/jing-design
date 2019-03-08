@@ -1,0 +1,72 @@
+---
+name: Button
+route: /button
+---
+
+import { Playground } from 'docz';
+import Button from './index.ts';
+
+# Button Component
+
+## color
+<Playground>
+    <Button.Group>
+        <Button color='blue' primary>确认</Button>
+        <Button color='orange' primary>确认</Button>
+        <Button color='green' primary>确认</Button>
+        <Button color='red' primary>确认</Button>
+    </Button.Group>
+</Playground>
+
+
+### 说明
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| blue | 蓝色 |
+| orange | 橙色 |
+| green | 绿色 |
+| red | 红色 |
+
+## type
+<Playground>
+    <Button.Group>
+        <Button type='small' primary>确认</Button>
+        <Button type='small' color='orange' primary>确认</Button>
+        <Button type='small' color='green' primary>确认</Button>
+        <Button type='small' color='red' primary>确认</Button>
+    </Button.Group>
+</Playground>
+
+### 说明
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| small | 小号 |
+
+## state
+<Playground>
+    <Button.Group>
+        <Button state='active' primary>确认</Button>
+        <Button state='disable' primary>确认</Button>
+        <Button state='loading' primary>确认</Button>
+    </Button.Group>
+</Playground>
+
+### 说明
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| loading | 加载 |
+| disable | 禁用 |
+| active | 激活 |
+
+## primary
+<Playground>
+    <Button.Group>
+        <Button primary>确认</Button>
+        <Button>确认</Button>
+    </Button.Group>
+</Playground>
+
+### 说明
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| true | 主按钮 |

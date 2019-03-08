@@ -1,0 +1,42 @@
+---
+name: Button.Group
+route: /button.Group
+---
+
+import { Playground } from 'docz';
+import Button from './index.ts';
+
+# Button.Group Component
+
+## type
+<Playground>
+    <Button.Group type='small'>
+        <Button color='blue' primary>确认</Button>
+        <Button color='orange' primary>确认</Button>
+        <Button color='green' primary>确认</Button>
+        <Button color='red' primary>确认</Button>
+    </Button.Group>
+    <br />
+    <Button.Group type='full'>
+        <Button color='blue' primary>确认</Button>
+    </Button.Group>
+    <br />
+    <Button.Group type='kf'>
+        <Button>icon</Button>
+        <Button primary>立即投资</Button>
+    </Button.Group>
+    <br />
+    <Button.Group type='hc'>
+        <Button>icon电话客服</Button>
+        <Button>自助服务</Button>
+        <Button primary>在线客服</Button>
+    </Button.Group>
+</Playground>
+
+### 说明
+| 参数      | 说明                                      | 描述   |
+|-----------|-------------------------------------------|--------|
+| small | 小号尺寸 |  |
+| full | 通栏尺寸 |  |
+| kf | 在线客服模式 | 此模式下首个Button的chilaren需放一个icon |
+| hc | 帮助中心模式 | 此模式下首个Button的chilaren需放一个icon |
