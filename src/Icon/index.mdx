@@ -1,63 +1,15 @@
 ---
-Icon
-author: Lewis.Wen
+name: Icon
+route: /Icon
 ---
 
-# Web
+import { Playground } from 'docz';
+import Icon from './index.tsx';
 
-## Icon
+# Icon Component
 
-### props
-| 参数      | 说明                                      | 类型         | 默认值 |
-|-----------|-------------------------------------------|--------------|--------|
-| icon | 图标 | string |  |
-| type | 类型 | string | normal |
-| size | 图标 | string | normal |
-| animate | 动画 | string | shake |
-| hasColor | 图标 | bool | true |
-
-
-### type
-| 参数      | 说明                                      | 类型         |
-|-----------|-------------------------------------------|--------------|
-| normal | 常规图标 | string |  |
-| feature | 结果图标 | string |  |
-
-
-### size
-| 参数      | 说明                                      | 类型         |
-|-----------|-------------------------------------------|--------------|
-| normal | 正常 | string |  |
-| small | 小号 | string |  |
-| mini | 迷你 | string |  |
-
-
-### animate
-| 参数      | 说明                                      | 类型         |
-|-----------|-------------------------------------------|--------------|
-| shake | 抖动效果 | string |  |
-
-
-### icon
-| 参数      | 说明                                      | 类型         |
-|-----------|-------------------------------------------|--------------|
-| xxxxxx | 太多的懒得写 | string |  |
-
-
-### example
-```
-<div className='am-g-10'>
-    <Icon icon='user' />
-    <Icon icon='user' hasColor={false} />
-    <Icon icon='user' animate='shake' />
-    <Icon icon='user' size='small' animate='shake' />
-    <Icon icon='user' size='mini' animate='shake' hasColor={false} />
-    <Icon icon='bank0308' />
-    <Icon type='new' />
-    <Icon type='dot' />
-</div>
-<Space />
-<div className='am-g-10'>
+## icon
+<Playground>
     <Icon icon='user' />
     <Icon icon='idType' />
     <Icon icon='idCard' />
@@ -68,9 +20,6 @@ author: Lewis.Wen
     <Icon icon='radio' />
     <Icon icon='radio_state_disable' />
     <Icon icon='radio_state_disable_on' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='code' />
     <Icon icon='notepad' />
     <Icon icon='security' />
@@ -81,9 +30,6 @@ author: Lewis.Wen
     <Icon icon='checkbox' />
     <Icon icon='checkbox_state_disable' />
     <Icon icon='checkbox_state_disable_on' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='magezine' />
     <Icon icon='briefcase' />
     <Icon icon='guidepost' />
@@ -94,9 +40,6 @@ author: Lewis.Wen
     <Icon icon='coin' />
     <Icon icon='waiting' />
     <Icon icon='medal' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='clothbag' />
     <Icon icon='wallet' />
     <Icon icon='userRight' />
@@ -107,9 +50,6 @@ author: Lewis.Wen
     <Icon icon='code2' />
     <Icon icon='idType2' />
     <Icon icon='rmb' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='house' />
     <Icon icon='loop' />
     <Icon icon='paper2' />
@@ -120,9 +60,6 @@ author: Lewis.Wen
     <Icon icon='radio-w' />
     <Icon icon='home-on' />
     <Icon icon='home' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='menu' />
     <Icon icon='history' />
     <Icon icon='about' />
@@ -133,9 +70,6 @@ author: Lewis.Wen
     <Icon icon='dock_my_on' />
     <Icon icon='dock_pro_on' />
     <Icon icon='dock_home_on' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='location' />
     <Icon icon='gold' />
     <Icon icon='security2' />
@@ -146,9 +80,6 @@ author: Lewis.Wen
     <Icon icon='dock_my' />
     <Icon icon='dock_pro' />
     <Icon icon='dock_home' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='keyboard' />
     <Icon icon='inputedit' />
     <Icon icon='finger' />
@@ -159,9 +90,6 @@ author: Lewis.Wen
     <Icon icon='radio_type2_state_on' />
     <Icon icon='word' />
     <Icon icon='pdf' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='license' />
     <Icon icon='telephone-w' />
     <Icon icon='callcenter' />
@@ -170,9 +98,6 @@ author: Lewis.Wen
     <Icon icon='close' />
     <Icon icon='back' />
     <Icon icon='help-w' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='sound-w' />
     <Icon icon='sound-w-on' />
     <Icon icon='callcenter-w' />
@@ -183,24 +108,16 @@ author: Lewis.Wen
     <Icon icon='close-w' />
     <Icon icon='back-w' />
     <Icon icon='mail-w' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='security2-g' />
     <Icon icon='logo-g' />
     <Icon icon='callcenter-g' />
     <Icon icon='delete-bw' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='offline' />
     <Icon icon='infoRed' />
     <Icon icon='shell' />
     <Icon icon='face' />
+    <Icon icon='orange' />
     <Icon icon='excel' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='bank0308' />
     <Icon icon='bank0105' />
     <Icon icon='bank0301' />
@@ -211,9 +128,6 @@ author: Lewis.Wen
     <Icon icon='bank0302' />
     <Icon icon='bank0103' />
     <Icon icon='bank0309' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='bank0305' />
     <Icon icon='bank0306' />
     <Icon icon='bank0100' />
@@ -224,9 +138,6 @@ author: Lewis.Wen
     <Icon icon='bank1006' />
     <Icon icon='bank0304' />
     <Icon icon='bank0450' />
-</div>
-<Space />
-<div className='am-g-10'>
     <Icon icon='bank1418' />
     <Icon icon='bank0317' />
     <Icon icon='bank0403' />
@@ -234,25 +145,80 @@ author: Lewis.Wen
     <Icon icon='bank6311' />
     <Icon icon='bank0408' />
     <Icon icon='bank0424' />
-</div>
-<Space />
-<div className='am-g-5'>
-    <Icon icon='1' type='feature' />
-    <Icon icon='2' type='feature' />
-    <Icon icon='3' type='feature' />
-    <Icon icon='4' type='feature' />
-    <Icon icon='5' type='feature' />
-    <Icon icon='6' type='feature' />
-    <Icon icon='7' type='feature' />
-    <Icon icon='8' type='feature' />
-    <Icon icon='9' type='feature' />
-    <Icon icon='10' type='feature' />
-</div>
-<Space />
-<div className='am-g-4'>
-    <Icon icon='1' type='help' />
-    <Icon icon='2' type='help' />
-    <Icon icon='3' type='help' />
-    <Icon icon='4' type='help' />
-</div>
-```
+    <Icon icon='feature1' />
+    <Icon icon='feature2' />
+    <Icon icon='feature3' />
+    <Icon icon='feature4' />
+    <Icon icon='feature5' />
+    <Icon icon='feature6' />
+    <Icon icon='feature7' />
+    <Icon icon='feature8' />
+    <Icon icon='feature9' />
+    <Icon icon='feature10' />
+    <Icon icon='help1' />
+    <Icon icon='help2' />
+    <Icon icon='help3' />
+    <Icon icon='help4' />
+</Playground>
+
+### 说明
+| 参数 | | | | | | | |
+|-|-|-|-|-|-|-|-|
+| user | idType | idCard | phone | card | correct | radio_state_on | radio |
+| radio_state_disable | radio_state_disable_on | code | notepad | security | edit | lock | help |
+| checkbox_state_on | checkbox | checkbox_state_disable | checkbox_state_disable_on | magezine | briefcase | guidepost | paper |
+| cash | notepad2 | diamonds | coin | waiting | medal | clothbag | wallet |
+| userRight | mail | telephone | phoneBack | phoneRight | code2 | idType2 | rmb |
+| house | loop | paper2 | coin2 | coupon | friend | coupon2 | radio-w |
+| home-on | home | menu | history | about | filter | money | forward |
+| more | dock_my_on | dock_pro_on | dock_home_on | location | gold | security2 | camera |
+| right2 | arrow | right | dock_my | dock_pro | dock_home | keyboard | inputedit |
+| finger | gesture | password | info-w | info | radio_type2_state_on | word | pdf |
+| license | telephone-w | callcenter | slidedown-w | delete | close | back | help-w |
+| sound-w | sound-w-on | callcenter-w | eye-w | eye-w-on | refresh-w | delete-w | close-w |
+| back-w | mail-w | security2-g | logo-g | callcenter-g | delete-bw | offline | infoRed |
+| shell | face | orange | excel | bank0308 | bank0105 | bank0301 | bank0102 |
+| bank0104 | bank0401 | bank0310 | bank0302 | bank0103 | bank0309 | bank0305 | bank0306 |
+| bank0100 | bank0303 | bank0307 | bank0410 | bank1005 | bank1006 | bank0304 | bank0450 |
+| bank1418 | bank0317 | bank0403 | bank0508 | bank6311 | bank0408 | bank0424 | feature1 |
+| feature2 | feature3 | feature4 | feature5 | feature6 | feature7 | feature8 | feature9 |
+| feature10 | help1 | help2 | help3 | help4 | | | |
+
+## size
+<Playground>
+    <Icon icon='feature1' />
+    <Icon icon='feature1' size='small' />
+    <Icon icon='feature1' size='mini' />
+    <div class='am-g-6'>
+        <Icon icon='feature1' size='auto' />
+    </div>
+</Playground>
+
+### 说明
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| normal | 小号 |
+| small | 小号 |
+| mini | 迷你 |
+| auto | 自动 |
+
+## animate
+<Playground>
+    <Icon icon='user' animate='shake' />
+</Playground>
+
+### 说明
+| 参数      | 说明                                      | 类型         |
+|-----------|-------------------------------------------|--------------|
+| shake | 抖动效果 | string |
+
+## hasColor
+<Playground>
+    <Icon icon='user' hasColor />
+    <Icon icon='user' hasColor={false} />
+</Playground>
+
+### 说明
+| 参数      | 说明                                      | 类型         |
+|-----------|-------------------------------------------|--------------|
+| hasColor | 有无颜色 | bool |

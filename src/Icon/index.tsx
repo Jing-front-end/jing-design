@@ -7,8 +7,7 @@ import '../_style/index.less';
 import './index.less';
 
 const iconAnimate = tuple('shake');
-const iconType = tuple('normal', 'feature');
-const iconSize = tuple('normal', 'small', 'mini');
+const iconSize = tuple('normal', 'small', 'mini', 'auto');
 const iconKind = tuple(
   'user',
   'idType',
@@ -145,30 +144,42 @@ const iconKind = tuple(
   'bank6311',
   'bank0408',
   'bank0424',
+  'feature1',
+  'feature2',
+  'feature3',
+  'feature4',
+  'feature5',
+  'feature6',
+  'feature7',
+  'feature8',
+  'feature9',
+  'feature10',
+  'help1',
+  'help2',
+  'help3',
+  'help4',
 );
 
 export interface IconProps {
   animate?: string;
   hasColor?: boolean;
-  type?: string;
   size?: string;
   icon?: string;
   className?: string;
 }
 
 const Icon = (props: IconProps) => {
-  const { animate, hasColor, type, size, icon, className } = props;
+  const { animate, hasColor, size, icon, className } = props;
 
   const classes = classNames('Icon', className, {
     [`Icon__animate_${animate}`]: animate,
     [`Icon__color_${hasColor}`]: hasColor === false,
-    [`Icon__type_${type}`]: type && type !== 'normal',
     [`Icon__size_${size}`]: size && size !== 'normal',
     [`Icon__icon_${icon}`]: icon,
   });
 
   // 图标type为feature或help时，需在图标窗口中放置空白png图占位
-  const iconImg = (type === 'feature' || type === 'help') && (
+  const iconImg = size === 'auto' && (
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP//////ACH5BAEHAAAALAAAAAABAAEAAAICRAEAOw==" />
   );
   return <span className={classes}>{iconImg}</span>;
@@ -177,7 +188,6 @@ const Icon = (props: IconProps) => {
 Icon.propTypes = {
   animate: PropTypes.oneOf(iconAnimate),
   hasColor: PropTypes.bool,
-  type: PropTypes.oneOf(iconType),
   size: PropTypes.oneOf(iconSize),
   icon: PropTypes.oneOf(iconKind),
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),

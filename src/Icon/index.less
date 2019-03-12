@@ -7,12 +7,20 @@
 	&__type_new { width:2.25rem; &:after { display:inline-block; content:"new"; width:auto; height:1rem; line-height:.9rem; padding:0 .25rem; border-radius:4rem; .am-pos-cc; font-size:@am-xs; color:#fff; background-color:@globalColorOrange;}}
 	&__type_dot { &:after { display:block; content:""; width:.4rem; height:.4rem; border-radius:.2rem; background-color:@globalColorRed; position:absolute; right:.5rem; top:.5rem;}}
 	&__animate_shake { .animation(animateShake 1s linear infinite);}
-	&__size_small { &:before { left:0; top:0; .transform(scale(0.75,0.75))}}
-	&__size_mini { &:before { left:0; top:0; .transform(scale(0.5,0.5))}}
+	&__size {
+		&_small { &:before { left:0; top:0; .transform(scale(0.75,0.75))}}
+		&_mini { &:before { left:0; top:0; .transform(scale(0.5,0.5))}}
+		&_auto { display:block; width:100%; height:100%; min-width:1.375rem; min-height:1.375rem;
+			&:before { display:block; content:''; width:100%; height:100%; .am-pos-cc; background-repeat:no-repeat; background-size:100% auto;}
+			& img { width:100%; height:auto;}
+		}
+	}
 	&__color_false { &:before { background-image:url(../_images/unify/sprite-icon-common-gray60.png);}}
 }
 [class*='Icon__icon_bank'] { &:before { background-image:url(../_images/unify/sprite-icon-bank.png); background-size:40rem auto;}}
 [class*='Icon__icon_bank']&__color_false { &:before { background-image:url(../_images/unify/sprite-icon-bank.png);}}
+[class*='Icon__icon_feature'] { &:before { background-image:url(../_images/unify/icon-safe.png); background-size:100% auto;}}
+[class*='Icon__icon_help'] { &:before { background-image:url(../_images/unify/icon-help.png); background-size:100% auto;}}
 
 .Icon__icon {
 	/*v1*/
@@ -166,36 +174,26 @@
 	&_bank6311							{&:before { background-position:@iconPos8 @iconPos4;}}
 	&_bank0408							{&:before { background-position:@iconPos8 @iconPos5;}}
 	&_bank0424							{&:before { background-position:@iconPos8 @iconPos6;}}
+	// featuer
+	&_feature1 { &:before { background-position:center 0;}}
+	&_feature2 { &:before { background-position:center 10%;}}
+	&_feature3 { &:before { background-position:center 20%;}}
+	&_feature4 { &:before { background-position:center 30%;}}
+	&_feature5 { &:before { background-position:center 40%;}}
+	&_feature6 { &:before { background-position:center 50%;}}
+	&_feature7 { &:before { background-position:center 60%;}}
+	&_feature8 { &:before { background-position:center 70%;}}
+	&_feature9 { &:before { background-position:center 80%;}}
+	&_feature10 { &:before { background-position:center 90%;}}
+	// help
+	&_help1 { &:before { background-position:center 0;}}
+	&_help2 { &:before { background-position:center 10%;}}
+	&_help3 { &:before { background-position:center 20%;}}
+	&_help4 { &:before { background-position:center 30%;}}
 }
 
-/*feature icon*/
-.Icon {
-	&__type_feature { display:block; width:100%; height:100%;
-		&:before { display:block; content:''; width:100%; height:100%; .am-pos-cc; background-image:url(../_images/unify/icon-safe.png); background-repeat:no-repeat; background-size:100% auto;}
-		& img { width:100%; height:auto;}
-	}
-	&__type_feature&__icon_1 { &:before { background-position:center 0;}}
-	&__type_feature&__icon_2 { &:before { background-position:center 10%;}}
-	&__type_feature&__icon_3 { &:before { background-position:center 20%;}}
-	&__type_feature&__icon_4 { &:before { background-position:center 30%;}}
-	&__type_feature&__icon_5 { &:before { background-position:center 40%;}}
-	&__type_feature&__icon_6 { &:before { background-position:center 50%;}}
-	&__type_feature&__icon_7 { &:before { background-position:center 60%;}}
-	&__type_feature&__icon_8 { &:before { background-position:center 70%;}}
-	&__type_feature&__icon_9 { &:before { background-position:center 80%;}}
-	&__type_feature&__icon_10 { &:before { background-position:center 90%;}}
-}
-
-/*help icon*/
-.Icon {
-	&__type_help { display:block; width:100%; height:100%;
-		&:before { display:block; content:''; width:100%; height:100%; .am-pos-cc; background-image:url(../_images/unify/icon-help.png); background-repeat:no-repeat; background-size:100% auto;}
-		& img { width:100%; height:auto;}
-	}
-	&__type_help&__icon_1 { &:before { background-position:center 0;}}
-	&__type_help&__icon_2 { &:before { background-position:center 10%;}}
-	&__type_help&__icon_3 { &:before { background-position:center 20%;}}
-	&__type_help&__icon_4 { &:before { background-position:center 30%;}}
+/*icon resize*/
+.Icon__resize {
 }
 
 @keyframes animateShake {
