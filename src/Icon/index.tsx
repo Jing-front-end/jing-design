@@ -164,7 +164,7 @@ export interface IconProps {
   animate?: string;
   hasColor?: boolean;
   size?: string;
-  icon?: string;
+  icon: string;
   className?: string;
 }
 
