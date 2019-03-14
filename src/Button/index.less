@@ -39,6 +39,11 @@
 	&__color_orange&__type_primary { background:@globalColorOrange; color:#fff!important;}
 	&__color_orange&__state_active { background-color:lighten(@globalColorOrange,37%);}
 	&__color_orange&__type_primary&__state_active { background:darken(@globalColorOrange,10%);}
+	/*yellow*/
+	&__color_yellow { border-color:@globalColorYellow; color:@globalColorYellow;}
+	&__color_yellow&__type_primary { background:@globalColorYellow; color:#fff!important;}
+	&__color_yellow&__state_active { background-color:lighten(@globalColorYellow,37%);}
+	&__color_yellow&__type_primary&__state_active { background:darken(@globalColorYellow,10%);}
 }
 
 /*btn group*/
@@ -65,20 +70,20 @@
 	&__type_full { padding:0!important; border:0!important;
 		.Button { border:1px solid @globalColorBorder; border-left:0; border-right:0; border-radius:0; height:2.75rem;}
 	}
-	&__type_kf {
-		.Button:not(.Button__type_primary) { width:10%!important; border:none; background-color:#ffa800; color:#fff; text-indent:-999rem;}
+	&__type_two-col {
+		.Button:nth-child(1) { width:10%!important;}
 		.Button .Icon { .am-pos-cc;}
-		.Button.Button__type_primary { width:87%!important;}
+		.Button:nth-child(2) { width:87%!important;}
 		@media screen and (max-width:375px) { 
-		.Button:not(.Button__type_primary) { width:11%!important;}
-		.Button.Button__type_primary { width:86%!important;}
+		.Button:nth-child(1) { width:11%!important;}
+		.Button:nth-child(2) { width:86%!important;}
 		}
 		@media screen and (max-width:320px) { 
-		.Button:not(.Button__type_primary) { width:12%!important;}
-		.Button.Button__type_primary { width:85%!important;}
+		.Button:nth-child(1) { width:12%!important;}
+		.Button:nth-child(2) { width:85%!important;}
 		}
 	}
-	&__type_hc { padding:0!important; border-top:1px solid @globalColorBorder!important;
+	&__type_three-col { padding:0!important; border-top:1px solid @globalColorBorder!important;
 		.Button .Icon { margin-right:.25rem;}
 		.Button { height:48px; margin:0; border:0; border-radius:0; font-size:@am-sm; color:@globalColorBlack0;}
 		.Button:not(.Button__type_primary) { width:30%!important;
