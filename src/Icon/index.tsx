@@ -144,20 +144,20 @@ const iconKind = tuple(
   'bank6311',
   'bank0408',
   'bank0424',
-  'feature1',
-  'feature2',
-  'feature3',
-  'feature4',
-  'feature5',
-  'feature6',
-  'feature7',
-  'feature8',
-  'feature9',
-  'feature10',
-  'help1',
-  'help2',
-  'help3',
-  'help4',
+  'feature-type-1',
+  'feature-type-2',
+  'feature-type-3',
+  'feature-type-4',
+  'feature-type-5',
+  'feature-type-6',
+  'feature-type-7',
+  'feature-type-8',
+  'feature-type-9',
+  'feature-type-10',
+  'help-type-1',
+  'help-type-2',
+  'help-type-3',
+  'help-type-4',
 );
 
 export interface IconProps {
@@ -193,4 +193,4 @@ Icon.propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
-export default Icon;
+export default React.memo(Icon);

@@ -8,15 +8,15 @@ describe('<Icon />', () => {
     expect(wrapper.hasClass('Icon__icon_user')).toEqual(true);
   });
   it('icon size small', () => {
-    const wrapper = shallow(<Icon icon="feature1" size="small" />);
+    const wrapper = shallow(<Icon icon="feature-type-1" size="small" />);
     expect(wrapper.hasClass('Icon__size_small')).toEqual(true);
   });
   it('icon size mini', () => {
-    const wrapper = shallow(<Icon icon="feature1" size="mini" />);
+    const wrapper = shallow(<Icon icon="feature-type-1" size="mini" />);
     expect(wrapper.hasClass('Icon__size_mini')).toEqual(true);
   });
   it('icon size auto', () => {
-    const wrapper = shallow(<Icon icon="feature1" size="auto" />);
+    const wrapper = shallow(<Icon icon="feature-type-1" size="auto" />);
     expect(wrapper.hasClass('Icon__size_auto')).toEqual(true);
   });
   it('icon animate shake', () => {
