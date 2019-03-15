@@ -7,6 +7,11 @@ import { util } from '..';
 import '../_style/index.less';
 import './index.less';
 
+let touchX = 0;
+let touchXPos = 0;
+let touchY = 0;
+let touchYPos = 0;
+
 const buttonColor = tuple('blue', 'orange', 'green', 'red', 'yellow');
 const buttonType = tuple('small');
 const buttonState = tuple('loading', 'disable', 'active');
@@ -23,11 +28,6 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  let touchX = 0;
-  let touchXPos = 0;
-  let touchY = 0;
-  let touchYPos = 0;
-
   const [isActive, setIsActive] = useState(false);
 
   const { color, type, state, primary, className, children, href } = props;
@@ -46,6 +46,12 @@ const Button = (props: ButtonProps) => {
     setIsActive(true);
   }
 
+  function handleMouseDown(e: MouseEvent) {
+    touchX = e.pageX;
+    touchY = e.pageY;
+    setIsActive(true);
+  }
+
   function handleTouchMove(e: TouchEvent) {
     touchXPos = e.changedTouches[0].pageX;
     touchYPos = e.changedTouches[0].pageY;
@@ -57,7 +63,22 @@ const Button = (props: ButtonProps) => {
     }
   }
 
+  function handleMouseMove(e: MouseEvent) {
+    touchXPos = e.pageX;
+    touchYPos = e.pageY;
+    if (
+      Math.abs(touchXPos - touchX) > util.global.moveOffset ||
+      Math.abs(touchYPos - touchY) > util.global.moveOffset
+    ) {
+      setIsActive(false);
+    }
+  }
+
   function handleTouchEnd() {
+    setIsActive(false);
+  }
+
+  function handleMouseUp() {
     setIsActive(false);
   }
 
@@ -78,6 +99,9 @@ const Button = (props: ButtonProps) => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
         onClick={handleClick}
       >
         {children}
@@ -90,6 +114,9 @@ const Button = (props: ButtonProps) => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
         onClick={handleClick}
       >
         {children}
