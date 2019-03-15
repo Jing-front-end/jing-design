@@ -16,6 +16,5 @@ if (
 /* @remove-on-es-build-end */
 
 export { default as util } from './_util';
-export { default as Foo } from './Foo';
 export { default as Button } from './Button';
 export { default as Icon } from './Icon';
