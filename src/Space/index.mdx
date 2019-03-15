@@ -1,0 +1,40 @@
+---
+name: Space
+route: /Space
+---
+
+import { Playground } from 'docz';
+import Button from '../Button/index.ts';
+import Space from './index.tsx';
+
+# Space Component
+
+## scale
+<Playground>
+    <Button.Group>
+        <Button color='blue' primary>确认</Button>
+        <Button color='orange' primary>确认</Button>
+        <Button color='green' primary>确认</Button>
+        <Button color='red' primary>确认</Button>
+        <Button color='yellow' primary>确认</Button>
+    </Button.Group>
+    <Space />
+    <Button.Group>
+        <Button color='blue'>确认</Button>
+        <Button color='orange'>确认</Button>
+        <Button color='green'>确认</Button>
+        <Button color='red'>确认</Button>
+        <Button color='yellow'>确认</Button>
+    </Button.Group>
+</Playground>
+
+
+### 说明
+| 参数 |  说明  |
+| :--- | :----- |
+| 1    | space1 |
+| 2    | space2 |
+| 3    | space3 |
+| 4    | space4 |
+| 5    | space5 |
+| 6    | space6 |
