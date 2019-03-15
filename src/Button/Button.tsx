@@ -38,6 +38,7 @@ const Button = (props: ButtonProps) => {
     [`Button__state_${state}`]: state,
     ['Button__type_primary']: primary,
     ['Button__state_active']: isActive,
+    ['Button__ua-pc']: util.isPC,
   });
 
   function handleTouchStart(e: TouchEvent) {
