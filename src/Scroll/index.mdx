@@ -1,0 +1,43 @@
+---
+name: Scroll
+route: /Scroll
+---
+
+import { Playground } from 'docz';
+import Scroll from './index.tsx';
+
+# Scroll Component
+
+<Playground>
+    <div style={{'height':'100px'}}>
+        <Scroll
+            showPullDown={true}
+            showPullUp={true}
+            endPullUp={false}
+            scrollPullDown={(pullDownComplete)=>{
+                setTimeout(()=>{
+                    pullDownComplete(()=>{
+                        console.log('ok')
+                    })
+                },3000);
+            }}
+            scrollPullUp={(pullUpComplete)=>{
+                setTimeout(()=>{
+                    pullUpComplete(()=>{
+                        console.log('ok')
+                    })
+                },3000);
+            }}
+        >
+            <div style={{'height':'100px','width':'100%'}}>try pulling me</div>
+        </Scroll>
+    </div>
+</Playground>
+
+|      参数      |     说明     |   类型   | 默认值 |
+| -------------- | ------------ | -------- | ------ |
+| showPullDown   | 是否显示下拉 | boolean  | false  |
+| showPullUp     | 是否显示上拉 | boolean  | false  |
+| endPullUp      | 上拉是否结尾 | boolean  | false  |
+| scrollPullDown | 下拉回调方法 | function |        |
+| scrollPullUp   | 上拉回调方法 | function |        |

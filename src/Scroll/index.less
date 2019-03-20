@@ -1,0 +1,67 @@
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+.Scroll 								{ min-height: 100%;box-sizing: content-box!important;padding-bottom: 1px;.clearfix;
+	&__pullDown 						{ display:none; .GPUsupport; width:60px; height:60px; position:absolute!important; left:50%; top:-70px; .transform(translate(-50%,0)); overflow:hidden;
+		&-msg:before 					{ content:"下拉刷新";}
+		&-msg:after 					{ content:"";}
+		&-icon 							{ .transform(rotate(-180deg));}
+		&_turn_on 						{ overflow:visible;
+			& span:nth-child(1) 		{ .animation(pullDownLoading .5s linear infinite);}
+			& span:nth-child(2) 		{ opacity:0;}
+			& span:nth-child(3) 		{ opacity:1!important;}
+		}
+		&_turn_on &-icon 				{ .transform(rotate(0));}
+		&_turn_on &-msg:before 			{ content:"松开刷新";}
+		& span 							{ display:block; width:100%; height:100%; position:absolute; left:0; top:0; background:url(../_images/unify/mob/icon-pageload-drop.png) center 0 no-repeat; background-size:100% auto;
+			&:nth-child(1) 				{ background-position:center -60px; .transform(translateZ(0));}
+			&:nth-child(2) 				{ background-position:center 0; top:1px; .transform(translateZ(0));}
+			&:nth-child(3) 				{ background-image:url(../_images/unify/mob/icon-pageload-text1.png); left:100%; top:-15%; opacity:0; .transition(all @globalSpeed ease-out);
+				&.am-on 				{ background-image:url(../_images/unify/mob/icon-pageload-text2.png);}
+			}
+
+		}
+		&_state_loading 				{
+			& span:nth-child(3) 		{ background-image:url(../_images/unify/mob/icon-pageload-text3.png);}
+		}
+		&_show_on 						{ display:block;}
+	}
+
+	&__pullUp 							{ display:none; .GPUsupport; margin-left:-.5rem; height:40px; position:relative; left:50%; text-align:center; .transform(translate(-50%,0));
+		&-msg 							{ display:block; padding-left:1rem; line-height:30px; padding:5px 0; float:left; font-size:@am-xs;
+			&:before 					{ content:"上拉加载更多";}
+			&:after 					{ content:"";}
+		}
+		&-icon 							{ display:block; width:40px; height:40px; float:left; background:url(../_images/unify/mob/icon-pullup.png) center center no-repeat; background-size:70% 70%; .transition(all @globalSpeed ease-out)!important;}
+		&_turn_on &-icon 				{ .transform(rotate(-180deg));}
+		&_turn_on &-msg:before 			{ content:"　松开刷新　";}
+		&_state_loading &-icon 			{ background-image:url(../_images/unify/mob/icon-loading.png); .animation(pullUpLoading 1s linear infinite);}
+		&_state_loading &-msg:before 	{ content:"加载中...";}
+		&_state_end 					{ margin-left:0;}
+		&_state_end &-icon 				{ display:none;}
+		&_state_end &-msg:before 		{ content:"没有更多了"; color:@globalColorBlack2;}
+		&_show_on 						{ display:inline-block;}
+	}
+
+}
+
+@keyframes pullDownLoading {
+00%		 { background-position:center -120px;}		24.99% { background-position:center -120px;}
+25% 	 { background-position:center -180px;}		49.99% { background-position:center -180px;}
+50% 	 { background-position:center -240px;}		74.99% { background-position:center -240px;}
+75%		 { background-position:center -300px;}		99.99% { background-position:center -300px;}
+}
+@keyframes pullUpLoading {
+0.000%	 { .transform(rotate(0deg));}				8.300% { .transform(rotate(0deg));}
+8.310% 	 { .transform(rotate(30deg));}				16.60% { .transform(rotate(30deg));}
+16.61% 	 { .transform(rotate(60deg));}				24.90% { .transform(rotate(60deg));}
+24.91% 	 { .transform(rotate(90deg));}				33.30% { .transform(rotate(90deg));}
+33.31% 	 { .transform(rotate(120deg));}				41.60% { .transform(rotate(120deg));}
+41.61% 	 { .transform(rotate(150deg));}				49.80% { .transform(rotate(150deg));}
+49.81% 	 { .transform(rotate(180deg));}				58.20% { .transform(rotate(180deg));}
+58.21% 	 { .transform(rotate(210deg));}				66.50% { .transform(rotate(210deg));}
+66.51% 	 { .transform(rotate(240deg));}				74.80% { .transform(rotate(240deg));}
+74.81% 	 { .transform(rotate(270deg));}				83.10% { .transform(rotate(270deg));}
+83.11% 	 { .transform(rotate(300deg));}				91.50% { .transform(rotate(300deg));}
+91.51% 	 { .transform(rotate(330deg));}				100.0% { .transform(rotate(330deg));}
+}
