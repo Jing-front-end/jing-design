@@ -19,7 +19,13 @@ const NoticeBar = (props: NoticeBarProps) => {
       <a className="NoticeBar__link" href={href} onClick={onClick}>
         <p className="NoticeBar__link-text">{word}</p>
       </a>
-      <Icon icon="close" size="mini" />
+      <a
+        onClick={e => {
+          e.target.parentNode.parentNode.remove();
+        }}
+      >
+        <Icon icon="close" size="mini" />
+      </a>
     </div>
   );
 };
