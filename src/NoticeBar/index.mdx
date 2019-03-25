@@ -1,0 +1,26 @@
+---
+name: NoticeBar
+route: /NoticeBar
+---
+
+import { Playground } from 'docz';
+import NoticeBar from './index.tsx';
+import Space from '../Space/index.tsx';
+
+# NoticeBar Component
+
+<Playground>
+    <NoticeBar word='我是文字' />
+    <Space />
+    <NoticeBar href='https://www.jingqb.com' word='我是文字' />
+    <Space />
+    <NoticeBar word='我是文字' onClick={()=>{alert('click')}} />
+</Playground>
+
+## props
+
+|  参数   |   说明   |  类型  |
+| :------ | :------- | :----- |
+| href    | 链接地址 | string |
+| word    | 文字     | string |
+| onClick | 点击事件 | fn     |
