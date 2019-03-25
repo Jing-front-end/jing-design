@@ -1,0 +1,57 @@
+---
+name: CardList
+route: /CardList
+---
+
+import { Playground } from 'docz';
+import CardList from './index.tsx';
+
+# CardList Component
+
+<Playground>
+    <CardList
+        platform='mob'
+        type='large'
+        list={[
+            {cardPkid:33635,bankAccountEndFour:'7499',bankLimitDay:'500001',bankName:'浦发银行',convertedBankLimit:'5万',convertedBankLimitDay:'50万',bankNo:'0310',link:'#',onBindTipsClick:()=>{console.log('bind tips')}},
+            {cardPkid:36929,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
+            {cardPkid:36919,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
+            {cardPkid:36910,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0102',link:'#'},
+        ]}
+    />
+</Playground>
+
+## props
+
+| 参数      | 说明                                      | 类型         | 默认值 |
+|----------|------------------------------------------|-------------|-------|
+| list | 银行列表 | array | [] |
+| type | 种类 | string |  | small |
+| bindTips | 注意事项 | string |  |
+| payTips | 大额支付 | string |  |
+
+
+
+### list
+
+| 参数      | 说明                                      | 类型         |
+|----------|------------------------------------------|-------------|
+| link | 链接地址 | string |
+| cardPkid | 银行卡id | string |
+| bankAccountEndFour | 后四位 | string |
+| bankLimitDay | 日限额 | string |
+| bankName | 银行名称 | string |
+| convertedBankLimit | 单笔首次限额 | string |
+| convertedNextBankLimit | 单笔后续限额 | string |
+| convertedBankLimitDay | 单日限额 | string |
+| bankNo | 银行编号 | string |
+| onBindTipsClick | 绑定注册事项点击 | function |
+
+
+### type
+
+| 参数      | 说明                                      | 类型         |
+|----------|------------------------------------------|-------------|
+| small | 小卡 | string |
+| large | 大卡 | string |
+| primary | 突出底色 | string |
