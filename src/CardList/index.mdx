@@ -5,18 +5,31 @@ route: /CardList
 
 import { Playground } from 'docz';
 import CardList from './index.tsx';
+import Space from '../Space/index.tsx';
 
 # CardList Component
 
 <Playground>
     <CardList
-        platform='mob'
+        list={[
+            {cardPkid:33635,bankAccountEndFour:'7499',bankLimitDay:'500001',bankName:'浦发银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'50万',bankNo:'0310',link:'#',onBindTipsClick:()=>{console.log('bind tips')}},
+            {cardPkid:36929,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
+        ]}
+    />
+    <Space />
+    <CardList
         type='large'
         list={[
-            {cardPkid:33635,bankAccountEndFour:'7499',bankLimitDay:'500001',bankName:'浦发银行',convertedBankLimit:'5万',convertedBankLimitDay:'50万',bankNo:'0310',link:'#',onBindTipsClick:()=>{console.log('bind tips')}},
-            {cardPkid:36929,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
-            {cardPkid:36919,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
-            {cardPkid:36910,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedBankLimitDay:'20万',bankNo:'0102',link:'#'},
+            {cardPkid:33635,bankAccountEndFour:'7499',bankLimitDay:'500001',bankName:'浦发银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'50万',bankNo:'0310',link:'#',onBindTipsClick:()=>{console.log('bind tips')}},
+            {cardPkid:36919,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'20万',bankNo:'0100',link:'#'},
+        ]}
+    />
+    <Space />
+    <CardList
+        type='primary'
+        list={[
+            {cardPkid:33635,bankAccountEndFour:'7499',bankLimitDay:'500001',bankName:'浦发银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'50万',bankNo:'0310',link:'#',onBindTipsClick:()=>{console.log('bind tips')}},
+            {cardPkid:36910,bankAccountEndFour:'3277',bankLimitDay:'200000',bankName:'邮储银行',convertedBankLimit:'5万',convertedNextBankLimit:'1万',convertedBankLimitDay:'20万',bankNo:'0102',link:'#'},
         ]}
     />
 </Playground>
@@ -27,8 +40,6 @@ import CardList from './index.tsx';
 |----------|------------------------------------------|-------------|-------|
 | list | 银行列表 | array | [] |
 | type | 种类 | string |  | small |
-| bindTips | 注意事项 | string |  |
-| payTips | 大额支付 | string |  |
 
 
 
