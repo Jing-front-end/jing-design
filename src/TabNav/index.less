@@ -1,0 +1,21 @@
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+.TabNav { .am-card; position:relative;
+	&__tab { display:block; height:2.75rem; margin:0; position:relative; color:@globalColorBlack1; cursor:pointer;
+	    &:active { color:@globalColorOrange;}
+		&:before { display:block; content:""; width:1px; height:1rem; background-color:@globalColorBorder; .am-pos-lc;}
+		&:nth-child(1):before { display:none;}
+		&_state_current { color:@globalColorOrange!important;}
+		&-text { display:block; width:100%; height:2.75rem; line-height:2.75rem; font-size:@am-sm; text-align:center;}
+		.Icon { display:none;}
+	}
+	&__type_dock { border-bottom:0;
+		.TabNav__tab { height:48px; color:@globalColorBlack0;
+			&:before { display:none;}
+			.Icon { display:inline-block; .am-pos-cc; top:35%;}
+			&-text { height:1rem; line-height:1rem; .am-pos-bc; bottom:5%; font-size:@am-xs;}
+		}
+	}
+	&__currentBar { display:block; content:""; width:0; height:2px; position:absolute; left:0; bottom:-1px; background-color:@globalColorOrange; .transition(all @globalSpeed/2 ease-out)!important;}
+}

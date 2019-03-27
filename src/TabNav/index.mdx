@@ -1,0 +1,56 @@
+---
+name: TabNav
+route: /TabNav
+---
+
+import { Playground } from 'docz';
+import TabNav from './index.tsx';
+
+# TabNav Component
+
+<Playground>
+    <TabNav
+        currentIndex={0}
+        onClick={(index)=>{
+            console.log(index)
+        }}
+        list={[
+            { id:'1', title:'理财产品' },
+            { id:'2', title:'我的资产' }    
+        ]}
+    />
+</Playground>
+
+### props
+|     参数     |   说明   |   类型   | 默认值 |
+| :----------- | :------- | :------- | :----- |
+| currentIndex | 当前项   | number   | 0      |
+| list         | 内容数据 | array    |        |
+| onClick      | 触发事件 | function |        |
+| noborder     | 无边框   | string   | none   |
+| type         | 类型     | string   | nav    |
+
+
+### list
+| 参数  |  说明   |  类型  |
+| :---- | :------ | :----- |
+| id    | id      | string |
+| title | tab名称 | string |
+| icon  | 图标    | string |
+
+
+### type
+| 参数 | 说明 |
+| :--- | :--- |
+| top  | 顶部 |
+| dock | 底部 |
+| nav  | 页内 |
+
+
+
+### noborder
+|  参数  |     说明     |            备注            |
+| :----- | :----------- | :------------------------- |
+| top    | 顶部         | 使用type后无需指定noborder |
+| bottom | 底部         | 使用type后无需指定noborder |
+| none   | 上下都有边框 |                            |
