@@ -1,0 +1,30 @@
+---
+name: TagList
+route: /TagList
+---
+
+import { Playground } from 'docz';
+import TagList from './index.tsx';
+
+# TagList Component
+
+<Playground>
+    <TagList
+        list={[
+            {'labelName':'收益稳定','labelColor':'#ff6600'},
+            {'labelName':'净值型','labelColor':'#1496ff'},
+            {'labelName':'周开放','labelColor':'#1496ff'},
+        ]}
+    />
+</Playground>
+
+## list
+
+| 参数 |   说明   | 类型  |
+| :--- | :------- | :---- |
+| list | 标签列表 | array |
+
+|    参数    |   说明   |  类型  |
+| :--------- | :------- | :----- |
+| labelColor | 标签颜色 | string |
+| labelName  | 标签文字 | string |
