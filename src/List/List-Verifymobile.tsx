@@ -9,7 +9,7 @@ import List from '../List/index';
 import '../_style/index.less';
 import './index.less';
 
-const iconKind = tuple('input', 'text');
+const typeKind = tuple('input', 'text');
 
 export interface ListVerifymobileProps {
   type: string;
@@ -128,7 +128,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
 };
 
 ListVerifymobile.propTypes = {
-  type: PropTypes.oneOf(iconKind),
+  type: PropTypes.oneOf(typeKind),
   hasIcon: PropTypes.bool,
   title: PropTypes.string,
   setMobileValue: PropTypes.func,

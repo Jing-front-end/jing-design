@@ -15,6 +15,7 @@ export interface ListRadioProps {
   type: string;
   secondType: string;
   list: Array<RadioItemProps>;
+  onClick: (index: number) => void;
 }
 
 interface RadioItemProps {
@@ -27,7 +28,6 @@ interface RadioItemProps {
   type: string;
   disable: boolean;
   checked: boolean;
-  onClick: (index: number) => void;
 }
 
 function ListItemClicked(onClick: (index: number) => void, index: number) {
@@ -36,8 +36,14 @@ function ListItemClicked(onClick: (index: number) => void, index: number) {
   }
 }
 
-function setListItem(type: string, secondType: string, item: RadioItemProps, index: number) {
-  const { disable, value, icon, title, titleDesc, desc, rc, checked, onClick } = item;
+function setListItem(
+  type: string,
+  secondType: string,
+  item: RadioItemProps,
+  index: number,
+  onClick: (index: number) => void,
+) {
+  const { disable, value, icon, title, titleDesc, desc, rc, checked } = item;
 
   const classes = classNames('ListRadio', 'ListRadio__type_payment', {
     [`ListRadio__state_disable`]: secondType !== 'offline' && disable === true,
@@ -50,9 +56,7 @@ function setListItem(type: string, secondType: string, item: RadioItemProps, ind
         key={value}
         className={classes}
         onClick={() => {
-          if (disable === false || secondType === 'offline') {
-            ListItemClicked(onClick, index);
-          }
+          ListItemClicked(onClick, index);
         }}
       >
         <span className="ListRadio__content">
@@ -98,12 +102,12 @@ function setListItem(type: string, secondType: string, item: RadioItemProps, ind
 }
 
 const ListRadio = (props: ListRadioProps) => {
-  const { type, secondType, list } = props;
+  const { type, secondType, list, onClick } = props;
 
   return (
     <div className="am-group">
       {list.map((item: RadioItemProps, index: number) =>
-        setListItem(type, secondType, item, index),
+        setListItem(type, secondType, item, index, onClick),
       )}
     </div>
   );

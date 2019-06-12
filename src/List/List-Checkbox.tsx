@@ -7,13 +7,13 @@ import './index.less';
 
 export interface CheckboxProps {
   list: Array<CheckboxItemProps>;
+  onClick: (index: number) => void;
 }
 
 interface CheckboxItemProps {
   title: string;
   value: string;
   checked: boolean;
-  onClick: (index: number) => void;
 }
 
 function ListItemClicked(onClick: (index: number) => void, index: number) {
@@ -22,8 +22,8 @@ function ListItemClicked(onClick: (index: number) => void, index: number) {
   }
 }
 
-function setListItem(item: CheckboxItemProps, index: number) {
-  const { title, value, checked, onClick } = item;
+function setListItem(item: CheckboxItemProps, index: number, onClick: (index: number) => void) {
+  const { title, value, checked } = item;
 
   return (
     <div
@@ -44,17 +44,18 @@ function setListItem(item: CheckboxItemProps, index: number) {
 }
 
 const Checkbox = (props: CheckboxProps) => {
-  const { list } = props;
+  const { list, onClick } = props;
 
   return (
     <div className="am-group">
-      {list.map((item: CheckboxItemProps, index: number) => setListItem(item, index))}
+      {list.map((item: CheckboxItemProps, index: number) => setListItem(item, index, onClick))}
     </div>
   );
 };
 
 Checkbox.propTypes = {
   list: PropTypes.array,
+  onClick: PropTypes.func,
 };
 
 export default React.memo(Checkbox);

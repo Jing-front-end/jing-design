@@ -41,28 +41,29 @@ import Space from '../Space/index.tsx';
     <List>
         <List.Checkbox
             list={[
-                {title:'选项名称0', value:'0', checked:true, onClick:(index)=>{alert(index)}},
-                {title:'选项名称1', value:'1', onClick:(index)=>{alert(index)}},
+                {title:'选项名称0', value:'0', checked:true},
+                {title:'选项名称1', value:'1'},
                 {title:'选项名称2', value:'2'},
                 {title:'选项名称3', value:'4'},
             ]}
+            onClick={(index)=>{alert(index)}}
         />
     </List>
 </Playground>
 
 ### props
-| 参数 |   说明   | 类型  |
-| :--- | :------- | :---- |
-| list | 选项数据 | array |
+|  参数   |   说明   |    类型     |
+| :------ | :------- | :---------- |
+| list    | 选项数据 | array       |
+| onClick | 点击方法 | (index)=>{} |
 
 
 ### list
-|  参数   |   说明   |   类型   |
-| :------ | :------- | :------- |
-| title   | 选项名称 | string   |
-| value   | 选项值   | string   |
-| checked | 是否选中 | boolean  |
-| onClick | 点击方法 | (index)=>{} |
+|  参数   |   说明   |  类型   |
+| :------ | :------- | :------ |
+| title   | 选项名称 | string  |
+| value   | 选项值   | string  |
+| checked | 是否选中 | boolean |
 
 ## List.Dashboard
 
@@ -144,6 +145,7 @@ import Space from '../Space/index.tsx';
                 {title:'选项名称2', value:2},
                 {title:'选项名称3', value:3},
             ]}
+            onClick={(index)=>{alert(index)}}
         />
     </List>
     <Space />
@@ -156,16 +158,18 @@ import Space from '../Space/index.tsx';
                 {title:'选项名称2', value:2, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万'},
                 {title:'选项名称3', value:3, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万'},
             ]}
+            onClick={(index)=>{alert(index)}}
         />
     </List>
 </Playground>
 
 ### props
-|    参数    |        说明        |  类型  | 默认值 |
-| ---------- | ------------------ | ------ | ------ |
-| type       | 类型               | strong | custom |
-| secondType | 当类型为payment的时候 | strong |        |
-| list       | 选项数据           | array  |        |
+|    参数    |         说明          |    类型     | 默认值 |
+| ---------- | --------------------- | ----------- | ------ |
+| type       | 类型                  | strong      | custom |
+| secondType | 当类型为payment的时候 | strong      |        |
+| list       | 选项数据              | array       |        |
+| onClick    | 点击方法              | (index)=>{} |        |
 
 
 ### type
@@ -193,7 +197,6 @@ import Space from '../Space/index.tsx';
 | type      | 支付类型 | string  |        |                   |
 | disable   | 是否禁用 | boolean |        |                   |
 | checked   | 是否选中 | boolean |        |                   |
-| onClick   | 点击事件 | func    |        |                   |
 
 ## List.Row
 
