@@ -1,0 +1,303 @@
+---
+name: Popup
+route: /Popup
+---
+
+import { Playground } from 'docz';
+import Popup from './index.ts';
+import Button from '../Button/index.ts';
+import NoticeBar from '../NoticeBar/index.tsx';
+
+# Popup Component
+
+### props
+|   参数   |   说明   |   类型   |
+| :------- | :------- | :------- |
+| show     | 是否显示 | boolean  |
+| onClose  | 关闭事件 | function |
+| children | 子元素   | any      |
+
+## Popup.Alert
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.Alert
+                    title='这个我必须要告诉你！'
+                    onSubmit = {()=>{
+                        setIsShow(false);
+                    }}
+                />
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|     参数      |     说明     |   类型   |
+| :------------ | :----------- | :------- |
+| title         | 提示内容     | string   |
+| btnSubmitText | 确认按钮文字 | string   |
+| onSubmit      | 点击事件     | function |
+
+
+## Popup.AlertSelect
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.AlertSelect
+                    title='这个我必须要告诉你！'
+                    list={[{btnSubmitText:'选项一'},{btnSubmitText:'选项二'},{btnSubmitText:'选项三'}]}
+                    onCancel = {()=>{
+                        setIsShow(false);
+                    }}
+                    onSubmit = {(index)=>{
+                        alert(index)
+                        setIsShow(false);
+                    }}
+                />
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|     参数      |     说明     |   类型   |
+| :------------ | :----------- | :------- |
+| title         | 提示内容     | string   |
+| btnCancelText | 取消按钮文字 | string   |
+| onCancel      | 取消事件     | function |
+| list          | 选项列表     | array |
+| onSubmit      | 选项点击事件 | function |
+
+### list
+|     参数      |   说明   |  类型  |
+| :------------ | :------- | :----- |
+| btnSubmitText | 选项文字 | string |
+
+
+## Popup.Confirm
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.Confirm
+                    title='这个我必须要告诉你！'
+                    onCancel = {()=>{
+                        setIsShow(false);
+                    }}
+                    onSubmit = {()=>{
+                        alert('ok')
+                        setIsShow(false);
+                    }}
+                />
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|     参数      |     说明     |   类型   |
+| :------------ | :----------- | :------- |
+| title         | 提示内容     | string   |
+| btnSubmitText | 确认按钮文字 | string   |
+| btnCancelText | 取消按钮文字 | string   |
+| onSubmit      | 确认点击事件 | function |
+| onCancel      | 取消点击事件 | function |
+
+
+## Popup.Custom
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.Custom
+                    title='选择支付方式'
+                    onCancel = {()=>{
+                        console.log('cancel');
+                        setIsShow(false);
+                    }}
+                    onBack = {(index)=>{
+                        console.log('back');
+                    }}
+                    fixedTop={
+                      <NoticeBar
+                          word='我是文字'
+                      />
+                    }
+                >
+                  <div>1</div>
+                </Popup.Custom>
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|   参数   |     说明     |   类型   |
+| :------- | :----------- | :------- |
+| title    | 提示内容     | string   |
+| fixedTop | 置顶内容     | any      |
+| children | 子内容       | any      |
+| onBack   | 返回点击事件 | function |
+| onCancel | 取消点击事件 | function |
+
+## Popup.Prompt
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.Prompt
+                    title='这个我必须要告诉你！'
+                    onCancel = {()=>{
+                        setIsShow(false);
+                    }}
+                    onSubmit = {()=>{
+                        alert('ok')
+                        setIsShow(false);
+                    }}
+                />
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|     参数      |     说明     |   类型   |
+| :------------ | :----------- | :------- |
+| title         | 提示内容     | string   |
+| btnSubmitText | 确认按钮文字 | string   |
+| btnCancelText | 取消按钮文字 | string   |
+| onSubmit      | 确认点击事件 | function |
+| onCancel      | 取消点击事件 | function |
+
+
+## Popup.Passcode 未完成
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button>
+            </Button.Group>
+            {isShow?<Popup show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.Passcode
+                    title='密码'
+                    onCancel = {()=>{
+                        console.log('cancel');
+                        setIsShow(false);
+                    }}
+                    onForgetPwd = {(index)=>{
+                        console.log('forget');
+                    }}
+                />
+            </Popup>:''}
+            
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|    参数     |       说明       |   类型   |
+| :---------- | :--------------- | :------- |
+| title       | 提示内容         | string   |
+| onForgetPwd | 忘记密码点击事件 | function |
+| onCancel    | 取消点击事件     | function |
