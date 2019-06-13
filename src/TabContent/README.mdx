@@ -1,0 +1,24 @@
+---
+name: TabContent
+route: /TabContent
+---
+
+import { Playground } from 'docz';
+import TabContent from './index.ts';
+
+# TabContent Component
+
+<Playground>
+  <TabContent.Group current={1}>
+      <TabContent><div className='am-card am-align-center'>content1</div></TabContent>
+      <TabContent><div className='am-card am-align-center'>content2</div></TabContent>
+      <TabContent><div className='am-card am-align-center'>content3</div></TabContent>
+  </TabContent.Group>
+</Playground>
+
+## TabContent.Group
+
+### props
+|  参数   |   说明   |  类型  |
+| :------ | :------- | :----- |
+| current | 提示内容 | number |
