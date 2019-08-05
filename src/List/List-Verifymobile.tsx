@@ -1,9 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { tuple } from '../_util/type';
 import { util } from '..';
-import Icon from '../Icon/index';
 import List from '../List/index';
 
 import '../_style/index.less';
@@ -50,7 +48,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
     tempJSX = (
       <List.Input
         type="mobile"
-        icon={hasIcon === true ? 'phone' : false}
+        icon={hasIcon === true ? 'phone' : undefined}
         title={title}
         setValue={(v: string) => {
           if (typeof setMobileValue === 'function') {
@@ -62,7 +60,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
   } else if (type === 'text') {
     tempJSX = (
       <List.Row
-        icon={hasIcon === true ? 'phone' : false}
+        icon={hasIcon === true ? 'phone' : ''}
         title={title}
         desc={util.shieldedMobile(desc)}
       />
@@ -116,7 +114,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
             setVerifyValue(v);
           }
         }}
-        icon={hasIcon === true ? 'code' : false}
+        icon={hasIcon === true ? 'code' : undefined}
         type="verifycode"
         onMessageSend={() => {
           onMessageSend();

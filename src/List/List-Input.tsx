@@ -162,17 +162,21 @@ const iconKind = tuple(
 );
 
 export interface ListInputProps {
-  value: string;
+  value?: string;
   type: string;
   icon?: string;
   title?: string;
   isEyeOn?: boolean;
   length?: number;
   disabled?: boolean;
-  setValue: () => void;
+  setValue: (v: string) => void;
   onMessageSend?: () => void;
   minVal?: number;
   maxVal?: number;
+}
+
+interface HTMLInputEvent extends React.ChangeEvent {
+  target: HTMLInputElement & EventTarget;
 }
 
 function eyeClicked(isEyeOn: any, setIsEyeOn: any) {
@@ -200,7 +204,7 @@ function inputOnFocus(setIsFocus: any) {
   setIsFocus(true);
 }
 
-function bindValue(e: React.ChangeEvent, type: string, setValue: any, minVal: any, maxVal: any) {
+function bindValue(e: HTMLInputEvent, type: string, setValue: any, minVal: any, maxVal: any) {
   let val = '';
   // 格式化value
   if (type === 'price') {

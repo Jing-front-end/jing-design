@@ -1,4 +1,4 @@
-import List from './List';
+import ListGroup from './List';
 import ListRow from './List-Row';
 import ListDesc from './List-Desc';
 import ListInput from './List-Input';
@@ -10,15 +10,20 @@ import ListCheckbox from './List-Checkbox';
 import ListDashboard from './List-Dashboard';
 import ListCardSelect from './List-CardSelect';
 import ListVerifymobile from './List-Verifymobile';
-List.Row = ListRow;
-List.Desc = ListDesc;
-List.Input = ListInput;
-List.Radio = ListRadio;
-// List.Switch = ListSwitch;
-List.Select = ListSelect;
-List.Datetime = ListDatetime;
-List.Checkbox = ListCheckbox;
-List.Dashboard = ListDashboard;
-List.CardSelect = ListCardSelect;
-List.Verifymobile = ListVerifymobile;
+
+const List = {
+  Group: ListGroup,
+  Row: ListRow,
+  Desc: ListDesc,
+  Input: ListInput,
+  Radio: ListRadio,
+  // Switch: ListSwitch,
+  Select: ListSelect,
+  Datetime: ListDatetime,
+  Checkbox: ListCheckbox,
+  Dashboard: ListDashboard,
+  CardSelect: ListCardSelect,
+  Verifymobile: ListVerifymobile,
+};
+
 export default List;

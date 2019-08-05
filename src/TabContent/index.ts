@@ -1,4 +1,9 @@
-import TabContent from './TabContent';
+import Self from './TabContent';
 import TabContentGroup from './TabContent-group';
-TabContent.Group = TabContentGroup;
+
+const TabContent = {
+  Self: Self,
+  Group: TabContentGroup,
+};
+
 export default TabContent;

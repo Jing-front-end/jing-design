@@ -25,11 +25,11 @@ const descColorKind = tuple(
 export interface ListRowProps {
   icon: string;
   title: string;
-  descColor: string;
+  descColor?: string;
   desc: string;
-  href: string;
-  autoBreak: boolean;
-  onClick: () => void;
+  href?: string;
+  autoBreak?: boolean;
+  onClick?: () => void;
 }
 
 const ListRow = (props: ListRowProps) => {

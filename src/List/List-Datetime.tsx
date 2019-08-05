@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { tuple } from '../_util/type';
 import Icon from '../Icon/index';
 
 import '../_style/index.less';

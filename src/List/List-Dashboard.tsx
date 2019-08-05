@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { tuple } from '../_util/type';
-import numeral from './numeral';
 import Icon from '../Icon/index';
 
 import '../_style/index.less';
@@ -40,11 +39,11 @@ const Dashboard = (props: DashboardProps) => {
         <span className="ListDashboard__content-lt">{leftTitle}</span>
         <span className="ListDashboard__content-rt">{rightTitle}</span>
         <span className="ListDashboard__content-lb am-color-black2">
-          {leftValue === 0 ? '暂无资产' : numeral(leftValue).format('0,0.00')}
+          {leftValue === 0 ? '暂无资产' : leftValue}
           {leftValue !== 0 && ' 元'}
         </span>
         <span className={rbClasses}>
-          {rightValue === 0 ? '暂无收益' : numeral(rightValue).format('0,0.00')}
+          {rightValue === 0 ? '暂无收益' : rightValue}
           {rightValue !== 0 && ' 元'}
         </span>
       </span>
@@ -52,7 +51,7 @@ const Dashboard = (props: DashboardProps) => {
   );
   if (href || onClick) {
     tempJSX = (
-      <a className="ListDashboard ListDashboard__type_link" to={href} onClick={onClick}>
+      <a className="ListDashboard ListDashboard__type_link" href={href} onClick={onClick}>
         {tempJSXInner}
       </a>
     );

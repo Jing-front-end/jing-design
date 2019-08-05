@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { tuple } from '../_util/type';
 import Icon from '../Icon/index';
 
 import '../_style/index.less';
@@ -69,7 +68,7 @@ const ListSelect = (props: ListSelectProps) => {
           >
             {title}
           </option>
-          {list.map((item: ListSelectItemProps, index: number) => (
+          {list.map((item: ListSelectItemProps) => (
             <option
               key={item.value}
               className="ListSelect__content-select-option"

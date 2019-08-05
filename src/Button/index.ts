@@ -1,5 +1,9 @@
-import Button from './Button';
+import Self from './Button';
 import ButtonGroup from './Button-group';
 
-Button.Group = ButtonGroup;
+const Button = {
+  Self: Self,
+  Group: ButtonGroup,
+};
+
 export default Button;

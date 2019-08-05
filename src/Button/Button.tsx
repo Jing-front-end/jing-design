@@ -18,7 +18,7 @@ const buttonState = tuple('loading', 'disable', 'active');
 
 export interface ButtonProps {
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent) => void;
   color?: string;
   type?: string;
   state?: string;

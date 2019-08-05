@@ -1,14 +1,19 @@
-import Popup from './Popup';
+import PopupGroup from './Popup';
 import PopupAlert from './Popup-alert';
 import PopupConfirm from './Popup-confirm';
 import PopupAlertSelect from './Popup-alertselect';
 import PopupPrompt from './Popup-prompt';
 import PopupCustom from './Popup-custom';
-import PopupPasscode from './Popup-passcode';
-Popup.Alert = PopupAlert;
-Popup.Confirm = PopupConfirm;
-Popup.AlertSelect = PopupAlertSelect;
-Popup.Prompt = PopupPrompt;
-Popup.Custom = PopupCustom;
-Popup.Passcode = PopupPasscode;
+// import PopupPasscode from './Popup-passcode';
+
+const Popup = {
+  Group: PopupGroup,
+  Alert: PopupAlert,
+  Confirm: PopupConfirm,
+  AlertSelect: PopupAlertSelect,
+  Prompt: PopupPrompt,
+  Custom: PopupCustom,
+  // Passcode: PopupPasscode,
+};
+
 export default Popup;
