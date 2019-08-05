@@ -1,6 +1,6 @@
 {
   "name": "jingqb-design",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react-iscroll": "^2.0.3"
   }
 }
