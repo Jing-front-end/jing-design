@@ -6,7 +6,7 @@ import { tuple } from '../_util/type';
 import '../_style/index.less';
 import './index.less';
 
-const ButtonGroupType = tuple('small', 'full', 'two-col', 'three-col');
+const ButtonGroupType = tuple('small', 'full', 'two-col', 'three-col', 'group');
 
 export interface GroupProps {
   type?: string;
