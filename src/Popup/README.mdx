@@ -27,11 +27,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Alert
@@ -40,7 +40,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );
@@ -68,11 +68,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.AlertSelect
@@ -86,7 +86,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );
@@ -121,11 +121,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Confirm
@@ -138,7 +138,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );
@@ -168,11 +168,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Custom
@@ -192,7 +192,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 >
                   <div>1</div>
                 </Popup.Custom>
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );
@@ -221,11 +221,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Prompt
@@ -238,7 +238,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );
@@ -268,11 +268,11 @@ import NoticeBar from '../NoticeBar/index.tsx';
       return (
           <div>
             <Button.Group>
-            <Button color="blue" onClick={()=>{
+            <Button.Self color="blue" onClick={()=>{
                 setIsShow(true);
-              }} primary>确认</Button>
+              }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup show={isShow} onClose={()=>{
+            {isShow?<Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Passcode
@@ -285,7 +285,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         console.log('forget');
                     }}
                 />
-            </Popup>:''}
+            </Popup.Group>:''}
             
           </div>
       );

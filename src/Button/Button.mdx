@@ -5,17 +5,63 @@ route: /Button
 
 import { Playground } from 'docz';
 import Button from './index.ts';
+import Icon from '../Icon/index.tsx';
 
-# Button Component
+# Button.Group Component
+
+## type
+<Playground>
+    <Button.Group type='small'>
+        <Button.Self color='blue' primary>确认</Button.Self>
+        <Button.Self color='orange' primary>确认</Button.Self>
+        <Button.Self color='green' primary>确认</Button.Self>
+        <Button.Self color='red' primary>确认</Button.Self>
+        <Button.Self color='yellow' primary>确认</Button.Self>
+    </Button.Group>
+    <br />
+        <Button.Group type='group'>
+        <Button.Self color='green' primary>确认</Button.Self>
+        <Button.Self color='green'>确认</Button.Self>
+        <Button.Self color='green'>确认</Button.Self>
+        <Button.Self color='green'>确认</Button.Self>
+        <Button.Self color='green'>确认</Button.Self>
+    </Button.Group>
+    <br />
+    <Button.Group type='full'>
+        <Button.Self color='blue' primary>确认</Button.Self>
+    </Button.Group>
+    <br />
+    <Button.Group type='two-col'>
+        <Button.Self color='yellow' primary><Icon icon='callcenter-w' /></Button.Self>
+        <Button.Self primary>立即投资</Button.Self>
+    </Button.Group>
+    <br />
+    <Button.Group type='three-col'>
+        <Button.Self><Icon icon='telephone' />电话客服</Button.Self>
+        <Button.Self>自助服务</Button.Self>
+        <Button.Self primary>在线客服</Button.Self>
+    </Button.Group>
+</Playground>
+
+### 说明
+|   参数    |   说明   |
+| :-------- | :------- |
+| group     | 小号尺寸,按钮无间距 |
+| small     | 小号尺寸 |
+| full      | 通栏尺寸 |
+| two-col   | 2列模式  |
+| three-col | 3列模式  |
+
+# Button.Self Component
 
 ## color
 <Playground>
     <Button.Group>
-        <Button color='blue' primary>确认</Button>
-        <Button color='orange' primary>确认</Button>
-        <Button color='green' primary>确认</Button>
-        <Button color='red' primary>确认</Button>
-        <Button color='yellow' primary>确认</Button>
+        <Button.Self color='blue' primary>确认</Button.Self>
+        <Button.Self color='orange' primary>确认</Button.Self>
+        <Button.Self color='green' primary>确认</Button.Self>
+        <Button.Self color='red' primary>确认</Button.Self>
+        <Button.Self color='yellow' primary>确认</Button.Self>
     </Button.Group>
 </Playground>
 
@@ -32,10 +78,10 @@ import Button from './index.ts';
 ## type
 <Playground>
     <Button.Group>
-        <Button type='small' primary>确认</Button>
-        <Button type='small' color='orange' primary>确认</Button>
-        <Button type='small' color='green' primary>确认</Button>
-        <Button type='small' color='red' primary>确认</Button>
+        <Button.Self type='small' primary>确认</Button.Self>
+        <Button.Self type='small' color='orange' primary>确认</Button.Self>
+        <Button.Self type='small' color='green' primary>确认</Button.Self>
+        <Button.Self type='small' color='red' primary>确认</Button.Self>
     </Button.Group>
 </Playground>
 
@@ -47,8 +93,8 @@ import Button from './index.ts';
 ## state
 <Playground>
     <Button.Group>
-        <Button state='disable' primary>确认</Button>
-        <Button state='loading' primary>确认</Button>
+        <Button.Self state='disable' primary>确认</Button.Self>
+        <Button.Self state='loading' primary>确认</Button.Self>
     </Button.Group>
 </Playground>
 
@@ -61,8 +107,8 @@ import Button from './index.ts';
 ## primary
 <Playground>
     <Button.Group>
-        <Button primary>确认</Button>
-        <Button>确认</Button>
+        <Button.Self primary>确认</Button.Self>
+        <Button.Self>确认</Button.Self>
     </Button.Group>
 </Playground>
 
@@ -74,13 +120,13 @@ import Button from './index.ts';
 ## href
 <Playground>
     <Button.Group>
-        <Button href='https://www.jingqb.com'>确认</Button>
+        <Button.Self href='https://www.jingqb.com'>确认</Button.Self>
     </Button.Group>
 </Playground>
 
 ## onClick
 <Playground>
     <Button.Group>
-        <Button onClick={()=>{alert('click')}}>确认</Button>
+        <Button.Self onClick={()=>{alert('click')}}>确认</Button.Self>
     </Button.Group>
 </Playground>
