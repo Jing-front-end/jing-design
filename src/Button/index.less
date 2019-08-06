@@ -60,6 +60,16 @@
 		&>.Button__state_loading:before { left:50%; margin-left:-1rem;}
 		&>.Button__type_small.Button__state_loading:before { margin-left:-.5rem;}
 	}
+	&__type_group {
+		&.am-g-2>.Button { width:50%!important;}
+		&.am-g-3>.Button { width:33.33333333%!important;}
+		&.am-g-4>.Button { width:25%!important;}
+		&.am-g-5>.Button { width:20%!important;}
+		&>.Button { height:1.25rem; margin:0; padding:0; font-size:@am-xs; border-radius:0; border-left-width:0;
+			&:first-of-type { border-left-width:1px; border-top-left-radius:.25rem; border-bottom-left-radius:.25rem;}
+			&:last-of-type { border-top-right-radius:.25rem; border-bottom-right-radius:.25rem;}
+		}
+	}
 	&__type_small {
 		&.am-g-4,
 		&.am-g-5 {
@@ -75,11 +85,11 @@
 		.Button:nth-child(1) { width:10%!important;}
 		.Button .Icon { .am-pos-cc;}
 		.Button:nth-child(2) { width:87%!important;}
-		@media screen and (max-width:375px) { 
+		@media screen and (max-width:375px) {
 		.Button:nth-child(1) { width:11%!important;}
 		.Button:nth-child(2) { width:86%!important;}
 		}
-		@media screen and (max-width:320px) { 
+		@media screen and (max-width:320px) {
 		.Button:nth-child(1) { width:12%!important;}
 		.Button:nth-child(2) { width:85%!important;}
 		}
@@ -98,7 +108,7 @@
 }
 
 /*iconLoading*/
-@keyframes iconLoading { 
+@keyframes iconLoading {
 0.000% { .transform(rotate(0deg));}		8.300% { .transform(rotate(0deg));}		8.310% { .transform(rotate(30deg));}
 16.60% { .transform(rotate(30deg));}	16.61% { .transform(rotate(60deg));}	24.90% { .transform(rotate(60deg));}
 24.91% { .transform(rotate(90deg));}	33.30% { .transform(rotate(90deg));}	33.31% { .transform(rotate(120deg));}
