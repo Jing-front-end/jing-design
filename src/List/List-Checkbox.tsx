@@ -34,7 +34,7 @@ function setListItem(item: CheckboxItemProps, index: number, onClick: (index: nu
       }}
     >
       <span className="ListCheckbox__icon">
-        <Icon icon={checked === true ? 'checkbox_state_on' : 'checkbox'} />
+        <Icon kind={checked === true ? 'checkbox_state_on' : 'checkbox'} />
       </span>
       <span className="ListCheckbox__content">
         <span className="ListCheckbox__content-title">{title}</span>

@@ -51,7 +51,7 @@ const ListSelect = (props: ListSelectProps) => {
   return (
     <div className="ListSelect">
       <span className="ListSelect__icon">
-        <Icon icon={icon} />
+        <Icon kind={icon} />
       </span>
       <span className={classes}>
         <select

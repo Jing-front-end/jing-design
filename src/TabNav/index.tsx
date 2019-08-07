@@ -44,7 +44,7 @@ function setListItem(
         }}
         className={classes}
       >
-        <Icon icon={currentIndex === index ? `${item.icon}_orange` : item.icon} />
+        <Icon kind={currentIndex === index ? `${item.icon}_orange` : item.icon} />
         <span className="TabNav__tab-text">{item.title}</span>
       </div>
     );

@@ -365,7 +365,7 @@ const ListInput = (props: ListInputProps) => {
     <div className={classes}>
       {icon !== undefined ? (
         <span className="ListInput__icon">
-          <Icon icon={icon} />
+          <Icon kind={icon} />
         </span>
       ) : (
         ''

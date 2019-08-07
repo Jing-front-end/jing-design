@@ -52,7 +52,7 @@ function setListItem(item: CardItemProps) {
     <div key={cardPkid} className="CardList__card">
       <div>
         <div className="CardList__card-icon">
-          <Icon icon={`bank${bankNo}`} />
+          <Icon kind={`bank${bankNo}`} />
         </div>
         <strong className="CardList__card-name">{bankName}</strong>
         <p className="CardList__card-desc">
@@ -75,7 +75,7 @@ function setListItem(item: CardItemProps) {
           </em>
         )}
         <div className="CardList__card-bigicon">
-          <Icon icon={`bank${bankNo}`} />
+          <Icon kind={`bank${bankNo}`} />
         </div>
       </div>
     </div>

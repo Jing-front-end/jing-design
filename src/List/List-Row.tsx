@@ -45,7 +45,7 @@ const ListRow = (props: ListRowProps) => {
   const tempJSXInner = (
     <div>
       <span className="ListRow__icon">
-        <Icon icon={icon} />
+        <Icon kind={icon} />
       </span>
       <span
         className={icon ? 'ListRow__content ListRow__content_state_hasicon' : 'ListRow__content'}

@@ -33,7 +33,7 @@ const Dashboard = (props: DashboardProps) => {
   const tempJSXInner = (
     <div>
       <span className="ListDashboard__icon">
-        <Icon icon={icon} />
+        <Icon kind={icon} />
       </span>
       <span className="ListDashboard__content">
         <span className="ListDashboard__content-lt">{leftTitle}</span>

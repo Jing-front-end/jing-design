@@ -127,7 +127,7 @@ export default class ListSwitch extends Component {
     let tempJSX = (
       <div className="ListSwitch">
         <span className="ListSwitch__icon">
-          <Icon icon={this.props.icon} />
+          <Icon kind={this.props.icon} />
         </span>
         <span
           className={

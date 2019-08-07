@@ -64,7 +64,7 @@ const PopupCustom = (props: PopupCustomProps) => {
           handleCancel(onCancel);
         }}
       >
-        <Icon icon="close" />
+        <Icon kind="close" />
       </a>
       <a
         className={classes}
@@ -72,7 +72,7 @@ const PopupCustom = (props: PopupCustomProps) => {
           handleBack(onBack, pageIndex, setPageIndex);
         }}
       >
-        <Icon icon="back" />
+        <Icon kind="back" />
       </a>
     </div>
   );

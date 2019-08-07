@@ -59,7 +59,7 @@ function setListItem(
         }}
       >
         <span className="ListRadio__content">
-          <Icon icon={icon} />
+          <Icon kind={icon} />
           <p className="ListRadio__content-title">
             {title}{' '}
             <span className="ListRadio__content-title-desc">
@@ -71,7 +71,7 @@ function setListItem(
         </span>
         {checked === true ? (
           <span className="ListRadio__icon">
-            <Icon icon="radio_type2_state_on" />
+            <Icon kind="radio_type2_state_on" />
           </span>
         ) : (
           ''
@@ -90,7 +90,7 @@ function setListItem(
         }}
       >
         <span className="ListRadio__icon">
-          <Icon icon={checked === true ? 'radio_state_on' : 'radio'} />
+          <Icon kind={checked === true ? 'radio_state_on' : 'radio'} />
         </span>
         <span className="ListRadio__content">
           <span className="ListRadio__content-title">{title}</span>

@@ -52,7 +52,7 @@ const CardSelect = (props: CardSelectProps) => {
   const tempJSXInner = (
     <div>
       <span className="ListCardSelect__icon">
-        <Icon icon={icon} />
+        <Icon kind={icon} />
       </span>
       <span className="ListCardSelect__content">
         <span className="ListCardSelect__content-lt">

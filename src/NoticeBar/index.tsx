@@ -24,7 +24,7 @@ const NoticeBar = (props: NoticeBarProps) => {
           e.target.parentNode.parentNode.remove();
         }}
       >
-        <Icon icon="close" size="mini" />
+        <Icon kind="close" size="mini" />
       </a> */}
     </div>
   );

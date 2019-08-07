@@ -16,7 +16,7 @@ const ListDatetime = (props: ListDatetimeProps) => {
   return (
     <div className="ListDatetime">
       <span className="ListDatetime__icon">
-        <Icon icon={icon} />
+        <Icon kind={icon} />
       </span>
       <span
         className={

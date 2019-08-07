@@ -89,7 +89,7 @@ const PopupPasscode = (props: PopupPasscodeProps) => {
             handleCancel(onCancel, value);
           }}
         >
-          <Icon icon="close" size="small" />
+          <Icon kind="close" size="small" />
         </a>
         <h6 className="Popup__title">
           <span className="Popup__title-text">{title}</span>
