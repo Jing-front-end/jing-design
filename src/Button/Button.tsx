@@ -13,7 +13,7 @@ let touchY = 0;
 let touchYPos = 0;
 
 const buttonColor = tuple('blue', 'orange', 'green', 'red', 'yellow');
-const buttonType = tuple('small');
+const buttonType = tuple('small', 'block');
 const buttonState = tuple('loading', 'disable', 'active');
 
 export interface ButtonProps {
