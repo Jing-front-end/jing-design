@@ -261,8 +261,9 @@ export default class Util {
     }
     if (Util.isPC) {
       Util.addClass(document.getElementsByTagName('html')[0], 'am-pc');
-    } else {
-      Util.addClass(document.getElementsByTagName('html')[0], 'am-mob am-wx');
+    }
+    if (Util.browser.wechat) {
+      Util.addClass(document.getElementsByTagName('html')[0], 'am-wx');
     }
   };
   public static testTel = (str: string) => {
