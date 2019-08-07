@@ -12,7 +12,7 @@ import Space from '../Space/index.tsx';
 ## List.CardSelect
 
 <Playground>
-    <List>
+    <List.Group>
         <List.CardSelect
             icon='bank0308'
             lt='银行名称(8888)'
@@ -21,7 +21,7 @@ import Space from '../Space/index.tsx';
             online={true}
             onClick={()=>{}}
         />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -38,7 +38,7 @@ import Space from '../Space/index.tsx';
 ## List.Checkbox
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Checkbox
             list={[
                 {title:'选项名称0', value:'0', checked:true},
@@ -48,7 +48,7 @@ import Space from '../Space/index.tsx';
             ]}
             onClick={(index)=>{alert(index)}}
         />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -68,11 +68,11 @@ import Space from '../Space/index.tsx';
 ## List.Dashboard
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Dashboard icon='cash' leftTitle='现金管理' rightTitle='最新收益(元)' leftValue={433.12} rightValue={0.00} href='to:123' />
         <List.Dashboard icon='diamonds' leftTitle='固定收益' rightTitle='预期收益(元)' leftValue={0.00} rightValue={0.00} onClick={()=>{alert('click')}} />
         <List.Dashboard icon='gold' leftTitle='高端理财' rightTitle='预期收益(元)' leftValue={1800000} rightValue={291999.45} />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -89,12 +89,12 @@ import Space from '../Space/index.tsx';
 ## List.Desc
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Desc>
             <span className='am-color-black1 am-float-left'>左边文字</span>
             <a className='am-float-right'>右边链接</a>
         </List.Desc>
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -105,7 +105,7 @@ import Space from '../Space/index.tsx';
 ## List.input
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Input icon='phone' title='手机号' type='mobile' setValue={()=>{}} />
         <List.Input icon='password' title='密码' type='password' setValue={()=>{}} />
         <List.Input icon='money' title='金额' type='price' setValue={()=>{}} />
@@ -116,7 +116,7 @@ import Space from '../Space/index.tsx';
             <span className='am-color-black1 am-float-left'>左边文字</span>
             <a className='am-float-right'>右边链接</a>
         </List.Desc>
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -137,7 +137,7 @@ import Space from '../Space/index.tsx';
 ## List.Radio
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Radio
             list={[
                 {title:'选项名称0', value:0},
@@ -147,9 +147,9 @@ import Space from '../Space/index.tsx';
             ]}
             onClick={(index)=>{alert(index)}}
         />
-    </List>
+    </List.Group>
     <Space />
-    <List>
+    <List.Group>
         <List.Radio
             type='payment'
             list={[
@@ -160,7 +160,7 @@ import Space from '../Space/index.tsx';
             ]}
             onClick={(index)=>{alert(index)}}
         />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -201,19 +201,19 @@ import Space from '../Space/index.tsx';
 ## List.Row
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Row icon='card' title='银行卡' onClick={()=>{alert(1)}} />
         <List.Row icon='loop' title='我的转让' href='#' />
         <List.Row icon='paper' title='交易明细' href='#' />
         <List.Row icon='coupon' title='优惠券' href='#' />
-    </List>
+    </List.Group>
     <Space />
-    <List>
+    <List.Group>
         <List.Row icon='friend' title='邀请亲友' desc='瞎几把描述1' descColor='orange' />
         <List.Row icon='friend' title='邀请亲友' desc='瞎几把描述2' />
         <List.Row icon='callcenter' title='客服中心' desc='瞎几把描述3' href='#' />
         <List.Row icon='about' title='关于很长自动换行自动换行自动换行自动换行' autoBreak={true} href='link' />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -230,7 +230,7 @@ import Space from '../Space/index.tsx';
 ## List.Select
 
 <Playground>
-    <List>
+    <List.Group>
         <List.Select
             title='请选择证件类型'
             icon='card'
@@ -242,7 +242,7 @@ import Space from '../Space/index.tsx';
                 {title:'选项名称3', value:'d'},
             ]}
         />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
@@ -264,7 +264,7 @@ import Space from '../Space/index.tsx';
 ## List.Verifymobile
 
 <Playground>
-  <List>
+  <List.Group>
         {/*验证码组合使用，手机号码不可更改*/}
         <List.Verifymobile
             type='input'
@@ -278,7 +278,7 @@ import Space from '../Space/index.tsx';
             onMessageSend={(value)=>{console.log(value)}}
             setVerifyValue={(value)=>{console.log(value)}}
         />
-    </List>
+    </List.Group>
 </Playground>
 
 ### props
