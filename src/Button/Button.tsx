@@ -33,7 +33,7 @@ const Button = (props: ButtonProps) => {
   const { color, type, state, primary, className, children, href } = props;
 
   const classes = classNames('Button', className, {
-    [`Button__color_${color}`]: color,
+    [`Button__color_${color}`]: type !== 'block' && color,
     [`Button__type_${type}`]: type,
     [`Button__state_${state}`]: state,
     ['Button__type_primary']: primary,

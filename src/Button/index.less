@@ -17,6 +17,7 @@
 	&__type_small { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.25rem;}
 	// block
 	&__type_block { width:1rem; height:1rem; border:0; background-color:transparent; border-radius:0; margin:0; padding:0;}
+	&__type_block&__state_active { background-color:transparent; opacity:.75;}
 	/*loading*/
 	&__state_loading { position:relative; opacity:.75; cursor:wait!important;}
 	&__state_loading:before { display:block; content:""; width:2rem; height:2rem; position:absolute; right:.125rem; top:.125rem; margin-top:-1px; background:url(../_images/unify/mob/icon-loading.png) 0 0 no-repeat; background-size:contain; .animation(iconLoading 1s linear infinite);}
