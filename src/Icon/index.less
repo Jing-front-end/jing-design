@@ -2,11 +2,17 @@
 @import (reference) '../_style/public.less';
 
 
-.Icon { display:inline-block; width:1.375rem; height:1.375rem; overflow:hidden; position:relative;
+.Icon { display:inline-block; 
   &__animate_shake { .animation(animateShake 1s linear infinite);}
-  &__color_grey { color:@globalColorBlack2;}
-  &__color_blue { color:@globalColorBlue;}
-  &__color_white { color:@globalColorWhite0;}
+  &__color_grey { 
+    svg { fill:@globalColorBlack2;}
+  }
+  &__color_blue {
+    svg { fill:@globalColorBlue;}
+  }
+  &__color_white { 
+    svg { fill:@globalColorWhite0;}
+  }
 }
 
 @keyframes animateShake {

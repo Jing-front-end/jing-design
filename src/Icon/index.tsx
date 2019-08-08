@@ -47,14 +47,19 @@ const Icon = (props: IconProps) => {
     _size = '100%';
   }
 
-  const classes = classNames({
+  const classes = classNames('Icon', {
+    [`Icon__${kind}`]: kind,
     [`Icon__color_grey`]: color === 'grey' || color === undefined,
     [`Icon__color_blue`]: color === 'blue',
     [`Icon__color_white`]: color === 'white',
     [`Icon__animate_shake`]: animate === 'shake',
   });
 
-  return <JingqbIcon kind={kind} size={_size} className={classes} />;
+  return (
+    <i className={classes}>
+      <JingqbIcon kind={kind} size={_size} />
+    </i>
+  );
 };
 
 Icon.propTypes = {
