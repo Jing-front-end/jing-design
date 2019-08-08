@@ -33,7 +33,7 @@ export default class Icon extends React.Component<IconProps, {}> {
   static defaultProps = {
     className: '',
     color: 'currentColor',
-    size: 32,
+    size: '100%',
   };
 
   render() {

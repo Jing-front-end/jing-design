@@ -36,19 +36,9 @@ export interface IconProps {
 const Icon = (props: IconProps) => {
   const { kind, size, color, animate } = props;
 
-  let _size = '';
-  if (size === 'normal' || size === undefined) {
-    _size = '1.375rem';
-  } else if (size === 'small') {
-    _size = '1.03rem';
-  } else if (size === 'mini') {
-    _size = '0.68rem';
-  } else if (size === 'auto') {
-    _size = '100%';
-  }
-
   const classes = classNames('Icon', {
     [`Icon__${kind}`]: kind,
+    [`Icon__size_${size}`]: size,
     [`Icon__color_grey`]: color === 'grey' || color === undefined,
     [`Icon__color_blue`]: color === 'blue',
     [`Icon__color_white`]: color === 'white',
@@ -57,9 +47,13 @@ const Icon = (props: IconProps) => {
 
   return (
     <i className={classes}>
-      <JingqbIcon kind={kind} size={_size} />
+      <JingqbIcon kind={kind} />
     </i>
   );
+};
+
+Icon.defaultProps = {
+  size: 'normal',
 };
 
 Icon.propTypes = {
