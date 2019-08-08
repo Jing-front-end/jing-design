@@ -270,12 +270,12 @@ export default class Util {
     return /^1(\d){10}$/.test(str);
   };
   public static getElementHeight = (id: string) => {
-    const Element = document.getElementById(id);
-    let ElementHeight = 0;
-    if (Element) {
-      ElementHeight = Element.offsetHeight;
+    const element = document.getElementById(id);
+    let elementHeight = 0;
+    if (element) {
+      elementHeight = element.offsetHeight;
     }
-    return ElementHeight;
+    return elementHeight;
   };
 }
 
