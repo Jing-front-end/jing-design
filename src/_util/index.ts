@@ -269,24 +269,13 @@ export default class Util {
   public static testTel = (str: string) => {
     return /^1(\d){10}$/.test(str);
   };
-  public static setScrollHeight = () => {
-    const queryElement = ['#scrollTop', '#scrollBottom'];
-    const ElementHeight: number[] = [];
-    queryElement.map(item => {
-      const Element = document.querySelector(item);
-      if (Element) {
-        ElementHeight.push(Element.offsetHeight);
-      } else {
-        ElementHeight.push(0);
-      }
-    });
-    const bottomElementTop = Util.global.winH - ElementHeight[1];
-    const scrollHeight = {
-      scrollTopHeight: ElementHeight[0],
-      scrollBottomHeight: ElementHeight[1],
-      scrollBottomTop: bottomElementTop,
-    };
-    return scrollHeight;
+  public static getElementHeight = (id: string) => {
+    const Element = document.querySelector(id);
+    let ElementHeight = 0;
+    if (Element) {
+      ElementHeight = Element.offsetHeight;
+    }
+    return ElementHeight;
   };
 }
 
