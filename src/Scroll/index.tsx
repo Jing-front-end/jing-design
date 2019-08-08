@@ -18,6 +18,8 @@ export interface ScrollProps {
   scrollPullDown: (pullDownComplete: any) => void;
   scrollPullUp: (pullUpComplete: any) => void;
   scroll: any;
+  bottom: number;
+  top: number;
 }
 
 interface IndexBar {
@@ -34,6 +36,11 @@ interface IndexBar {
 }
 
 export default class Scroll extends PureComponent<ScrollProps, {}> {
+  static defaultProps = {
+    bottom: 0,
+    top: 0,
+  };
+
   static indexBarReady() {
     const index = document.createElement('div');
     index.id = 'IndexBarTop';
@@ -85,7 +92,7 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
   }
 
   setDom() {
-    const { showPullDown, children, showPullUp, endPullUp } = this.props;
+    const { showPullDown, children, showPullUp, endPullUp, bottom, top } = this.props;
     const options = {
       scrollbars: false,
       momentum: true,
@@ -154,7 +161,11 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
         </div>
       </ReactIScroll>
     );
-    return tempJSX;
+    return (
+      <div style={{ position: 'absolute', width: '100%', bottom: `${bottom}px`, top: `${top}px` }}>
+        {tempJSX}
+      </div>
+    );
   }
 
   checkIscrollReadyForRefresh() {
