@@ -2,7 +2,7 @@
 @import (reference) '../_style/public.less';
 
 
-.Icon { display:inline-block; 
+.Icon { display:inline-block; line-height: 0;
   &__animate_shake { .animation(animateShake 1s linear infinite);}
   &__color_grey { 
     svg { fill:@globalColorBlack2;}
@@ -17,6 +17,7 @@
   &__size_small { width: 1.03rem; height: 1.03rem;}
   &__size_mini { width: 0.68rem; height: 0.68rem;}
   &__size_auto { width: 100%; height: 100%;}
+  svg {display: inline-block;}
 }
 
 @keyframes animateShake {
