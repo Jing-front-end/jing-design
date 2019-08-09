@@ -7,7 +7,7 @@ import JingqbIcon from './Icon';
 import '../_style/index.less';
 import './index.less';
 
-const iconAnimate = tuple('shake');
+const iconAnimate = tuple('shake', 'rotate');
 const iconSize = tuple('normal', 'small', 'mini', 'auto');
 const iconColor = tuple('blue', 'grey', 'white');
 const iconKind = tuple(
@@ -43,6 +43,7 @@ const Icon = (props: IconProps) => {
     [`Icon__color_blue`]: color === 'blue',
     [`Icon__color_white`]: color === 'white',
     [`Icon__animate_shake`]: animate === 'shake',
+    [`Icon__animate_rotate`]: animate === 'rotate',
   });
 
   return (
