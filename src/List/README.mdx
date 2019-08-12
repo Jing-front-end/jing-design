@@ -304,18 +304,27 @@ import Space from '../Space/index.tsx';
 ## List.Switch
 
 <Playground>
-  
+
     {()=>{
       const Temp = () => {
-        const [isTurnedOn, setIsTurnedOn] = React.useState(false);
+        const [isTurnedOn1, setIsTurnedOn1] = React.useState(false);
+        const [isTurnedOn2, setIsTurnedOn2] = React.useState(false);
 
         return (
           <List.Group>
             <List.Switch
-                title='我是抬头'
-                isTurnedOn={isTurnedOn}
-                turn={(isTurnedOn)=>{
-                  setIsTurnedOn(isTurnedOn)
+                title='我是标题标题标题标题标题标题标题标题标题标题标题'
+                desc='我是描述描述描述描述描述描述描述描述描述描述描述'
+                isTurnedOn={isTurnedOn1}
+                turn={(isTurnedOn1)=>{
+                  setIsTurnedOn1(isTurnedOn1)
+                }}
+            />
+            <List.Switch
+                title='我是标题'
+                isTurnedOn={isTurnedOn2}
+                turn={(isTurnedOn2)=>{
+                  setIsTurnedOn2(isTurnedOn2)
                 }}
             />
           </List.Group>
@@ -324,13 +333,14 @@ import Space from '../Space/index.tsx';
 
       return <Temp/>;
     }}
-    
+
 </Playground>
 
 ### props
 | 参数      | 说明                                      | 类型         | 默认值 |
 |-----------|-------------------------------------------|--------------|--------|
-| title | 左侧标题 | string |  |
+| title | 标题 | string |  |
+| desc | 描述 | string |  |
 | icon | 图标 | string |  |
 | onSwitch | 切换回调 | function |  |
 

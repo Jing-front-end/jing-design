@@ -30,15 +30,15 @@ function clicked(turn: (isTurnedOn: boolean) => void, isTurnedOn: boolean) {
 const ListSwitch = (props: ListSelectProps) => {
   const [isActive, setIsActive] = useState(false);
 
-  const { icon, title, isTurnedOn, turn } = props;
+  const { icon, title, desc, isTurnedOn, turn } = props;
 
   const classes1 = classNames('ListSwitch__content', {
     [`ListSwitch__content_state_hasicon`]: icon !== undefined,
   });
 
-  const classes2 = classNames('ListSwitch__content-btn', {
-    [`ListSwitch__content-btn_state_on`]: isTurnedOn === true,
-    [`ListSwitch__content-btn_state_active`]: isActive === true,
+  const classes2 = classNames('ListSwitch__btn', {
+    [`ListSwitch__btn_state_on`]: isTurnedOn === true,
+    [`ListSwitch__btn_state_active`]: isActive === true,
   });
 
   function onTouchStart(e: TouchEvent) {
@@ -113,21 +113,22 @@ const ListSwitch = (props: ListSelectProps) => {
       )}
       <span className={classes1}>
         <span className="ListSwitch__content-title">{title}</span>
-        <span
-          className={classes2}
-          onClick={() => {
-            clicked(turn, isTurnedOn);
-          }}
-          onTouchStart={(e: TouchEvent) => {
-            onTouchStart(e);
-          }}
-          // onTouchMove={(e)=>{this.onTouchMove(e)}}
-          onTouchEnd={() => {
-            onTouchEnd();
-          }}
-        >
-          <em />
-        </span>
+        {!!desc ? <span className="ListSwitch__content-desc">{desc}</span> : ''}
+      </span>
+      <span
+        className={classes2}
+        onClick={() => {
+          clicked(turn, isTurnedOn);
+        }}
+        onTouchStart={(e: TouchEvent) => {
+          onTouchStart(e);
+        }}
+        // onTouchMove={(e)=>{this.onTouchMove(e)}}
+        onTouchEnd={() => {
+          onTouchEnd();
+        }}
+      >
+        <em />
       </span>
     </div>
   );
@@ -136,6 +137,7 @@ const ListSwitch = (props: ListSelectProps) => {
 ListSwitch.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
+  desc: PropTypes.string,
   isTurnedOn: PropTypes.bool,
   turn: PropTypes.func,
 };
