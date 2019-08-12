@@ -3,7 +3,7 @@ import ListRow from './List-Row';
 import ListDesc from './List-Desc';
 import ListInput from './List-Input';
 import ListRadio from './List-Radio';
-// import ListSwitch from './List-Switch';
+import ListSwitch from './List-Switch';
 import ListSelect from './List-Select';
 import ListDatetime from './List-Datetime';
 import ListCheckbox from './List-Checkbox';
@@ -17,7 +17,7 @@ const List = {
   Desc: ListDesc,
   Input: ListInput,
   Radio: ListRadio,
-  // Switch: ListSwitch,
+  Switch: ListSwitch,
   Select: ListSelect,
   Datetime: ListDatetime,
   Checkbox: ListCheckbox,
