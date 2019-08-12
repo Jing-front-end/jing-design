@@ -44,6 +44,7 @@ const Icon = (props: IconProps) => {
     [`Icon__color_white`]: color === 'white',
     [`Icon__animate_shake`]: animate === 'shake',
     [`Icon__animate_rotate`]: animate === 'rotate',
+    [`Icon__animate_scale`]: animate === 'scale',
   });
 
   return (
