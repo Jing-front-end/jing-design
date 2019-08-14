@@ -44,18 +44,11 @@ const Icon = (props: IconProps) => {
     [`Icon__color_white`]: color === 'white',
     [`Icon__animate_shake`]: animate === 'shake',
     [`Icon__animate_rotate`]: animate === 'rotate',
-    [`Icon__animate_scale`]: animate === 'scale',
   });
-
-  // 调整图标视觉差异
-  let _size = undefined;
-  if (kind === 'back') {
-    _size = '80%';
-  }
 
   return (
     <i className={classes}>
-      <JingqbIcon kind={kind} size={_size} />
+      <JingqbIcon kind={kind} />
     </i>
   );
 };
