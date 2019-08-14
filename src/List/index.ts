@@ -1,4 +1,5 @@
 import ListGroup from './List';
+import ListButton from './List-Button';
 import ListRow from './List-Row';
 import ListDesc from './List-Desc';
 import ListInput from './List-Input';
@@ -13,6 +14,7 @@ import ListVerifymobile from './List-Verifymobile';
 
 const List = {
   Group: ListGroup,
+  Button: ListButton,
   Row: ListRow,
   Desc: ListDesc,
   Input: ListInput,

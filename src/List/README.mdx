@@ -344,5 +344,41 @@ import Space from '../Space/index.tsx';
 | icon | 图标 | string |  |
 | onSwitch | 切换回调 | function |  |
 
+## List.Button
+
+<Playground>
+    <List.Group>
+      <List.Button
+          title='我是标题标题标题标题标题标题标题标题标题标题标题'
+          desc='我是描述描述描述描述描述描述描述描述描述描述描述'
+          buttonArray={[
+            {color: 'green', primary: true},
+            {color: 'green', primary: false}
+          ]}
+      />
+      <List.Button
+          title='我是标题'
+          buttonArray={[
+            {color: 'green', primary: true},
+            {color: 'green', primary: false}
+          ]}
+      />
+    </List.Group>
+</Playground>
+
+### props
+|    参数     |   说明   |  类型  | 默认值 |
+| ----------- | -------- | ------ | ------ |
+| title       | 标题     | string |        |
+| desc        | 描述     | string |        |
+| buttonArray | 按钮数组 | string |        |
+| icon        | 图标     | string |        |
+
+### buttonArray
+|  参数   |    说明    |   类型   | 默认值 |
+| ------- | ---------- | -------- | ------ |
+| color   | 颜色       | string   |        |
+| primary | 是否填充色 | boolean  |        |
+| onClick | 点击事件   | function |        |
 
 ## List.Datetime 未完成

@@ -127,6 +127,19 @@
     }
 }
 
+.ListButton { .am-row;
+  &__icon { .am-g; width:2rem!important; height:100%!important; .am-pos-lt;
+      .Icon { .am-pos-lc;}
+  }
+  &__content { .am-con; margin-right:3.5rem; padding:.5rem 0; color:@globalColorBlack0;
+      &_state_hasicon { padding-left:2rem;}
+      &-title { .am-g; height:1.75rem; line-height:1.75rem; .ellipsis;}
+      &-desc { .am-g; height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2; .ellipsis;}
+  }
+  &__btn { width:3.2rem; height:1.25rem; .am-pos-rc; right:@verticalGap;
+  }
+}
+
 .ListRadio { .am-row; height:auto; padding:.75rem @verticalGap .75rem 0;
     &:not(.ListRadio__state_disable):active { background-color:darken(#fff,3%);
         &:before { display:block; box-sizing:content-box; content:''; width:1rem; height:100%; .am-pos-lt; left:-1rem; background-color:darken(#fff,3%);}

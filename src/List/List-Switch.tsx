@@ -9,7 +9,7 @@ import './index.less';
 let touchX = 0;
 let touchY = 0;
 
-export interface ListSelectProps {
+export interface ListSwitchProps {
   icon?: string;
   title: string;
   desc: string;
@@ -27,7 +27,7 @@ function clicked(turn: (isTurnedOn: boolean) => void, isTurnedOn: boolean) {
   }
 }
 
-const ListSwitch = (props: ListSelectProps) => {
+const ListSwitch = (props: ListSwitchProps) => {
   const [isActive, setIsActive] = useState(false);
 
   const { icon, title, desc, isTurnedOn, turn } = props;
