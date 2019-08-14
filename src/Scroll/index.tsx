@@ -17,7 +17,7 @@ export interface ScrollProps {
   endPullUp: boolean;
   scrollPullDown: (pullDownComplete: any) => void;
   scrollPullUp: (pullUpComplete: any) => void;
-  scroll: any;
+  onScrollY: (y: number) => void;
   bottom: number;
   top: number;
 }
@@ -236,7 +236,7 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
   }
 
   scroll() {
-    const { scroll } = this.props;
+    const { onScrollY } = this.props;
     const scrollDown = this.iscroll.getIScroll().scroller.children[0];
     const scrollUp = this.iscroll.getIScroll().scroller.children[
       this.iscroll.getIScroll().scroller.children.length - 1
@@ -262,8 +262,8 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
     if (this.indexBar.isInit === true) {
       this.indexBarScroll();
     }
-    if (typeof scroll === 'function') {
-      scroll(this.scrolly);
+    if (typeof onScrollY === 'function') {
+      onScrollY(this.scrolly);
     }
   }
 

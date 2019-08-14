@@ -30,6 +30,9 @@ import Scroll from './index.tsx';
                     })
                 },3000);
             }}
+            onScrollY={(y)=>{
+              console.log(y)
+            }}
         >
             <div style={{'height':'200px','width':'100%'}}>try pulling me</div>
         </Scroll>
@@ -43,3 +46,4 @@ import Scroll from './index.tsx';
 | endPullUp      | 上拉是否结尾 | boolean  | false  |
 | scrollPullDown | 下拉回调方法 | function |        |
 | scrollPullUp   | 上拉回调方法 | function |        |
+| onScrollY      | 上下滚动事件 | function |        |
