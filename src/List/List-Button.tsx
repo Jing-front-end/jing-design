@@ -15,6 +15,7 @@ export interface ListButtonProps {
 }
 
 interface ButtonItemProps {
+  name: string;
   color: string;
   primary: boolean;
   onClick?: () => void;
@@ -36,7 +37,7 @@ const ListButton = (props: ListButtonProps) => {
       ) : (
         ''
       )}
-      <span className={classes1}>
+      <span className={classes1} style={{ marginRight: 3.2 * buttonArray.length + 0.3 + 'rem' }}>
         <span className="ListButton__content-title">{title}</span>
         {!!desc ? <span className="ListButton__content-desc">{desc}</span> : ''}
       </span>
@@ -44,7 +45,7 @@ const ListButton = (props: ListButtonProps) => {
         <Button.Group type="group">
           {buttonArray.map((item: ButtonItemProps) => (
             <Button.Self primary={item.primary} color={item.color} onClick={item.onClick}>
-              确认
+              {item.name}
             </Button.Self>
           ))}
         </Button.Group>

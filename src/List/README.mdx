@@ -352,15 +352,18 @@ import Space from '../Space/index.tsx';
           title='我是标题标题标题标题标题标题标题标题标题标题标题'
           desc='我是描述描述描述描述描述描述描述描述描述描述描述'
           buttonArray={[
-            {color: 'green', primary: true},
-            {color: 'green', primary: false}
+            {name: '大', color: 'green', primary: true},
+            {name: '小', color: 'green', primary: false}
           ]}
       />
       <List.Button
           title='我是标题'
+          desc='我是描述描述描述描述描述'
           buttonArray={[
-            {color: 'green', primary: true},
-            {color: 'green', primary: false}
+            {name: '小', color: 'green', primary: true},
+            {name: '中', color: 'green', primary: false},
+            {name: '大', color: 'green', primary: false},
+            {name: '超大', color: 'green', primary: false}
           ]}
       />
     </List.Group>
@@ -377,6 +380,7 @@ import Space from '../Space/index.tsx';
 ### buttonArray
 |  参数   |    说明    |   类型   | 默认值 |
 | ------- | ---------- | -------- | ------ |
+| name    | 名称       | string   |        |
 | color   | 颜色       | string   |        |
 | primary | 是否填充色 | boolean  |        |
 | onClick | 点击事件   | function |        |

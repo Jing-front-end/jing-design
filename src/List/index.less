@@ -136,7 +136,13 @@
       &-title { .am-g; height:1.75rem; line-height:1.75rem; .ellipsis;}
       &-desc { .am-g; height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2; .ellipsis;}
   }
-  &__btn { width:3.2rem; height:1.25rem; .am-pos-rc; right:@verticalGap;
+  &__btn { width:3.2rem; height:1.8rem; .am-pos-rc; right:@verticalGap;
+  }
+  .ButtonGroup { padding-left: 0; padding-right: 0;
+    &__type_group {
+      &>.Button { height:1.8rem;
+      }
+    }
   }
 }
 
