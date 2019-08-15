@@ -37,7 +37,7 @@ const ListButton = (props: ListButtonProps) => {
       ) : (
         ''
       )}
-      <span className={classes1} style={{ marginRight: 3.2 * buttonArray.length + 0.3 + 'rem' }}>
+      <span className={classes1} style={{ marginRight: 3.2 * buttonArray.length + 0.5 + 'rem' }}>
         <span className="ListButton__content-title">{title}</span>
         {!!desc ? <span className="ListButton__content-desc">{desc}</span> : ''}
       </span>

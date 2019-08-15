@@ -112,7 +112,7 @@
     &__content { .am-con; margin-right:3.5rem; padding:.5rem 0; color:@globalColorBlack0;
         &_state_hasicon { padding-left:2rem;}
         &-title { .am-g; height:1.75rem; line-height:1.75rem; .ellipsis;}
-        &-desc { .am-g; height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2; .ellipsis;}
+        &-desc { .am-g; min-height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2;}
     }
     &__btn { width:3.2rem; height:2rem; .am-pos-rc; right:@verticalGap; border-radius:1rem; background-color:@globalColorBorder; .transition(all .1s ease-out);
         &:before { display:block; content:""; width:100%; height:100%; border-radius:1rem; border:1.5px solid @globalColorBorder; margin-left:-1.6rem; margin-top:-1rem; position:absolute; left:50%; top:50%; background-color:#fff; .transition(all @globalSpeed cubic-bezier(0,0,.58,1));}
@@ -134,11 +134,11 @@
   &__content { .am-con; margin-right:3.5rem; padding:.5rem 0; color:@globalColorBlack0;
       &_state_hasicon { padding-left:2rem;}
       &-title { .am-g; height:1.75rem; line-height:1.75rem; .ellipsis;}
-      &-desc { .am-g; height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2; .ellipsis;}
+      &-desc { .am-g; min-height:1rem; line-height:1rem; margin-bottom:.25rem; font-size:@am-xs; color:@globalColorBlack2;}
   }
   &__btn { width:3.2rem; height:1.8rem; .am-pos-rc; right:@verticalGap;
   }
-  .ButtonGroup { padding-left: 0; padding-right: 0;
+  .ButtonGroup { padding-left:0; padding-right:0;
     &__type_group {
       &>.Button { height:1.8rem;
       }
