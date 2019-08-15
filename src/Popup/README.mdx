@@ -31,7 +31,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Alert
@@ -40,7 +40,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup.Group>:''}
+            </Popup.Group>
           </div>
       );
     };
@@ -71,7 +71,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.AlertSelect
@@ -85,7 +85,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup.Group>:''}
+            </Popup.Group>
           </div>
       );
     };
@@ -123,7 +123,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Confirm
@@ -136,7 +136,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup.Group>:''}
+            </Popup.Group>
           </div>
       );
     };
@@ -169,7 +169,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Custom
@@ -189,7 +189,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 >
                   <div>1</div>
                 </Popup.Custom>
-            </Popup.Group>:''}
+            </Popup.Group>
           </div>
       );
     };
@@ -221,7 +221,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Prompt
@@ -234,7 +234,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         setIsShow(false);
                     }}
                 />
-            </Popup.Group>:''}
+            </Popup.Group>
           </div>
       );
     };
@@ -267,7 +267,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                 setIsShow(true);
               }} primary>确认</Button.Self>
             </Button.Group>
-            {isShow?<Popup.Group show={isShow} onClose={()=>{
+            {/* <Popup.Group show={isShow} onClose={()=>{
                 setIsShow(false);
             }}>
                 <Popup.Passcode
@@ -280,7 +280,7 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         console.log('forget');
                     }}
                 />
-            </Popup.Group>:''}
+            </Popup.Group> */}
           </div>
       );
     };
