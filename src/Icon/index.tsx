@@ -24,6 +24,7 @@ const iconKind = tuple(
   'share',
   'wechat',
   'play-white',
+  'empty',
 );
 
 export interface IconProps {
