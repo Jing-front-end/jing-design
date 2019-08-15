@@ -18,27 +18,17 @@ const Popup = (props: PopupProps) => {
   React.useEffect(() => {
     if (show === true && isShow === 'false') {
       setIsShow('true');
-    }
-  });
-
-  function maskClicked() {
-    if (typeof onClose === 'function') {
+    } else if (show === false && isShow === 'true') {
       setIsShow('ready');
       setTimeout(function() {
-        onClose();
         setIsShow('false');
       }, util.global.speed + 200);
     }
-  }
+  });
 
   return (
     <div className={`Popup Popup__state_${isShow}`}>
-      <div
-        className="Popup__mask"
-        onClick={() => {
-          maskClicked();
-        }}
-      />
+      <div className="Popup__mask" onClick={onClose} />
       {children}
     </div>
   );
