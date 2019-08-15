@@ -1,4 +1,4 @@
-import React, { TouchEvent, useState } from 'react';
+import React, { useState } from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon/index';
@@ -6,8 +6,8 @@ import Icon from '../Icon/index';
 import '../_style/index.less';
 import './index.less';
 
-let touchX = 0;
-let touchY = 0;
+// let touchX = 0;
+// let touchY = 0;
 
 export interface ListSwitchProps {
   icon?: string;
@@ -41,11 +41,11 @@ const ListSwitch = (props: ListSwitchProps) => {
     [`ListSwitch__btn_state_active`]: isActive === true,
   });
 
-  function onTouchStart(e: TouchEvent) {
+  function onTouchStart() {
     // document.addEventListener('touchmove', e.preventDefault(), { passive: false });
     setIsActive(true);
-    touchX = e.changedTouches[0].pageX;
-    touchY = e.changedTouches[0].pageY;
+    // touchX = e.changedTouches[0].pageX;
+    // touchY = e.changedTouches[0].pageY;
   }
 
   function onTouchEnd() {
@@ -120,8 +120,8 @@ const ListSwitch = (props: ListSwitchProps) => {
         onClick={() => {
           clicked(turn, isTurnedOn);
         }}
-        onTouchStart={(e: TouchEvent) => {
-          onTouchStart(e);
+        onTouchStart={() => {
+          onTouchStart();
         }}
         // onTouchMove={(e)=>{this.onTouchMove(e)}}
         onTouchEnd={() => {
