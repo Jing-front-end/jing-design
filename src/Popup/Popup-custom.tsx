@@ -40,20 +40,15 @@ function handleCancel(onCancel: () => void) {
 }
 
 const PopupCustom = (props: PopupCustomProps) => {
-  // this.tempScrollTop = [];
   const { title, fixedTop, children, onCancel, onBack } = props;
-
   const [pageIndex, setPageIndex] = React.useState(0);
-
-  const classes = classNames('Popup__btn Popup__btn_type_back', 'ListRadio__type_payment', {
+  const classes = classNames('Popup__btn Popup__btn_type_back', {
     [`Popup__btn_type_back_state_true`]: pageIndex !== 0,
   });
 
   return (
     <div className="Popup__window PopupCustom">
-      <h6 className="Popup__title">
-        <span className="Popup__title-text">{title}</span>
-      </h6>
+      {!!title && <h6 className="Popup__title">{title}</h6>}
       {fixedTop}
       <div className="Popup__content" id="popupCustomContent">
         {children}
@@ -76,10 +71,6 @@ const PopupCustom = (props: PopupCustomProps) => {
       </a>
     </div>
   );
-};
-
-PopupCustom.defaultProps = {
-  title: '选项',
 };
 
 PopupCustom.propTypes = {

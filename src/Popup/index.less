@@ -19,7 +19,6 @@
 	}
 }
 
-
 /*PopupAlert*/
 .PopupAlert { width:80%; border-radius:.5rem; background-color:#fff; opacity:0; .transform(translate(-50%,-50%) scale(0.875,0.875)); .transition(all @globalSpeed ease-out);
 	.Popup__title { height:6rem; width:100%; display:block; position:relative;
@@ -67,13 +66,14 @@
 	.Popup__content { height:300px; border-top:1px solid @globalColorBorder; overflow:auto; -webkit-overflow-scrolling:touch;
 		.List { border-top:0;}
 	}
-	.Popup__btn { width:3.25rem; height:2.75rem; position:absolute; top:0;
-		&_type_cancel { right:0;
-			.Icon { .am-pos-cc;}
-		}
-		&_type_back { display:none; left:0;
+	.Popup__btn {
+		&_type_back { display:none; width:3.25rem; height:2.75rem; position:absolute; top:0; left:0;
 			.Icon { .am-pos-cc;}
 			&_state_true { display:block;}
+		}
+		&_type_cancel { height:2.75rem; line-height:2.75rem; .text-center; border-top:1px solid @globalColorBorder;
+			&:after { display:block; content:"取消"; color:@globalColorBlack0;}
+			.Icon { display:none;}
 		}
 	}
 	.Popup__state_true & { .transform(translate(0,0));}
@@ -110,7 +110,6 @@
 	.Popup__content { height:2.15rem;}
 	}
 }
-
 
 /*android border-radius overflow can not clip*/
 .android .Popup {
