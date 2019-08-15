@@ -1,11 +1,11 @@
 @import (reference) '../_style/index.less';
 @import (reference) '../_style/public.less';
 
-.Popup { width:100%; position:fixed; z-index:-999; left:0; top:0; bottom:0; overflow:hidden;
+.Popup { width:100%; position:relative; z-index:-999; left:0; top:0; bottom:0; overflow:hidden;
 	&__mask { width:100%; height:100%; position:absolute; left:0; top:0; background-color:rgba(0,0,0,.75); opacity:0; .transition(all @globalSpeed ease-out);}
 	&__window { display:block; position:absolute; z-index:1; left:50%; top:50%; overflow:hidden; .transition(all @globalSpeed ease-out);}
-	&__state_ready { z-index:9;}
-	&__state_true { z-index:9;}
+	&__state_ready { z-index:9; position:fixed;}
+	&__state_true { z-index:9; position:fixed;}
 	&__state_true &__mask,
 	&__state_true &__window { opacity:1;}
 	&__type_noCancel &__btn_type_submit { display:none;}
