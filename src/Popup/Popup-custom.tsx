@@ -32,8 +32,6 @@ function handleBack(onBack: (num: number) => void, pageIndex: number, setPageInd
 }
 
 function handleCancel(onCancel: () => void) {
-  // this.tempScrollTop = [];
-  // document.getElementById('popupCustomContent').scrollTop = 0;
   if (typeof onCancel === 'function') {
     onCancel();
   }
@@ -50,9 +48,7 @@ const PopupCustom = (props: PopupCustomProps) => {
     <div className="Popup__window PopupCustom">
       {!!title && <h6 className="Popup__title">{title}</h6>}
       {fixedTop}
-      <div className="Popup__content" id="popupCustomContent">
-        {children}
-      </div>
+      <div className="Popup__content">{children}</div>
       <a
         className="Popup__btn Popup__btn_type_cancel"
         onClick={() => {
