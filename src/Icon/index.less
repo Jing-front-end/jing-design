@@ -1,9 +1,8 @@
 @import (reference) '../_style/index.less';
 @import (reference) '../_style/public.less';
 
-
 .Icon { display:inline-block; line-height: 0; position: relative;
-  svg { display: inline-block; .am-pos-cc;}
+  &>* { display: inline-block; .am-pos-cc;}
   &__animate_shake { .animation(animateShake 1s linear infinite);}
   &__animate_rotate { .animation(animateRotate 1s linear infinite);}
   &__animate_scale { .animation(animateScale .5s ease-out);}
