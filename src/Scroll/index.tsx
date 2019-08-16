@@ -20,6 +20,7 @@ export interface ScrollProps {
   onScrollY: (y: number) => void;
   bottom: number;
   top: number;
+  scrollToY: number;
 }
 
 interface IndexBar {
@@ -67,6 +68,12 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
   };
 
   componentDidMount() {
+    if (typeof this.props.scrollToY === 'number') {
+      this.checkIscrollReady(() => {
+        this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
+      });
+    }
+
     this.indexBarInit();
     // 处理安卓输入框获得焦点后滚动问题
     if (util.system.android) {
@@ -81,6 +88,12 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
         _this.checkIscrollReadyForRefresh();
         img.onload = null;
       })();
+    }
+  }
+
+  componentDidUpdate() {
+    if (typeof this.props.scrollToY === 'number') {
+      this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
     }
   }
 
@@ -186,7 +199,7 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
       const _this = this;
       setTimeout(() => {
         _this.checkIscrollReady(callback);
-      }, 200);
+      }, 25);
     }
   }
 
