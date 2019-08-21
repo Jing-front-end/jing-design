@@ -93,7 +93,9 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
 
   componentDidUpdate() {
     if (typeof this.props.scrollToY === 'number') {
-      this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
+      this.checkIscrollReady(() => {
+        this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
+      });
     }
   }
 
