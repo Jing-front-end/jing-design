@@ -1,0 +1,26 @@
+---
+name: Toast
+route: /Toast
+---
+
+import { Playground } from 'docz';
+import Button from '../Button/index.ts';
+import Toast from '../Toast/index.tsx';
+
+# Toast Component
+
+## Toast.show
+
+<Playground>
+  <div>
+    <Button.Group>
+    <Button.Self color="blue" onClick={()=>{
+        Toast.show('message');
+      }} primary>确认</Button.Self>
+    </Button.Group>
+  </div>
+</Playground>
+
+```
+show(content: React.ReactNode, duration?: number, mask?: boolean)
+```
