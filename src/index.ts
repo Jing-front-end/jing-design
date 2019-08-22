@@ -27,3 +27,4 @@ export { default as Space } from './Space';
 export { default as TabContent } from './TabContent';
 export { default as TabNav } from './TabNav';
 export { default as TagList } from './TagList';
+export { default as Toast } from './Toast';
