@@ -2,7 +2,7 @@
 @import (reference) '../_style/public.less';
 
 /*btn*/
-.Button { display:block; width:100%; height:2.25rem; margin-left:3%; padding:0 0.5rem; border:1px solid transparent; float:left; border-radius:.375rem; background-color:#fff; font-size:@am-l; cursor:pointer; overflow:hidden; .text-center;
+.Button { display:block; width:100%; height:2.25rem; margin-left:3%; padding:0 0.5rem; position:relative; border:1px solid transparent; float:left; border-radius:.375rem; background-color:#fff; font-size:@am-l; cursor:pointer; overflow:hidden; .text-center;
 	&__ua-pc { width:100px; }
 	/*first*/
 	&:first-child { margin-left:0!important;}
@@ -14,7 +14,7 @@
 	/*primary*/
 	&__type_primary { border:none!important;}
 	/*sm*/
-	&__type_small { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.25rem;}
+	&__type_small { height:1.25rem; margin-left:3%; font-size:@am-xs;}
 	// block
 	&__type_block { width:1rem; height:1rem; border:0; background-color:transparent; border-radius:0; margin:0; padding:0;}
 	&__type_block&__state_active { background-color:transparent; opacity:.75;}
@@ -24,30 +24,50 @@
 	&__type_small&__state_loading:before { width:1.07rem; height:1.07rem; margin-left:-.535rem;}
 	&__type_primary&__state_loading:before { background-image:url(../_images/unify/mob/icon-loading-w.png);}
 	/*red*/
-	&__color_red { border-color:@globalColorRed; color:@globalColorRed;}
+	&__color_red { border-color:@globalColorRed; color:@globalColorRed;
+		&:after,&:before { background-color:@globalColorRed;}
+	}
 	&__color_red&__type_primary { background-color:@globalColorRed; color:#fff!important;}
 	&__color_red&__state_active { background-color:lighten(@globalColorRed,35%);}
-	&__color_red&__type_primary&__state_active { background-color:darken(@globalColorRed,5%); color:#fff;}
+	&__color_red&__type_primary&__state_active { background-color:darken(@globalColorRed,5%); color:#fff;
+		&:after,&:before { background-color:darken(@globalColorRed,5%);}
+	}
 	/*green*/
-	&__color_green { border-color:@globalColorGreen; color:@globalColorGreen;}
+	&__color_green { border-color:@globalColorGreen; color:@globalColorGreen;
+		&:after,&:before { background-color:@globalColorGreen;}
+	}
 	&__color_green&__type_primary { background-color:@globalColorGreen; color:#fff!important;}
 	&__color_green&__state_active { background-color:lighten(@globalColorGreen,50%);}
-	&__color_green&__type_primary&__state_active { background-color:darken(@globalColorGreen,5%); color:#fff;}
+	&__color_green&__type_primary&__state_active { background-color:darken(@globalColorGreen,5%); color:#fff;
+		&:after,&:before { background-color:darken(@globalColorGreen,5%);}
+	}
 	/*blue*/
-	&__color_blue { border-color:@globalColorBlue; color:@globalColorBlue;}
+	&__color_blue { border-color:@globalColorBlue; color:@globalColorBlue;
+		&:after,&:before { background-color:@globalColorBlue;}
+	}
 	&__color_blue&__type_primary { background-color:@globalColorBlue; color:#fff!important;}
 	&__color_blue&__state_active { background-color:lighten(@globalColorBlue,42%);}
-	&__color_blue&__type_primary&__state_active { background-color:darken(@globalColorBlue,5%); color:#fff;}
+	&__color_blue&__type_primary&__state_active { background-color:darken(@globalColorBlue,5%); color:#fff;
+		&:after,&:before { background-color:darken(@globalColorBlue,5%);}
+	}
 	/*orange*/
-	&__color_orange { border-color:@globalColorOrange; color:@globalColorOrange;}
+	&__color_orange { border-color:@globalColorOrange; color:@globalColorOrange;
+		&:after,&:before { background-color:@globalColorOrange;}
+	}
 	&__color_orange&__type_primary { background:@globalColorOrange; color:#fff!important;}
 	&__color_orange&__state_active { background-color:lighten(@globalColorOrange,37%);}
-	&__color_orange&__type_primary&__state_active { background:darken(@globalColorOrange,10%);}
+	&__color_orange&__type_primary&__state_active { background:darken(@globalColorOrange,10%);
+		&:after,&:before { background-color:darken(@globalColorOrange,5%);}
+	}
 	/*yellow*/
-	&__color_yellow { border-color:@globalColorYellow; color:@globalColorYellow;}
+	&__color_yellow { border-color:@globalColorYellow; color:@globalColorYellow;
+		&:after,&:before { background-color:@globalColorYellow;}
+	}
 	&__color_yellow&__type_primary { background:@globalColorYellow; color:#fff!important;}
 	&__color_yellow&__state_active { background-color:lighten(@globalColorYellow,37%);}
-	&__color_yellow&__type_primary&__state_active { background:darken(@globalColorYellow,10%);}
+	&__color_yellow&__type_primary&__state_active { background:darken(@globalColorYellow,10%);
+		&:after,&:before { background-color:darken(@globalColorYellow,5%);}
+	}
 }
 
 /*btn group*/
@@ -68,9 +88,26 @@
 		&.am-g-3>.Button { width:33.33333333%!important;}
 		&.am-g-4>.Button { width:25%!important;}
 		&.am-g-5>.Button { width:20%!important;}
-		&>.Button { height:1.25rem; margin:0; padding:0; font-size:@am-xs; border-radius:0; border-left-width:0;
-			&:first-of-type { border-left-width:1px; border-top-left-radius:.25rem; border-bottom-left-radius:.25rem;}
-			&:last-of-type { border-top-right-radius:.25rem; border-bottom-right-radius:.25rem;}
+		&>.Button { height:1.25rem; margin:0; padding:0; font-size:@am-xs; border-radius:0; border-left-width:0; border-right-width:0;
+			&:after { display:block; content:""; width:1px; position:absolute; left:0; top:25%; bottom:25%; opacity:.375;}
+			&:first-of-type { border-left-width:1px; border-top-left-radius:.375rem; border-bottom-left-radius:.375rem;
+				&:after { display:none;}
+			}
+			&:last-of-type { border-right-width:1px; border-top-right-radius:.375rem; border-bottom-right-radius:.375rem;}
+			&__type_primary { border:0; border-radius:.375rem; overflow:visible;
+				&:after { display:block; content:""; height:1px; width:100%; position:absolute; top:0; opacity:1;}
+				&:before { display:block; content:""; height:1px; width:100%; position:absolute; bottom:0; opacity:1;}
+				&:first-of-type {
+					&:after, &:before { display:block; width:50%; left:auto; right:0;}
+				}
+				&:last-of-type {
+					&:after, &:before { display:block; width:50%; right:auto; left:0;}
+				}
+				&+.Button:after { display:none;}
+				&+.Button__type_primary {
+					&:after { display:block;}
+				}
+			}
 		}
 	}
 	&__type_small {
@@ -78,7 +115,7 @@
 		&.am-g-5 {
 			&>.Button__state_loading:before { margin-left:-.5rem;}
 		}
-		&>.Button { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.25rem;}
+		&>.Button { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.375rem;}
 		&>.Button__state_loading:before { width:1.07rem; height:1.07rem; margin-left:-.535rem;}
 	}
 	&__type_full { padding:0!important; border:0!important;
