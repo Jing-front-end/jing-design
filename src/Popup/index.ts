@@ -4,6 +4,7 @@ import PopupConfirm from './Popup-confirm';
 import PopupAlertSelect from './Popup-alertselect';
 import PopupPrompt from './Popup-prompt';
 import PopupCustom from './Popup-custom';
+import PopupFloatLayer from './Popup-FloatLayer';
 // import PopupPasscode from './Popup-passcode';
 
 const Popup = {
@@ -13,6 +14,7 @@ const Popup = {
   AlertSelect: PopupAlertSelect,
   Prompt: PopupPrompt,
   Custom: PopupCustom,
+  FloatLayer: PopupFloatLayer,
   // Passcode: PopupPasscode,
 };
 

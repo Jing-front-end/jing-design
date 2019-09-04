@@ -252,6 +252,44 @@ import NoticeBar from '../NoticeBar/index.tsx';
 | onSubmit      | 确认点击事件 | function |
 | onCancel      | 取消点击事件 | function |
 
+## Popup.FloatLayer
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+            <Button.Self color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button.Self>
+            </Button.Group>
+            <Popup.Group show={isShow} onClose={()=>{
+                setIsShow(false);
+            }}>
+                <Popup.FloatLayer
+                  innerHTML={<div>content.image</div>}
+                  onClick={()=>{
+                    setIsShow(false);
+                  }}
+                />
+            </Popup.Group>
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+### props
+|   参数    |   说明   |   类型   |
+| :-------- | :------- | :------- |
+| innerHTML | 浮层内容 | any      |
+| onClick   | 点击事件 | function |
+
 
 ## Popup.Passcode 未完成
 
