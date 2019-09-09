@@ -90,10 +90,6 @@ html.am-mob textarea { -webkit-user-select:auto; -moz-user-select:auto; -ms-user
             @keyframes @name {.-frames();}
 }
 /*-----------------------------------------from public--------------------------------------------*/
-@font-face { font-family:"fzlth"; src:url("../_fonts/fzlth.ttf") format("truetype");}
-@font-face { font-family:"fjallaone"; src:url("../_fonts/fjallaone.eot"); src:url("../_fonts/fjallaone.eot?#iefix"), url("../_fonts/fjallaone.ttf");}
-.basefont { font-family:"Microsoft YaHei","微软雅黑","arial","苹果丽中黑";}
-.appfont { font-family:"arial","fzlth";}
 /*pad*/
 @media screen and (min-width:414px) { html { font-size:18px;}}
 /*big*/
@@ -181,10 +177,9 @@ a.am-disable:active             { color:rgb(180,180,180); cursor:not-allowed!imp
 .am-bg-black                    { background-color:@globalColorBlack0!important; color:#fff;}
 .am-bg-white                    { background-color:@globalColorWhite0!important;}
 /*-------------------------------------------------------------------------------------------------------------------------*/
-*:not(input)                    { .cantSelect; .basefont;}
-::-webkit-input-placeholder     { .cantSelect; .basefont;}
+*:not(input)                    { .cantSelect;}
+::-webkit-input-placeholder     { .cantSelect;}
 html.am-mob                     { body { background-color:@globalColorBg;}}
-html.am-app                     { *,body,input,::-webkit-input-placeholder { .appfont;}}
 html.am-pc                      { font-size:16px; background-color:@globalColorBg;}
 /*con*/
 [class*=am-con],
