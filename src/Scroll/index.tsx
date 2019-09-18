@@ -115,7 +115,9 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
     const tempJSX = (
       <ReactIScroll
         ref={(c: any) => {
-          this.iscroll = c;
+          if (c) {
+            this.iscroll = c;
+          }
         }}
         iScroll={iScroll}
         options={options}
