@@ -2,7 +2,7 @@
 @import (reference) '../_style/public.less';
 
 /*btn*/
-.Button { display:block; width:100%; height:2.25rem; margin-left:3%; padding:0 0.5rem; position:relative; border:1px solid transparent; float:left; border-radius:.375rem; background-color:#fff; font-size:@am-l; cursor:pointer; overflow:hidden; .text-center;
+.Button { display:block; width:100%; height:2.25rem; line-height:2.25rem; margin-left:3%; padding:0 0.5rem; position:relative; border:1px solid transparent; float:left; border-radius:.375rem; background-color:#fff; font-size:@am-l; cursor:pointer; overflow:hidden; text-align:center; .text-center;
 	&__ua-pc { width:100px; }
 	/*first*/
 	&:first-child { margin-left:0!important;}
@@ -14,7 +14,7 @@
 	/*primary*/
 	&__type_primary { border:none!important;}
 	/*sm*/
-	&__type_small { height:1.25rem; margin-left:3%; font-size:@am-xs;}
+	&__type_small { height:1.25rem; line-height:1.25rem; margin-left:3%; font-size:@am-xs;}
 	// block
 	&__type_block { width:1rem; height:1rem; border:0; background-color:transparent; border-radius:0; margin:0; padding:0;}
 	&__type_block&__state_active { background-color:transparent; opacity:.75;}
@@ -88,7 +88,7 @@
 		&.am-g-3>.Button { width:33.33333333%!important;}
 		&.am-g-4>.Button { width:25%!important;}
 		&.am-g-5>.Button { width:20%!important;}
-		&>.Button { height:1.25rem; margin:0; padding:0; font-size:@am-xs; border-radius:0; border-left-width:0; border-right-width:0;
+		&>.Button { height:1.25rem; line-height:1.25rem; margin:0; padding:0; font-size:@am-xs; border-radius:0; border-left-width:0; border-right-width:0;
 			&:after { display:block; content:""; width:1px; position:absolute; left:0; top:25%; bottom:25%; opacity:.375;}
 			&:first-of-type { border-left-width:1px; border-top-left-radius:.375rem; border-bottom-left-radius:.375rem;
 				&:after { display:none;}
@@ -115,11 +115,11 @@
 		&.am-g-5 {
 			&>.Button__state_loading:before { margin-left:-.5rem;}
 		}
-		&>.Button { height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.375rem;}
+		&>.Button { height:1.25rem; line-height:1.25rem; margin-left:3%; font-size:@am-xs; border-radius:.375rem;}
 		&>.Button__state_loading:before { width:1.07rem; height:1.07rem; margin-left:-.535rem;}
 	}
 	&__type_full { padding:0!important; border:0!important;
-		.Button { border:1px solid @globalColorBorder; border-left:0; border-right:0; border-radius:0; height:2.75rem;}
+		.Button { height:2.75rem; line-height:2.75rem; border:1px solid @globalColorBorder; border-left:0; border-right:0; border-radius:0;}
 	}
 	&__type_two-col {
 		.Button:nth-child(1) { width:10%!important;}
@@ -136,7 +136,7 @@
 	}
 	&__type_three-col { padding:0!important; border-top:1px solid @globalColorBorder!important;
 		.Button .Icon { margin-right:.25rem;}
-		.Button { height:48px; margin:0; border:0; border-radius:0; font-size:@am-sm; color:@globalColorBlack0;}
+		.Button { height:48px; line-height:48px; margin:0; border:0; border-radius:0; font-size:@am-sm; color:@globalColorBlack0;}
 		.Button:not(.Button__type_primary) { width:30%!important;
 			&:after { content:''; width:1px; height:50%; .am-pos-lc; background-color:@globalColorBlackA10;}
 			&:first-child:after { display:none;}

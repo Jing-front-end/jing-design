@@ -44,7 +44,12 @@ const ListButton = (props: ListButtonProps) => {
       <span className="ListButton__btn" style={{ width: 3.2 * buttonArray.length + 'rem' }}>
         <Button.Group type="group">
           {buttonArray.map((item: ButtonItemProps) => (
-            <Button.Self primary={item.primary} color={item.color} onClick={item.onClick}>
+            <Button.Self
+              key={item.name}
+              primary={item.primary}
+              color={item.color}
+              onClick={item.onClick}
+            >
               {item.name}
             </Button.Self>
           ))}
