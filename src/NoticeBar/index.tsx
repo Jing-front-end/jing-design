@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-// import Icon from '../Icon/index';
+import Icon from '../Icon/index';
 
 import '../_style/index.less';
 import './index.less';
@@ -19,13 +19,15 @@ const NoticeBar = (props: NoticeBarProps) => {
       <a className="NoticeBar__link" href={href} onClick={onClick}>
         <p className="NoticeBar__link-text">{word}</p>
       </a>
-      {/* <a
-        onClick={e => {
-          e.target.parentNode.parentNode.remove();
-        }}
-      >
-        <Icon kind="close" size="mini" />
-      </a> */}
+      <div>
+        <a
+          onClick={e => {
+            e.target.parentNode.parentNode.remove();
+          }}
+        >
+          <Icon kind="close" size="mini" />
+        </a>
+      </div>
     </div>
   );
 };
