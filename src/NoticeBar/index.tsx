@@ -11,6 +11,22 @@ export interface NoticeBarProps {
   onClick?: () => void;
 }
 
+interface HTMLAnchorEvent extends React.MouseEvent {
+  currentTarget: HTMLAnchorElement & EventTarget;
+}
+
+function doClose(e: HTMLAnchorEvent) {
+  if (
+    e.currentTarget.parentNode !== null &&
+    e.currentTarget.parentNode.parentNode !== null &&
+    e.currentTarget.parentNode.parentNode.parentNode !== null
+  ) {
+    e.currentTarget.parentNode.parentNode.parentNode.removeChild(
+      e.currentTarget.parentNode.parentNode,
+    );
+  }
+}
+
 const NoticeBar = (props: NoticeBarProps) => {
   const { href, word, onClick } = props;
 
@@ -22,7 +38,7 @@ const NoticeBar = (props: NoticeBarProps) => {
       <div>
         <a
           onClick={e => {
-            e.target.parentNode.parentNode.remove();
+            doClose(e);
           }}
         >
           <Icon kind="close" size="mini" />
