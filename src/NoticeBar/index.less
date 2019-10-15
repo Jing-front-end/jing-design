@@ -2,9 +2,10 @@
 @import (reference) '../_style/public.less';
 
 .NoticeBar { .am-con; height:@noticeHeight; line-height:@noticeHeight; padding:0 @noticeHeight 0 @verticalGap; background-color:#fff4cd; border-bottom:1px solid @globalColorBorder; position:relative;
-	.Icon { width:@noticeHeight; height:@noticeHeight; .am-pos-rc;}
+	.Icon {.am-pos-rc;right:6px;}
 	&__link { display:block; width:100%; height:100%; overflow:hidden; font-size:@am-sm; color:@globalColorOrange; position:relative;
 		&-text { .am-pos-lt; .am-nobreak;}
-	}
-	&__state_play &-text { .animation(noticeBarPlay 15s linear infinite);}
+  }
+  &__close {display:block; width:@noticeHeight; height:@noticeHeight; position:absolute; top:0; right:0;}
+	&__state_play { .animation(noticeBarPlay 15s linear infinite);}
 }
