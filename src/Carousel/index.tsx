@@ -26,7 +26,7 @@ const Carousel = (props: CarouselProps) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
   };
 
@@ -34,7 +34,7 @@ const Carousel = (props: CarouselProps) => {
     <div>
       <Slider {...settings}>
         {list.map((item: ListItemProps) => (
-          <div key={item.url}>
+          <div className="slick-slide-photo" key={item.url}>
             <a style={{ backgroundImage: `url('${item.url}')` }} onClick={item.onClick} />
           </div>
         ))}
