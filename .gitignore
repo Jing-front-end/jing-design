@@ -5,3 +5,4 @@ npm-debug.log
 dist
 .rpt2_cache
 yarn-error.log
+node_modules
