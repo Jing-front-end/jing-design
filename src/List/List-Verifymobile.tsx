@@ -114,7 +114,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
             setVerifyValue(v);
           }
         }}
-        icon={hasIcon === true ? 'code' : undefined}
+        icon={hasIcon === true ? 'keycode' : undefined}
         type="verifycode"
         onMessageSend={() => {
           onMessageSend();

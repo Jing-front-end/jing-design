@@ -9,7 +9,9 @@ import '../_style/index.less';
 import './index.less';
 
 const typeKind = tuple('price', 'number', 'mobile', 'password', 'verifycode', 'text');
+// 很多历史图标暂不修改了
 const iconKind = tuple(
+  'keycode',
   'user',
   'idType',
   'idCard',
@@ -20,7 +22,6 @@ const iconKind = tuple(
   'radio',
   'radio_state_disable',
   'radio_state_disable_on',
-  'code',
   'notepad',
   'security',
   'edit',
@@ -302,7 +303,7 @@ const ListInput = (props: ListInputProps) => {
 
   const verifycodeClasses = classNames('ListInput__link-text', {
     [`am-color-black1`]: isSent === true,
-    [`am-color-orange`]: isSent === false,
+    [`am-color-blue`]: isSent === false,
   });
 
   const iconClasses = classNames('ListInput__content', {
@@ -365,7 +366,7 @@ const ListInput = (props: ListInputProps) => {
     <div className={classes}>
       {icon !== undefined ? (
         <span className="ListInput__icon">
-          <Icon kind={icon} />
+          <Icon kind={icon} color="blue" />
         </span>
       ) : (
         ''
