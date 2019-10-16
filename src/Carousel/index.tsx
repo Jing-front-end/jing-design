@@ -8,11 +8,16 @@ import '../_style/index.less';
 import './index.less';
 
 export interface CarouselProps {
-  children: any;
+  list: Array<ListItemProps>;
+}
+
+export interface ListItemProps {
+  url: string;
+  onClick?: () => void;
 }
 
 const Carousel = (props: CarouselProps) => {
-  const { children } = props;
+  const { list } = props;
 
   const settings = {
     dots: true,
@@ -27,13 +32,19 @@ const Carousel = (props: CarouselProps) => {
 
   return (
     <div>
-      <Slider {...settings}>{children}</Slider>
+      <Slider {...settings}>
+        {list.map((item: ListItemProps) => (
+          <div key={item.url}>
+            <a style={{ backgroundImage: `url('${item.url}')` }} onClick={item.onClick} />
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
 
 Carousel.propTypes = {
-  children: PropTypes.any,
+  list: PropTypes.array,
 };
 
 export default React.memo(Carousel);

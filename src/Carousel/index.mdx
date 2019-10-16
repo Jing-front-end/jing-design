@@ -10,17 +10,15 @@ import Carousel from './index.tsx';
 
 ## scale
 <Playground>
-    <Carousel>
-      <div>
-        <h3 style={{'height':'140px', 'backgroundColor':'red'}}>1</h3>
-      </div>
-      <div>
-        <h3 style={{'height':'140px', 'backgroundColor':'green'}}>2</h3>
-      </div>
-      <div>
-        <h3 style={{'height':'140px', 'backgroundColor':'yellow'}}>3</h3>
-      </div>
-    </Carousel> 
+    <Carousel 
+      list={[
+        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000274.jpg', 'onClick': ()=>{alert('ok')}}, 
+        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000264.jpg'},
+        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000217.png'},
+        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000268.png'},
+        {'url': 'https://pic.jingqb.com/pic/banner/2017/PIC000000101.png'},
+      ]}
+    />
 </Playground>
 
 
