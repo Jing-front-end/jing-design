@@ -106,7 +106,7 @@ const NoticeBar = (props: NoticeBarProps) => {
           }}
           className="NoticeBar__close"
         >
-          <Icon kind="close" size="small" />
+          <Icon kind="close" size="mini" />
         </a>
       </div>
     </div>
