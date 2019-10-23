@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import '../_style/index.less';
 import './index.less';
@@ -28,8 +29,13 @@ function handleCancel(onCancel: () => void) {
 const PopupPrompt = (props: PopupPromptProps) => {
   const { children, title, btnCancelText, btnSubmitText, onSubmit, onCancel } = props;
 
+  const classes = classNames('Popup__window PopupPrompt', {
+    [`Popup__type_noCancel`]: btnCancelText === '',
+    [`Popup__type_noSubmit`]: btnSubmitText === '',
+  });
+
   return (
-    <div className="Popup__window PopupPrompt">
+    <div className={classes}>
       <h6 className="Popup__title">
         <span className="Popup__title-text">{title}</span>
       </h6>
