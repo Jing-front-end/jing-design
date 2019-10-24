@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { util } from '..';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -26,6 +27,12 @@ function handleCancel(onCancel: () => void) {
   }
 }
 
+let fontSize = 12;
+const cssFontSize = getComputedStyle(document.getElementsByTagName('html')[0]).fontSize;
+if (cssFontSize !== null) {
+  fontSize = parseInt(cssFontSize, 0);
+}
+
 const PopupPrompt = (props: PopupPromptProps) => {
   const { children, title, btnCancelText, btnSubmitText, onSubmit, onCancel } = props;
 
@@ -39,7 +46,12 @@ const PopupPrompt = (props: PopupPromptProps) => {
       <h6 className="Popup__title">
         <span className="Popup__title-text">{title}</span>
       </h6>
-      <div className="Popup__content">{children}</div>
+      <div
+        style={{ maxHeight: util.global.winH * 0.8 - 6.75 * fontSize }}
+        className="Popup__content"
+      >
+        {children}
+      </div>
       <a
         className="Popup__btn Popup__btn_type_cancel"
         onClick={() => {

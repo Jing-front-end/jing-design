@@ -18,10 +18,12 @@ const Popup = (props: PopupProps) => {
   React.useEffect(() => {
     if (show === true && isShow === 'false') {
       setIsShow('true');
+      document.removeEventListener('touchmove', util.preventDefault);
     } else if (show === false && isShow === 'true') {
       setIsShow('ready');
       setTimeout(function() {
         setIsShow('false');
+        document.addEventListener('touchmove', util.preventDefault, { passive: false });
       }, util.global.speed + 200);
     }
   });

@@ -277,6 +277,9 @@ export default class Util {
     }
     return elementHeight;
   };
+  public static preventDefault = (e: TouchEvent) => {
+    e.preventDefault();
+  };
 }
 
 Util.globalSet();
