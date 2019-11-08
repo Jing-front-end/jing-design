@@ -67,13 +67,7 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
     current: 0,
   };
 
-  componentDidMount() {
-    if (typeof this.props.scrollToY === 'number') {
-      this.checkIscrollReady(() => {
-        this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
-      });
-    }
-
+  checkContent() {
     this.indexBarInit();
     // 处理安卓输入框获得焦点后滚动问题
     if (util.system.android) {
@@ -91,12 +85,22 @@ export default class Scroll extends PureComponent<ScrollProps, {}> {
     }
   }
 
+  componentDidMount() {
+    if (typeof this.props.scrollToY === 'number') {
+      this.checkIscrollReady(() => {
+        this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
+      });
+    }
+    this.checkContent();
+  }
+
   componentDidUpdate() {
     if (typeof this.props.scrollToY === 'number') {
       this.checkIscrollReady(() => {
         this.iscroll.getIScroll().scrollTo(0, this.props.scrollToY);
       });
     }
+    this.checkContent();
   }
 
   componentWillUnmount() {
