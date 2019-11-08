@@ -10,6 +10,8 @@ import './index.less';
 const typeKind = tuple('input', 'text');
 
 export interface ListVerifymobileProps {
+  mobileValue: string;
+  verifyValue: string;
   type: string;
   hasIcon: boolean;
   title: string;
@@ -30,6 +32,8 @@ function onCall(onPhoneCall: () => void) {
 
 const ListVerifymobile = (props: ListVerifymobileProps) => {
   const {
+    mobileValue,
+    verifyValue,
     type,
     hasIcon,
     title,
@@ -47,6 +51,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
   if (type === 'input') {
     tempJSX = (
       <List.Input
+        value={mobileValue}
         type="mobile"
         icon={hasIcon === true ? 'phone' : undefined}
         title={title}
@@ -109,6 +114,7 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
     >
       {tempJSX}
       <List.Input
+        value={verifyValue}
         setValue={(v: string) => {
           if (typeof setVerifyValue === 'function') {
             setVerifyValue(v);
@@ -126,6 +132,8 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
 };
 
 ListVerifymobile.propTypes = {
+  mobileValue: PropTypes.string,
+  verifyValue: PropTypes.string,
   type: PropTypes.oneOf(typeKind),
   hasIcon: PropTypes.bool,
   title: PropTypes.string,

@@ -1,12 +1,14 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
 import React from 'react';
-import { Scroll, Popup, Button, util } from '../../../dist';
+import { Scroll, Popup, Button, util, List } from '../../../dist';
 
 export default function() {
   const [isShow, setIsShow] = React.useState(false);
   const [scrollToY, setScrollToY] = React.useState(0);
   const [endPullUp, setEndPullUp] = React.useState(false);
+  const [mobileNumber, setMobileNumber] = React.useState('');
+  const [verify, setVerify] = React.useState('');
   React.useEffect(() => {
     document.addEventListener('touchmove', util.preventDefault, {
       passive: false,
@@ -52,6 +54,27 @@ export default function() {
             try pulling me 1
           </a>
           <br />
+          <List.Group>
+            <List.Verifymobile
+              type="input"
+              hasIcon
+              title="手机号码"
+              mobileValue={mobileNumber}
+              verifyValue={verify}
+              setMobileValue={value => {
+                setMobileNumber(value);
+              }}
+              bankName="工行银行"
+              pkid="abc"
+              phoneCallShow
+              onMessageSend={() => {
+                console.log(verify);
+              }}
+              setVerifyValue={value => {
+                setVerify(value);
+              }}
+            />
+          </List.Group>
           try pulling me 2<br />
           try pulling me 3<br />
           try pulling me 4<br />
@@ -109,6 +132,7 @@ export default function() {
             onClose={() => {
               setIsShow(false);
             }}
+            preventDefault
           >
             <Popup.Prompt
               title="这个我必须要告诉你！"
