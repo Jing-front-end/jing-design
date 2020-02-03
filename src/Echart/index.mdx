@@ -1,0 +1,43 @@
+---
+name: Echart
+route: /Echart
+menu: 图表
+---
+
+
+- 图表功能 
+- 封装 echart，具体文档详见 echart官网[https://echarts.apache.org]
+
+
+import { Playground } from 'docz';
+import Echart from './index';
+
+import './index.less';
+
+
+
+## 用法
+<Playground>
+  <Echart className="test" option={{
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line'
+    }]
+  }}/>
+</Playground>
+
+## Echart 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| size | 大小尺寸 | String  | - |  24px
+
+
+- 在此说明，因为对ts语法掌握不是很到位，所以改成原生jsx来写组件
