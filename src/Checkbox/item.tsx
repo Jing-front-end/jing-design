@@ -33,9 +33,9 @@ function useCheckDisabled(initialValue: boolean) {
 const Item = (props: CheckboxItemProps) => {
   const { className, style, label, value, disabled, onChange } = props;
 
-  const classes = classnames('jqb-checkbox-item', className, {
-    'jqb-checkbox-selected': value,
-    'jqb-checkbox-disabled': disabled,
+  const classes = classnames('jqb-Checkbox-item', className, {
+    'jqb-Checkbox-selected': value,
+    'jqb-Checkbox-disabled': disabled,
   });
   const oValue = useCheckValue(value);
   const oDisabled = useCheckDisabled(disabled);

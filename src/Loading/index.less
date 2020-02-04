@@ -1,0 +1,47 @@
+
+
+
+.jqb-loading {
+  font-size: 24px;
+  .jqb-loading__spinners {
+    position: relative;
+    display: block;
+    width: 1em;
+    height: 1em;
+  }
+  .jqb-loading__spinner {
+    position: absolute;
+    left: 44.5%;
+    top: 37%;
+    width: 2PX;
+    height: 25%;
+    border-radius: 50%/20%;
+    opacity: .25;
+    background-color: currentColor;
+    animation: spinner-fade 1s linear infinite;
+
+    .for(@num) when (@num > 0){
+      // .width-((@num) * 5){
+      //     width:(@num *5%);
+      // }
+      &:nth-child(@{num}) {
+        animation-delay: ((@num - 1) / 12s);
+        transform: rotate(30deg * (@num - 6)) translateY(-150%);
+      }
+      .for((@num - 1))
+    }
+    .for(12);
+
+  }
+  @keyframes spinner-fade {
+    0% {
+      opacity: .85;
+    }
+    50% {
+      opacity: .25;
+    }
+    100% {
+      opacity: .25;
+    }
+  }
+}

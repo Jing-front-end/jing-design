@@ -1,0 +1,26 @@
+---
+name: Loading
+route: /Loading
+menu: 基础
+---
+
+import { Playground } from 'docz';
+import Loading from './index.tsx';
+
+import './index.less';
+
+# 加载
+
+图标大小默认为 `24px`, 可以通过`size`属性配置 
+
+## 使用
+<Playground>
+  <Loading />
+  <Loading size='28px'/>
+  <Loading size="40px"/>
+</Playground>
+
+## Tag 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| size | 大小尺寸 | String  | - |  24px

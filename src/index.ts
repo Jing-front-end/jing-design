@@ -22,7 +22,6 @@ export { default as Carousel } from './Carousel';
 export { default as Icon } from './Icon';
 export { default as List } from './List';
 export { default as NoticeBar } from './NoticeBar';
-export { default as Popup } from './Popup';
 export { default as Scroll } from './Scroll';
 export { default as Space } from './Space';
 export { default as TabContent } from './TabContent';
