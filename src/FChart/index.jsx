@@ -97,7 +97,6 @@ export default class extends React.Component {
     //   onShow: function onShow(ev) {
     //     // eslint-disable-next-line prefer-destructuring
     //     const items = ev.items;
-
     //     items[0].name = items[0].title;
     //   }
     // });

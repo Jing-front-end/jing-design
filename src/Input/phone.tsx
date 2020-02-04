@@ -26,11 +26,11 @@ const filterValue = (val: any) => {
 const Phone = (props: PhoneProps) => {
   const { value, icon, className, reg } = props;
 
-  const { _value, setValue } = useState(value);
+  // const { _value, setValue } = useState(value);
 
-  useEffect(() => {
-    setValue(filterValue(value));
-  }, [value]);
+  // useEffect(() => {
+  //   setValue(filterValue(value))
+  // }, [value])
   // return (
   //   <Addon {...props} children={null} onSearch={null} btnType={null} render={() => {
   //       return (
@@ -44,7 +44,10 @@ const Phone = (props: PhoneProps) => {
       {...props}
       children={null}
       render={() => {
-        return <Icon kind={icon} />;
+        return (
+          <span />
+          // <Icon kind={icon} />
+        );
       }}
     />
   );
@@ -55,7 +58,6 @@ const Phone = (props: PhoneProps) => {
     </Prefix>
   );
 };
-
 // class Phone extends React.Component<PhoneProps, PasswordState> {
 
 //   static defaultProps = {

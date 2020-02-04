@@ -1,0 +1,78 @@
+---
+name: Toast
+route: /Toast
+---
+
+import { Playground } from 'docz';
+import Button from '../Button/index.ts';
+import Toast from '../Toast';
+
+# 轻提示
+
+提供一个简单的 `Toast` ，可以传入 icon、image 来展示 不同的效果，另外提供日常使用频繁的三种状态来快速实现效果，
+页面层级 `1090`
+
+
+## 用法
+<Playground>
+  <div>
+    <Button.Group>
+      <Button.Self color="blue" onClick={()=>{
+          Toast.show('message');
+        }} primary>确认</Button.Self>
+    </Button.Group>
+  </div>
+</Playground>
+
+## 示例
+<Playground>
+  <Button.Group>
+    <Button.Self color="blue" onClick={()=>{
+        {/* Toast.loading({ text: 'Loading...' }); */}
+        Toast.success({ text: 'eeee!', duration: 2 })
+        setTimeout(() => {
+          Toast.success({ text: 'Loaded!', duration: 2 });
+        }, 1000);
+      }} primary>确认
+      </Button.Self>
+  </Button.Group>
+</Playground>
+
+
+## Props 配置
+
+## 静态方法
+
+- Toast.success(content, [duration], onClose)
+- Toast.error(content, [duration], onClose)
+- Toast.info(content, [duration], onClose)
+- Toast.warning(content, [duration], onClose)
+- Toast.loading(content, [durtion], onClose)
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| content | 提示内容 |  string |  - | - |
+| duration | 自动关闭延迟事件，单位秒。设为 0 时不自动关闭 | number | - | 3 |
+| mask | 是否显示蒙层 | Boolean | true/false | true |
+
+
+## 事件
+| 事件名称 | 说明 | 返回参数 |
+| :--- | :--- | :---- |
+| onClose | 关闭事件 | 
+| onCancel | 取消事件 | 
+| onConfirm | 确认事件 |
+
+## 实例方法
+| 方法名 | 说明 |
+| :--- | :--- | 
+| show | 显示 | 
+| hide | 隐藏 | 
+
+
+
+
+
+```
+show(content: React.ReactNode, duration?: number, mask?: boolean)
+```

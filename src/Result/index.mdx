@@ -1,0 +1,72 @@
+---
+name: Result
+route: /Result
+menu: 反馈
+---
+
+## 结果
+用于反馈一系列操作任务的处理结果
+
+import { Playground } from 'docz';
+import Result from './index';
+import Button from '../Button/index.ts';
+
+import './index.less';
+
+## 使用
+### 空的结果
+<Playground>
+  <Result status="empty" title='暂无数据' />
+</Playground>
+
+### success 成功的结果
+<Playground>
+  <Result status="success" />
+</Playground>
+
+### error 失败的结果
+<Playground>
+    <Result status="error" title="页面出现错误" subTitle="请稍后重试" />
+</Playground>
+
+### lost 文章找不到
+<Playground>
+    <Result status="lost" title="访问失败" subTitle="有事没事，回家过年" />
+</Playground>
+
+### 404 找不到页面
+<Playground>
+    <Result status="404" title="访问失败" subTitle="有事没事，回家过年" />
+</Playground>
+
+### 403 页面重置
+<Playground>
+    <Result status="403" title="访问失败" subTitle="有事没事，回家过年" />
+</Playground>
+
+### 500 服务器错误
+<Playground>
+    <Result status="500" title="访问失败" subTitle="有事没事，回家过年" />
+</Playground>
+
+### 500 服务器错误
+<Playground>
+    <Result 
+      status="empty" 
+      extra={
+        <Button.Group>
+          <Button.Self color='blue' primary onClick={ ()=>{alert('click')} }>确认</Button.Self>
+        </Button.Group>
+      }
+     />
+</Playground>
+
+
+
+## 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- |
+| title | 主文本文字 | String | - | - |
+| subTitle | 副文本文字 | String | - | - |
+| status | 结果的状态,决定图标和颜色 | String | `'success' | 'error' | 'empty' | 'lost' | '404' | '403' | '500' ` | 'empty' |
+| extra | 操作区 | ReactNode | - | - |
