@@ -37,6 +37,7 @@ export { default as Col } from './Layout/Col';
 export { default as Loading } from './Loading';
 
 // 视图组件
+export { default as Mask } from './Mask';
 
 // 数据展示
 export { default as ProductCard } from './ProductCard';
@@ -48,3 +49,6 @@ export { default as PopupOld } from './PopupOld';
 export { default as Popup } from './Popup';
 export { default as Modal } from './Modal';
 export { default as Toast } from './Toast';
+
+// test
+// export { default as PopupTest } from './ModalPopup';

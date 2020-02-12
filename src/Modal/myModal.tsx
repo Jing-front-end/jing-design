@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Mask from '../Mask';
-import Portal from '../Portal/myPortal';
+// import Mask from '../Mask';
+// import Portal from '../Portal/myPortal';
 
 export interface ModalProps {
   visible?: boolean;
@@ -45,13 +45,14 @@ class Modal extends React.Component<ModalProps, {}> {
     // console.log('visible', visible)
     // console.log('container', container)
     return (
-      <Portal container={container}>
-        <div ref={this.modalRef} role="dialog" className={modalClasses}>
-          <div>test</div>
-          <Mask onClick={backdropCancel} className={classnames({ 'jqb-noMask': Backdrop })} />
-          <div className={classnames(`jqb-modal__content jqb-modal__${size}`)}>{children}</div>
-        </div>
-      </Portal>
+      // <Portal container={container}>
+      //   <div ref={this.modalRef} role="dialog" className={modalClasses}>
+      //     <div>test</div>
+      //     {/* <Mask onClick={backdropCancel} className={classnames({ 'jqb-noMask': Backdrop })} /> */}
+      //     <div className={classnames(`jqb-modal__content jqb-modal__${size}`)}>{children}</div>
+      //   </div>
+      // </Portal>
+      <div />
     );
   }
 }
