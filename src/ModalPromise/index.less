@@ -11,16 +11,27 @@
     font-size: 14px;
 }
 
+.jqb-modal__confirm {
+  z-index: 999998;
+}
+
+.jqb-modal__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  opacity: 0;
+  transition: all .2s;
+}
+
 .modal, .modal-open {
   overflow: hidden;
 }
 
 .jqb-modal__active {
   visibility: visible;
-}
-
-.jqb-modal-confirm {
-    z-index: 999998;
 }
 
 .jqb-modal__content {
@@ -115,5 +126,21 @@
   border-top: 1px solid #F3F3F3;
   button {
       margin-left: 10px;
+  }
+}
+
+.jqb-modal__confirm .jqb-modal__body {
+  padding: 53px 30px;
+}
+
+//动画
+.jqb-modal__fade {
+  .jqb-modal__bg {
+      opacity: 1;
+  }
+
+  .jqb-modal__content {
+      opacity: 1;
+      top: 100px;
   }
 }
