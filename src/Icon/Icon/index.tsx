@@ -14,6 +14,7 @@ const iconList = [
   'favorite',
   'eye-on',
   'eye-off',
+  'delete',
   'heart',
   'heart-on',
   'locker',
@@ -664,8 +665,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="313.23"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#ff700f" />
-                <stop offset="1" stop-color="#ffa155" />
+                <stop offset="0" stopColor="#ff700f" />
+                <stop offset="1" stopColor="#ffa155" />
               </linearGradient>
               <linearGradient
                 id="L-adduserb"
@@ -705,8 +706,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="216.97"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#67b2fc" />
-                <stop offset="1" stop-color="#0c64f6" />
+                <stop offset="0" stopColor="#67b2fc" />
+                <stop offset="1" stopColor="#0c64f6" />
               </linearGradient>
               <linearGradient
                 id="L-addressbookb"
@@ -780,8 +781,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="957.78"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#f98b1f" />
-                <stop offset="1" stop-color="#fdc95c" />
+                <stop offset="0" stopColor="#f98b1f" />
+                <stop offset="1" stopColor="#fdc95c" />
               </linearGradient>
               <linearGradient
                 id="L-jingshellb"
@@ -822,8 +823,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="724.72"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#54bcff" />
-                <stop offset="1" stop-color="#0987ec" />
+                <stop offset="0" stopColor="#54bcff" />
+                <stop offset="1" stopColor="#0987ec" />
               </linearGradient>
               <linearGradient
                 id="L-briefcaseb"
@@ -833,8 +834,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="593.03"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#67b2fc" />
-                <stop offset="1" stop-color="#0c64f6" />
+                <stop offset="0" stopColor="#67b2fc" />
+                <stop offset="1" stopColor="#0c64f6" />
               </linearGradient>
               <linearGradient
                 id="L-briefcasec"
@@ -879,8 +880,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="131.65"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#f98b1f" />
-                <stop offset="1" stop-color="#fdc95c" />
+                <stop offset="0" stopColor="#f98b1f" />
+                <stop offset="1" stopColor="#fdc95c" />
               </linearGradient>
               <linearGradient
                 id="L-paperb"
@@ -946,8 +947,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="839.32"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#69e5c1" />
-                <stop offset="1" stop-color="#27cba3" />
+                <stop offset="0" stopColor="#69e5c1" />
+                <stop offset="1" stopColor="#27cba3" />
               </linearGradient>
             </defs>
             <path
@@ -976,8 +977,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="33.98"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#ffaea1" />
-                <stop offset="1" stop-color="#ffdfd4" />
+                <stop offset="0" stopColor="#ffaea1" />
+                <stop offset="1" stopColor="#ffdfd4" />
               </linearGradient>
               <linearGradient
                 id="L-callcenterb"
@@ -995,8 +996,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="403.99"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#ff9b8b" />
-                <stop offset="1" stop-color="#ffd9cb" />
+                <stop offset="0" stopColor="#ff9b8b" />
+                <stop offset="1" stopColor="#ffd9cb" />
               </linearGradient>
               <linearGradient
                 id="L-callcenterd"
@@ -1046,8 +1047,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="823.71"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#f93c1f" />
-                <stop offset="1" stop-color="#fe997c" />
+                <stop offset="0" stopColor="#f93c1f" />
+                <stop offset="1" stopColor="#fe997c" />
               </linearGradient>
               <linearGradient
                 id="L-callcenterj"
@@ -1218,8 +1219,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="416.26"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#b6dafc" />
-                <stop offset="1" stop-color="#b2d4fc" />
+                <stop offset="0" stopColor="#b6dafc" />
+                <stop offset="1" stopColor="#b2d4fc" />
               </linearGradient>
               <linearGradient
                 id="L-productinfob"
@@ -1229,8 +1230,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="1054.46"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#67b2fc" />
-                <stop offset="1" stop-color="#0c64f6" />
+                <stop offset="0" stopColor="#67b2fc" />
+                <stop offset="1" stopColor="#0c64f6" />
               </linearGradient>
               <linearGradient
                 id="L-productinfoc"
@@ -1240,8 +1241,8 @@ export default class Icon extends React.Component<IconProps, {}> {
                 y2="713.77"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#a1d0fc" />
-                <stop offset="1" stop-color="#5dabfc" />
+                <stop offset="0" stopColor="#a1d0fc" />
+                <stop offset="1" stopColor="#5dabfc" />
               </linearGradient>
             </defs>
             <title>共赢icon_svg</title>

@@ -1,0 +1,44 @@
+---
+name: Radio
+route: /Radio
+menu: 表单
+---
+
+import { Playground } from 'docz';
+import Radio from './index.tsx';
+
+import './index.less';
+
+## 单选框
+
+
+## 使用
+<Playground>
+  {
+    () => {
+      const RadioExample = () => {
+        {/* handleChange */}
+        return (
+          <div>
+            <Radio 
+              data={[
+                { value: 'option1', disabled: false },
+                { value: 'option2', disabled: false },
+                { value: 'option3', disabled: true }
+              ]}
+              onClick={() => {
+                console.log('aa')
+              }} />
+          </div>
+        )
+      }
+      return <RadioExample />
+    }
+  }
+</Playground>
+
+## 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| size | 上下留白的边距 | String | `xs`, `sm`, `md`, `lg`, `xl` | `md` |
+

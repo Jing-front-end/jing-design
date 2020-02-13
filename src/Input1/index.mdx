@@ -1,0 +1,59 @@
+
+
+import { Playground } from 'docz';
+import Input from './index.tsx';
+
+# Input输入框
+
+## 一般用法
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <div>nihao</div>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Group className="test" />
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Group className="test">
+          <Input className="sssss" type="password"></Input>
+        </Input.Group>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input className="dddd" type="email" />
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+Group 就是排版，将Input中的排版靠近

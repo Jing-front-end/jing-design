@@ -1,0 +1,26 @@
+---
+name: Panel
+route: /Panel
+---
+
+import { Playground } from 'docz';
+import Panel from './index.tsx';
+
+import './index.less';
+
+# 面板
+
+布局样式展示
+
+## 用法
+<Playground>
+  <Panel panelTitle="基础用法">
+    <div>你是我的爷，我是你的儿</div>
+  </Panel>
+</Playground>
+
+## Panel 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| panelTitle | 面板文字 | String | 任意颜色色号 | #ddd
+| size | 大小尺寸 | String  | normal, small |  small

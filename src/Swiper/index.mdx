@@ -1,0 +1,40 @@
+---
+name: Swiper
+route: /Swiper
+---
+
+
+
+
+import { Playground } from 'docz';
+import Swiper from './index.tsx';
+
+import './index.less';
+ 
+
+# 轮播图 
+
+基于swiper开发的react-swiper，可单独剥离出
+https://www.npmjs.com/package/swiper
+https://www.swiper.com.cn/
+
+switch为 react-id-switch
+https://www.npmjs.com/package/react-id-swiper
+
+## 用法
+<Playground>
+  <Swiper>
+      <div>Slide 1</div>
+      <div>Slide 2</div>
+      <div>Slide 3</div>
+      <div>Slide 4</div>
+      <div>Slide 5</div>
+    </Swiper>
+</Playground>
+
+
+## Tag 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :---- | :--- | :---- |
+| color | 自定义颜色 | String | 任意颜色色号 | #ddd
+| size | 大小尺寸 | String  | normal, small |  small

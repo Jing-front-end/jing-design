@@ -1,20 +1,57 @@
 ---
 name: NoticeBar
 route: /NoticeBar
+menu: 反馈
 ---
 
 import { Playground } from 'docz';
 import NoticeBar from './index.tsx';
-import Space from '../Space/index.tsx';
+import WhiteSpace from '../WhiteSpace';
+import Icon from '../Icon';
 
-# NoticeBar Component
+import './index.less';
 
-<NoticeBar word='我是很多文字我是很多文字我是很多文字我是很多文字我是很多文字---' onClick={()=>{alert('click')}} />
+## 通告栏
 
-## props
+## 使用
+<Playground>
+  <NoticeBar>
+    这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+  <WhiteSpace size="lg" />
+  <NoticeBar mode="link" action={<span>去看看</span>}>
+    这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+  <WhiteSpace size="lg" />
+  <NoticeBar mode="closable" action={<span style={{ color: '#a1a1a1' }}>不再提示</span>}>
+    这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+  <WhiteSpace size="lg" />
+  <NoticeBar mode="closable" icon={ <Icon kind="clock" size="mini" />}>
+    自定义icon这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+  <WhiteSpace size="lg" />
+  <NoticeBar mode="closable" icon={null}>
+    iconNull这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+  <WhiteSpace size="lg" />
+  <NoticeBar mode="link" onClick={() => alert('1')}>
+    onClick这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏，这是 NoticeBar 通知栏
+  </NoticeBar>
+</Playground>
 
-|  参数   |   说明   |  类型  |
-| :------ | :------- | :----- |
-| href    | 链接地址 | string |
-| word    | 文字     | string |
-| onClick | 点击事件 | fn     |
+## 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- |
+| close | 是否需要关闭按钮 | Boolean | - | false | 
+| marquee | 内容是否滚动(内容只能单行) | Boolean | - | false |
+| speed | 内容滚动速度(默认速度100px/秒) | Number | - | 100 |
+| showMore | 文字“显示更多”显示 | Boolean | - | false |
+| icon | 内容前的icon图标 | String | 参考`icon`图标 | - |
+| className | noticebar样式 | String | - | - |
+| children | noticebar内容 | reactnode | - | - |
+
+
+## 事件
+| 事件名称 | 说明 | 参数 |
+| onClick | 点击关闭或者操作区域的回调函数 | - |

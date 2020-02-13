@@ -1,122 +1,142 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import Icon from '../Icon/index';
-import { util } from '..';
 
 import '../_style/index.less';
 import './index.less';
 
 export interface NoticeBarProps {
-  href?: string;
-  word: string;
+  mode?: string;
+  icon?: React.ReactNode;
   onClick?: () => void;
+  marquee?: boolean;
+  speed?: number | undefined;
+  action?: React.ReactElement;
+  showMore?: boolean;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-interface HTMLAnchorEvent extends React.MouseEvent {
-  currentTarget: HTMLAnchorElement & EventTarget;
+export interface NoticeBarState {
+  dura: number;
+  animElemId: string;
+  show: boolean;
 }
 
-function doClose(e: HTMLAnchorEvent) {
-  if (
-    e.currentTarget.parentNode !== null &&
-    e.currentTarget.parentNode.parentNode !== null &&
-    e.currentTarget.parentNode.parentNode.parentNode !== null
-  ) {
-    e.currentTarget.parentNode.parentNode.parentNode.removeChild(
-      e.currentTarget.parentNode.parentNode,
+const operation = ({ mode, action }: NoticeBarProps, onClick?: () => void) => {
+  if (mode === 'closable') {
+    return (
+      <div className="jqb-noticebar__operation" onClick={onClick}>
+        {action ? action : <Icon kind="close" size="mini" />}
+      </div>
+    );
+  } else if (mode === 'link') {
+    return (
+      <div className="jqb-noticebar__operation" onClick={onClick}>
+        {action ? action : <Icon kind="setting" size="mini" />}
+      </div>
     );
   }
-}
+};
 
-const NoticeBar = (props: NoticeBarProps) => {
-  const { href, word, onClick } = props;
+class NoticeBar extends React.Component<NoticeBarProps, NoticeBarState> {
+  static defaultProps = {
+    mode: '',
+    icon: <Icon kind="arrow" size="small" />,
+    marquee: true,
+    speed: 100,
+    showMore: false,
+  };
 
-  let notice: HTMLElement;
+  static propTypes = {
+    mode: PropTypes.string,
+    icon: PropTypes.node,
+    marquee: PropTypes.bool,
+    speed: PropTypes.number,
+    action: PropTypes.object,
+    showMore: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.node,
+  };
 
-  const [proportion, setProportion] = React.useState(1);
-  const style = `<style>@-webkit-keyframes noticeBarPlay {0% { -webkit-transform:translate3d(0,0,0);}${proportion}% { -webkit-transform:translate3d(-100%,0,0);}${proportion +
-    0.01}% { -webkit-transform:translate3d(${
-    util.global.winW
-  }px,0,0);}100% { -webkit-transform:translate3d(0,0,0);}}</style>`;
+  timeout = null;
 
-  const [isPlay, setIsPlay] = React.useState(false);
+  constructor(props: Readonly<NoticeBarProps>) {
+    super(props);
+    const animElemId = `J_${Math.ceil(Math.random() * 10e5).toString(36)}`;
+    this.state = {
+      dura: 15,
+      animElemId,
+      show: true,
+    };
+  }
 
-  const playClass = classNames('NoticeBar__link-text', {
-    [`NoticeBar__state_play`]: isPlay === true,
-  });
+  componentDidMount() {
+    if (!this.props.marquee) return;
+    this.initAnimation();
+  }
 
-  const [pCss, setPCss] = React.useState({});
-
-  function setPlay() {
-    if (
-      notice.lastChild &&
-      notice.lastChild.previousSibling &&
-      notice.lastChild.previousSibling.firstChild
-    ) {
-      if (
-        (notice.lastChild.previousSibling.firstChild as HTMLElement).offsetWidth >
-        (notice.lastChild.previousSibling as HTMLElement).offsetWidth
-      ) {
-        const num =
-          (notice.lastChild.previousSibling.firstChild as HTMLElement).offsetWidth /
-          (notice.lastChild.previousSibling as HTMLElement).offsetWidth;
-        setProportion((100 / (num + 1)) * num);
-        setIsPlay(true);
-        const speed =
-          ((notice.lastChild.previousSibling.firstChild as HTMLElement).offsetWidth /
-            (notice.lastChild.previousSibling as HTMLElement).offsetWidth) *
-          15;
-        setPCss({
-          '-webkit-animation-duration': speed + 's',
-          '-moz-animation-duration': speed + 's',
-          'animation-duration': speed + 's',
-        });
-      } else {
-        setIsPlay(false);
-      }
+  componentWillReceiveProps() {
+    if (!this.timeout) {
+      this.initAnimation();
     }
   }
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setPlay();
-    }, 4000);
-  }, []);
+  onClick = () => {
+    const { mode, onClick } = this.props;
+    if (onClick) {
+      onClick();
+    }
+    if (mode === 'closable') {
+      this.setState({
+        show: false,
+      });
+    }
+  };
 
-  return (
-    <div
-      className="NoticeBar"
-      ref={(c: any) => {
-        if (c) {
-          notice = c;
-        }
-      }}
-    >
-      <div dangerouslySetInnerHTML={{ __html: style }} />
-      <a className="NoticeBar__link" href={href} onClick={onClick}>
-        <p style={pCss} className={playClass}>
-          {word}
-        </p>
-      </a>
-      <div>
-        <a
-          onClick={e => {
-            doClose(e);
-          }}
-          className="NoticeBar__close"
-        >
-          <Icon kind="close" size="mini" />
-        </a>
+  initAnimation() {
+    const { speed } = this.props;
+    // this.timeout = null;
+    const elem = document.querySelector(`.${this.state.animElemId}`);
+    if (!elem) return;
+    const width = elem.getBoundingClientRect().width;
+    const dura = width / speed;
+
+    this.setState({
+      dura,
+    });
+  }
+
+  render() {
+    const { icon, marquee, className, children } = this.props;
+    const { dura, animElemId, show } = this.state;
+
+    const style = {
+      animationDuration: '',
+    };
+    const classes = classnames('jqb-noticebar', className);
+    const marqueeClasses = ['jqb-noticebar__marquee'];
+
+    if (marquee) {
+      style.animationDuration = `${dura}s`;
+      marqueeClasses.push(animElemId);
+    }
+
+    return show ? (
+      <div className={classes}>
+        {icon && <div className="jqb-noticebar__icon">{icon}</div>}
+        <div className="jqb-noticebar__content">
+          <div className="jqb-noticebar__marquee-wrap">
+            <div className={classnames(marqueeClasses)} style={style}>
+              {children}
+            </div>
+          </div>
+        </div>
+        {operation(this.props, this.onClick)}
       </div>
-    </div>
-  );
-};
-
-NoticeBar.propTypes = {
-  href: PropTypes.string,
-  word: PropTypes.string,
-  onClick: PropTypes.func,
-};
+    ) : null;
+  }
+}
 
 export default React.memo(NoticeBar);

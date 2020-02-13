@@ -1,0 +1,29 @@
+
+.panel {
+  margin: .68267rem 0 1.19467rem;
+  &__title {
+    position: relative;
+    margin-bottom: 1.06667rem;
+    padding-left: 1.06667rem;
+    color: #6a6a77;
+    font-size: .68267rem;
+    font-weight: 700;
+    line-height: 1.5;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: .512rem;
+      top: 50%;
+      margin-top: -.42667rem;
+      width: 2PX;
+      height: .85333rem;
+      background-color: #6190e8;
+      box-shadow: 0 0.14933rem 0.256rem 0 rgba(97,144,232,.2);
+      border-radius: 1PX;
+    }
+  }
+  &__content {
+    padding: 0 .42667rem;
+  }
+}

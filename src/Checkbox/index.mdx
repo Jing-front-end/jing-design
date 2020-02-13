@@ -1,0 +1,54 @@
+---
+name: Checkout
+route: /Checkout
+menu: 表单
+---
+
+import { Playground } from 'docz';
+import Checkbox from './index.tsx';
+
+import './index.less';
+
+## 多选框
+
+
+## 使用
+<Playground>
+  {
+    () => {
+      const CheckboxExample = () => {
+        
+        return (
+          <div>
+            <Checkbox />
+          </div>
+        )
+      }
+      return <CheckboxExample />
+    }
+  }
+</Playground>
+
+## 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| size | 上下留白的边距 | String | `xs`, `sm`, `md`, `lg`, `xl` | `md` |
+
+
+<!-- 
+
+<AtCheckbox
+  options={this.checkboxOption}
+  selectedList={this.state.checkedList}
+  onChange={this.handleChange.bind(this)}
+/> -->
+<!-- 
+<Checkbox>
+ 
+ item
+    className: PropTypes.string,
+    style: PropTypes.object,
+    label: PropTypes.string,
+    value: PropTypes.bool,
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func -->

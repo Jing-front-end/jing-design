@@ -1,0 +1,58 @@
+---
+name: Drawer
+route: /drawer
+menu: 抽屉
+---
+
+import { Playground } from 'docz';
+import Button from '../Button/index.ts';
+import Drawer from './index.tsx';
+
+# 抽屉
+
+## 使用
+<Playground>
+     {() => {
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+        <div>
+          <Button.Group>
+            <Button.Self color="blue" onClick={()=>{
+                setIsShow(true);
+              }} primary>确认</Button.Self>
+          </Button.Group>
+          <Drawer visible={isShow} onClose={() => {
+            setIsShow(false);
+          }}>
+            <div>我是谁，我来自哪里，我要去哪里</div>
+          </Drawer>
+        </div>
+      )
+    }
+    return <Temp />
+  }}
+</Playground>
+
+
+## 参数
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- |
+| children | 内容 | ReactNode | - | - |
+| className | 组件样式 | String | - | - |
+| visible | 是否可见 | Boolean | - | false | 
+| closable | 是否显示右上角关闭按钮 | Boolean | - | false |
+| destroyOnClose | 关闭抽屉时销毁里面的子元素 | Boolean | - | false |
+| getContainer | 指定 抽屉组件 挂摘的HTML 节点， false 为挂摘当前 dom | HTMLElement | - | document.body |
+| maskClosable | 点击蒙层是否允许关闭抽屉组件 | Boolean | - | true |
+| mask | 是否展示蒙层 | Boolean | - | true |
+| width | 抽屉宽度 | String | - | '300px' |
+| zIndex | 抽屉层级 | Number | - | true |
+| placement | 抽屉方向 | string | - | 'bottom' |
+
+
+## 事件
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClose | 点击关闭时的回调 | - |
