@@ -18,4 +18,4 @@ Bite The Bullet!!!
 
 #### 以下为组件开发进度
 
-![UI](D:\code\jingqb\jqb-design\assets\UI.png)
+![UI](./assets/UI.png)
