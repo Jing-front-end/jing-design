@@ -9,19 +9,26 @@ export interface PopupProps {
   show: boolean;
   children: any;
   onClose: () => void;
+  preventDefault: boolean;
 }
 
 const Popup = (props: PopupProps) => {
-  const { show, children, onClose } = props;
+  const { show, children, onClose, preventDefault } = props;
   const [isShow, setIsShow] = React.useState('false');
 
   React.useEffect(() => {
     if (show === true && isShow === 'false') {
       setIsShow('true');
+      if (preventDefault === true) {
+        document.removeEventListener('touchmove', util.preventDefault);
+      }
     } else if (show === false && isShow === 'true') {
       setIsShow('ready');
       setTimeout(function() {
         setIsShow('false');
+        if (preventDefault === true) {
+          document.addEventListener('touchmove', util.preventDefault, { passive: false });
+        }
       }, util.global.speed + 200);
     }
   });
@@ -34,10 +41,15 @@ const Popup = (props: PopupProps) => {
   );
 };
 
+Popup.defaultProps = {
+  preventDefault: false,
+};
+
 Popup.propTypes = {
   show: PropTypes.bool,
   children: PropTypes.any,
   onClose: PropTypes.func,
+  preventDefault: PropTypes.bool,
 };
 
 export default React.memo(Popup);

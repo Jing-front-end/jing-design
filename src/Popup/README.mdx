@@ -11,11 +11,13 @@ import NoticeBar from '../NoticeBar/index.tsx';
 # Popup Component
 
 ### props
-|   参数   |   说明   |   类型   |
-| :------- | :------- | :------- |
-| show     | 是否显示 | boolean  |
-| onClose  | 关闭事件 | function |
-| children | 子元素   | any      |
+|      参数      |           说明            |   类型   |
+| :------------- | :------------------------ | :------- |
+| show           | 是否显示                  | boolean  |
+| onClose        | 关闭事件                  | function |
+| children       | 子元素                    | any      |
+| preventDefault | 是否阻止touchmove默认事件 | boolean  |
+
 
 ## Popup.Alert
 
@@ -233,7 +235,9 @@ import NoticeBar from '../NoticeBar/index.tsx';
                         alert('ok')
                         setIsShow(false);
                     }}
-                />
+                >
+                我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 
+                </Popup.Prompt>
             </Popup.Group>
           </div>
       );
@@ -247,8 +251,8 @@ import NoticeBar from '../NoticeBar/index.tsx';
 |     参数      |     说明     |   类型   |
 | :------------ | :----------- | :------- |
 | title         | 提示内容     | string   |
-| btnSubmitText | 确认按钮文字 | string   |
-| btnCancelText | 取消按钮文字 | string   |
+| btnSubmitText | 确认按钮文字,值为空则不显示按钮 | string   |
+| btnCancelText | 取消按钮文字,值为空则不显示按钮 | string   |
 | onSubmit      | 确认点击事件 | function |
 | onCancel      | 取消点击事件 | function |
 

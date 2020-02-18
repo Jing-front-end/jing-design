@@ -163,7 +163,7 @@ const iconKind = tuple(
 );
 
 export interface ListInputProps {
-  value?: string;
+  value: string;
   type: string;
   icon?: string;
   title?: string;

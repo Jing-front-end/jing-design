@@ -270,12 +270,13 @@ import Space from '../Space/index.tsx';
             type='input'
             hasIcon={true}
             title='手机号码'
-            value='18600000000'
+            mobileValue=''
+            verifyValue=''
             setMobileValue={(value)=>{console.log(value)}}
             bankName='工行银行'
             pkid={'abc'}
             phoneCallShow={true}
-            onMessageSend={(value)=>{console.log(value)}}
+            onMessageSend={()=>{console.log('ok')}}
             setVerifyValue={(value)=>{console.log(value)}}
         />
     </List.Group>
@@ -284,6 +285,8 @@ import Space from '../Space/index.tsx';
 ### props
 |      参数      |         说明         |  类型   | 默认值 |                               描述                               |
 | :------------- | :------------------- | :------ | :----- | :--------------------------------------------------------------- |
+| mobileValue    | 手机号码值           | string  |        |                                                                  |
+| verifyValue    | 验证码值             | string  |        |                                                                  |
 | type           | 验证模式             | string  | text   |                                                                  |
 | hasIcon        | 显示图标             | bool    | false  |                                                                  |
 | title          | 左侧标题             | string  |        |                                                                  |
