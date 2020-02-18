@@ -8,6 +8,7 @@ import { tuple } from '../_util/type';
 import ClearableLabeledInput from './clearableLabeledInput';
 import Group from './group';
 import Textarea from './textarea';
+import Password from './password';
 
 export const InputSizes = tuple('small', 'default', 'large');
 
@@ -94,6 +95,7 @@ export function getInputClassName(size?: (typeof InputSizes)[number], disabled?:
 class Input extends React.Component<InputProps, {}> {
   static Group: typeof Group;
   static Textarea: typeof Textarea;
+  static Password: typeof Password;
 
   // static Password: typeof Password;
 

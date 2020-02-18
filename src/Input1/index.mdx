@@ -1,35 +1,15 @@
+---
+name: Input1
+route: /Input1
+menu: 表单组件
+---
 
-
-// 临时改后缀，不让他出现在视图中
 import { Playground } from 'docz';
 import Input from './index.tsx';
 
-# Input输入框
+# Input输入框(需要新的UI设计)
 
 ## 一般用法
-<Playground>
-  {()=>{
-    const Temp = () => {
-      return (
-        <div>nihao</div>
-      )
-    }
-
-    return <Temp />
-  }}
-</Playground>
-
-<Playground>
-  {()=>{
-    const Temp = () => {
-      return (
-        <Input.Group className="test" />
-      )
-    }
-
-    return <Temp />
-  }}
-</Playground>
 
 <Playground>
   {()=>{
@@ -52,9 +32,6 @@ import Input from './index.tsx';
         <Input className="dddd" type="email" />
       )
     }
-
     return <Temp />
   }}
 </Playground>
-
-Group 就是排版，将Input中的排版靠近

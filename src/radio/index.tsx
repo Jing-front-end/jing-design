@@ -51,9 +51,6 @@ function Radio(props: any) {
   const oList = useRadioList(data.slice(0));
   const oData = useRadioData(selected);
 
-  // console.log('oList', oList)
-  // console.log('oData', oData)
-
   useEffect(() => {
     oList.updateData(data);
   }, [data]);
