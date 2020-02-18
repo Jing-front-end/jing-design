@@ -13,15 +13,3 @@ export default class {
   static Body = Body;
   static Footer = Footer;
 }
-
-// Modal.Alert = Alert;
-
-// const Modal = {
-//   Confirm: Confirm,
-//   Header: Header,
-//   Body: Body,
-//   Footer: Footer,
-//   Simple: SimpleModal,
-// }
-
-// export default Modal;

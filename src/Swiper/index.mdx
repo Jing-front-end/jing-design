@@ -1,6 +1,7 @@
 ---
 name: Swiper
 route: /Swiper
+menu: 视图组件
 ---
 
 
@@ -12,29 +13,75 @@ import Swiper from './index.tsx';
 import './index.less';
  
 
-# 轮播图 
+# Swiper 轮播图 
 
-基于swiper开发的react-swiper，可单独剥离出
-https://www.npmjs.com/package/swiper
-https://www.swiper.com.cn/
+
+## 介绍
+基于swiper开发的react-swiper
 
 switch为 react-id-switch
 https://www.npmjs.com/package/react-id-swiper
 
-## 用法
+## 一般使用
 <Playground>
   <Swiper>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
-      <div>Slide 3</div>
-      <div>Slide 4</div>
-      <div>Slide 5</div>
-    </Swiper>
+    <div>Slide 1</div>
+    <div>Slide 2</div>
+    <div>Slide 3</div>
+    <div>Slide 4</div>
+    <div>Slide 5</div>
+  </Swiper>
+</Playground>
+
+## 简单使用
+<Playground>
+  {
+    () => {
+      const Temp = () => {
+        const params = {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          spaceBetween: 30
+        }
+      
+        return(
+          <Swiper {...params}>
+            <div>Slide 1</div>
+            <div>Slide 2</div>
+            <div>Slide 3</div>
+            <div>Slide 4</div>
+            <div>Slide 5</div>
+          </Swiper>
+        )
+      }
+      return <Temp />
+    }
+  }
 </Playground>
 
 
-## Tag 参数
+## Api
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :---- | :--- | :---- |
-| color | 自定义颜色 | String | 任意颜色色号 | #ddd
-| size | 大小尺寸 | String  | normal, small |  small
+| ContainerEl | 容器的元素类型 | String | 任意颜色色号 | 'div'
+| containerClass | Swiper容器类名称 | String  | normal, small |  swiper-container
+| WrapperEl | 包裹(Wrapper)的元素类型 | String  | normal, small |  'div'
+| wrapperClass | 包裹(Wrapper)的类名称 | String  | normal, small |  swiper-wrapper	
+| slideClass | Slide的类名称 | String  | normal, small |  swiper-slide
+| shouldSwiperUpdate | 组件更新时更新Swiper | Boolean  | normal, small |  false
+| rebuildOnUpdate | 组件更新时重建Swiper | Boolean  | normal, small |  false
+| noSwiping | 禁止滑动 | Boolean  | normal, small |  false
+| activeSlideKey | 初始化幻灯片索引 | String  | normal, small |  null
+| renderPrevButton | 渲染上一个按钮 | function  | normal, small |  -
+| renderNextButton | 渲染下一个按钮 | function  | normal, small |  -
+| renderScrollbar | 渲染滚动条 | function  | normal, small |  -
+| renderPagination | 渲染分页 | function  | normal, small |  -
+| renderParallax | 渲染时差 | function  | normal, small |  -
+| getSwiper | 返回Swiper实例的回调函数 | function  | normal, small |  -

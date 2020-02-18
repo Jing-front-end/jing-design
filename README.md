@@ -2,32 +2,20 @@
 
 Bite The Bullet!!!
 
-`文档说明` 文档以 markdown格式,`每个组件必须存在于 Readme.md 文件，用来描述文件`
+鲸钱包UI组件分六大版本，为 **基础组件**，**视图组件**，**表单组件**，**导航组件**，**操作反馈组件**和**业务组件**
 
-```javascript
-$(document).ready(function () {
-    alert('hello world');
-});
-```
+**基础组件**：Button，Icon，Loading，Layout
 
-```js
-  # 组件名称
+**视图组件**：Carousel，Chart（待分析，具体用哪一种），List，NoticeBar，Panel，Result，Space，Swiper，TabConent，Tag，TagList，WhiteSpace
 
-  -----
+**表单组件**：Iput，Radio，Checkout，Form
 
-  组件功能介绍。
+**导航组件**：Drawer，TabNav
 
-  -----
+**操作反馈组件**：Scrool，Modal，ModalPromise，Toast
 
-  ## 依赖说明
+**业务组件**为常见具体业务，暂定有CardList（已有），ProductList（精选产品）
 
-  该模块依赖哪些组件，可以在这里描述清楚
+#### 以下为组件开发进度
 
-  ## 使用说明
-
-  如何使用该组件，可以根据组件的具体特征，合理组织。
-
-  ## API
-
-  需要提供 API 说明，属性、方法、事件、返回值等说明。
-```
+![UI](./assets/UI.png)

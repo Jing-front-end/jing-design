@@ -1,6 +1,7 @@
 ---
 name: Modal
 route: /Modal
+menu: 操作反馈
 ---
 
 import { Playground } from 'docz';
@@ -9,8 +10,10 @@ import Button from '../Button/index.ts';
 import './index.less';
 import MyModal from './myModal.tsx';
 
-# 模态框
+# Modal 模态框
 
+
+## 介绍
 所有模态框如 modal， 
 此模态框是基础模态框，一种为常见的modal，通过参数配置，
 另一种更自由化，通过组件内写组件的形式来谋划
@@ -19,7 +22,7 @@ ps：没有复写alert，alertSelect，目前看来，这些组件可以用过�
 目前只支持一层弹层，如项目需要再写多层
 
 
-## 一般用法
+## 使用
 <Playground>
   {()=>{
     const Temp = () => {
