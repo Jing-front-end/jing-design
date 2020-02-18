@@ -9,6 +9,7 @@ import './index.less';
 
 export interface CarouselProps {
   list: Array<ListItemProps>;
+  height: string;
 }
 
 export interface ListItemProps {
@@ -17,7 +18,7 @@ export interface ListItemProps {
 }
 
 const Carousel = (props: CarouselProps) => {
-  const { list } = props;
+  const { list, height } = props;
 
   const settings = {
     dots: true,
@@ -35,7 +36,10 @@ const Carousel = (props: CarouselProps) => {
       <Slider {...settings}>
         {list.map((item: ListItemProps) => (
           <div className="slick-slide-photo" key={item.url}>
-            <a style={{ backgroundImage: `url('${item.url}')` }} onClick={item.onClick} />
+            <a
+              style={{ backgroundImage: `url('${item.url}')`, height: height }}
+              onClick={item.onClick}
+            />
           </div>
         ))}
       </Slider>
@@ -45,6 +49,7 @@ const Carousel = (props: CarouselProps) => {
 
 Carousel.propTypes = {
   list: PropTypes.array,
+  height: PropTypes.string,
 };
 
 export default React.memo(Carousel);
