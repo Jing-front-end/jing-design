@@ -16,29 +16,29 @@ import './index.less';
   {
     () => {
       const WhiteSpaceExample = () => {
-      const PlaceHolder = () => (
-        <div className='example-placeholder'>Block</div>
-      );
-       return (
-          <div>
-          <WhiteSpace size="xs" />
-          <PlaceHolder />
-          <WhiteSpace size="sm" />
-          <PlaceHolder />
-          <WhiteSpace size="md" />
-          <PlaceHolder />
-          <WhiteSpace size="lg" />
-          <PlaceHolder />
-           <WhiteSpace size="xl" />
-        </div>
-       )
+        const PlaceHolder = () => (
+          <div className='example-placeholder'>Block</div>
+        );
+        return (
+            <div>
+            <WhiteSpace size="xs" />
+            <PlaceHolder />
+            <WhiteSpace size="sm" />
+            <PlaceHolder />
+            <WhiteSpace size="md" />
+            <PlaceHolder />
+            <WhiteSpace size="lg" />
+            <PlaceHolder />
+            <WhiteSpace size="xl" />
+          </div>
+        )
       }
       return <WhiteSpaceExample />
     }
   }
 </Playground>
 
-## 参数
+## API
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :---- | :--- |
 | size | 上下留白的边距 | String | `xs`, `sm`, `md`, `lg`, `xl` | `md` |

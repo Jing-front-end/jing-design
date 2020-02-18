@@ -12,38 +12,16 @@ import './index.less';
 
 # ModalPromise 模态框
 
-## 用法
+## Confirm用法
 <Playground>
   {()=>{
     const Temp = () => {
       const [isShow, setIsShow] = React.useState(false);
 
-      function Demo(props) {
-        return (
-            <div>
-              <Modal.Header> 
-                测试111
-              </Modal.Header>
-              <Modal.Body>
-                <div>测试1111</div>
-                <div>测试</div>
-                <div>测试</div>
-              </Modal.Body>
-              <Modal.Footer></Modal.Footer>
-            </div>
-        )
-    }
-
       return (
           <div>
             <Button.Group>
               <Button.Self color="blue" onClick={()=>{
-                  {/* setIsShow(true); */}
-                  {/* Modal.Dialog(Demo).then((res) => {
-                    console.log(res);
-                  }, (res) => {
-                      console.log(res);
-                  }); */}
                   Modal.Confirm().then((res) => {
                     console.log(res);
                   }, (res) => {
@@ -51,17 +29,70 @@ import './index.less';
                   })
                 }} primary>确认</Button.Self>
             </Button.Group>
-            {/* <div>
-              <Modal.Header> 
-                测试
-              </Modal.Header>
-              <Modal.Body>
-                <div>测试</div>
-                <div>测试</div>
-                <div>测试</div>
-              </Modal.Body>
-              <Modal.Footer></Modal.Footer>
-            </div> */}
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+## Alert模态框
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      return (
+          <div>
+            <Button.Group>
+              <Button.Self color="blue" onClick={()=>{
+                  Modal.Alert().then((res) => {
+                    console.log(res);
+                  }, (res) => {
+                      console.log(res);
+                  })
+                }} primary>确认</Button.Self>
+            </Button.Group>
+          </div>
+      );
+    };
+
+    return <Temp/>;
+  }}
+</Playground>
+
+## 自定义模态框
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+
+      function Demo(props) {
+          return (
+              <div>
+                  <Modal.Header {...props}>测试</Modal.Header>
+                  <Modal.Body>
+                      <div>测试</div>
+                      <div>测试</div>
+                      <div>测试</div>
+                  </Modal.Body>
+                  <Modal.Footer></Modal.Footer>
+              </div>
+          )
+      }
+
+      return (
+          <div>
+            <Button.Group>
+              <Button.Self color="blue" onClick={()=>{
+                  Modal.Dialog(Demo).then((res) => {
+                    console.log(res);
+                  }, (res) => {
+                      console.log(res);
+                  })
+                }} primary>自定义模态框</Button.Self>
+            </Button.Group>
           </div>
       );
     };
@@ -71,18 +102,11 @@ import './index.less';
 </Playground>
 
 
-
 ## API
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :---- | :--- | :---- |
 |   title  |      标题     | String |  - |  -
-| content  |      内容     | String |  - |  -
-|cancelText|  取消按钮文本  | String |  - |  取消
-|confirmText|  确认按钮文本  | String |  - |  确认
-|closeOnClickOverlay| 点击浮层的时候关闭模态框 | Boolean | - | true
-| Backdrop | 是否显示背景 | Boolean | `true/false` | true |
-| size | 模态框尺寸 | String | `sm/md/lg` | md |
-| maxHigher | 是否计算模态框最大高度 | Boolean | `true/false` | true | 
+
 
 
 

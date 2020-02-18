@@ -1,0 +1,42 @@
+---
+name: Portal
+route: /Portal
+menu: 操作反馈
+---
+
+import { Playground } from 'docz';
+// import Button from '../Button/index.ts';
+import Portal from './index.tsx';
+
+# Portal 传送门(暂时不能用)
+
+## 使用
+<Playground>
+  {() => {
+    const Temp = () => {
+      const [isShow, setIsShow] = React.useState(false);
+      {/* const getContainer = () => {
+        return <div id="ssss"></div>
+      } */}
+      return (
+        <div>
+          <button onClick={()=>{
+              setIsShow(true)
+            }}>快点点击我</button>
+          <Portal visible={isShow}>
+            <div>我是谁，我来自哪里，我要去哪里</div>
+          </Portal>
+        </div>
+      )
+    }
+    return <Temp />
+  }}
+</Playground>
+
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :--- | :--- |
+| children | 内容 | ReactNode | - | - |
+| visible | 是否可见 | Boolean | - | false | 
+| getContainer | 指定 抽屉组件 挂摘的HTML 节点， false 为挂摘当前 dom | HTMLElement | - | document.body |
