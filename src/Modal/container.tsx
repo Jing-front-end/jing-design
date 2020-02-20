@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { tuple } from '../_util/type';
 import util from '../_util';
 
-import Portal from '../Portal';
+// import Portal from '../Portal';
 import Mask from '../Mask';
 
 export interface ContainerProps {
@@ -57,4 +57,5 @@ Container.propTypes = {
   backdropCancel: PropTypes.func,
 };
 
-export default Portal(Container);
+export default Container;
+// export default Portal(Container);

@@ -9,14 +9,26 @@ import Input from './index.tsx';
 
 # Input输入框(需要新的UI设计)
 
-## 一般用法
 
+## 一般用法
 <Playground>
   {()=>{
     const Temp = () => {
       return (
-        <Input.Group className="test">
-          <Input className="sssss" type="password"></Input>
+        <Input/>
+      )
+    }
+    return <Temp />
+  }}
+</Playground>
+
+## 密码
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Group>
+          <Input type="password" />
         </Input.Group>
       )
     }
@@ -25,13 +37,17 @@ import Input from './index.tsx';
   }}
 </Playground>
 
+## 带Icon
 <Playground>
   {()=>{
     const Temp = () => {
       return (
-        <Input className="dddd" type="email" />
+        <Input.Group>
+          <Input/>
+        </Input.Group>
       )
     }
+
     return <Temp />
   }}
 </Playground>

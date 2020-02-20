@@ -1,0 +1,29 @@
+.rc-notification-fade-enter {
+  animation: moveLeft .3s;
+}
+.rc-notification-fade-leave {
+  animation: moveOutLeft .3s;
+}
+.rc-notification-fade-enter.rc-notification-fade-enter-active {
+  animation: moveLeft .3s;
+}
+.rc-notification-fade-leave.rc-notification-fade-leave-active {
+  animation-name: moveOutLeft .3s;
+}
+
+@keyframes moveOutLeft {
+  0% {
+      
+  }
+  100% {
+      right: -200%;
+  }
+}
+@keyframes moveLeft {
+  0% {
+      right: -200%;
+  }
+  100% {
+      right: 0;
+  }
+}
