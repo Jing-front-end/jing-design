@@ -6,7 +6,7 @@ menu: 操作反馈
 
 import { Playground } from 'docz';
 import Button from '../Button/index.ts';
-import Notify from '../Notify';
+// import Notify from '../Notify';
 
 # Notify 消息提示
 
@@ -16,7 +16,8 @@ import Notify from '../Notify';
   <div>
     <Button.Group>
       <Button.Self color="blue" onClick={()=>{
-          Notify.info({ type: 'primary', message: '通知内容' });
+          {/* console.log('ss') */}
+          {/* Notify.info({ type: 'primary', message: '通知内容' }); */}
         }} primary>确认</Button.Self>
     </Button.Group>
   </div>
