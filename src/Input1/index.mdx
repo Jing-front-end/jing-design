@@ -1,0 +1,53 @@
+---
+name: Input1
+route: /Input1
+menu: 表单组件
+---
+
+import { Playground } from 'docz';
+import Input from './index.tsx';
+
+# Input输入框(需要新的UI设计)
+
+
+## 一般用法
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input/>
+      )
+    }
+    return <Temp />
+  }}
+</Playground>
+
+## 密码
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Group>
+          <Input type="password" />
+        </Input.Group>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+## 带Icon
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Group>
+          <Input/>
+        </Input.Group>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>

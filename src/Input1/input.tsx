@@ -9,51 +9,51 @@ import { Icon } from 'src';
 
 export const InputSizes = tuple('small', 'default', 'large');
 
+/**
+ * Input 输入框组件
+ * @param {className} string 输入框组件样式名
+ * @param {name} string input的唯一标识，有传入点击title会聚焦
+ * @param {type} string input的类型
+ * @param {value} string input的值
+ * @param {icon} string  Icon
+ * @param {placeholder} string input的占位符
+ * @param {disabled} bool 是否能点击
+ * @param {error} bool 错误提示
+ * @param {minLength} number 最少长度
+ * @param {maxLength} number 最长长度
+ * @param {errorword} string 正则不匹配时显示的错误文案
+ * @param {clear} boolean 清除
+ * @param {onChange} function input中的value改变时触发
+ * @param {onFocus} function 获取焦点时的事件
+ * @param {onBlur} function 失去焦点时的事件
+ * @param {prefix} object 带前缀图标的 input
+ * @param {suffix} object 带后缀图标的 input
+ * @param {style} object input 的样式
+ * @param {size} object input 的尺寸
+ **/
 export interface InputProps {
-  // class 样式
   className?: string;
-  // input的唯一标识，有传入点击title会聚焦
   name?: string;
-  // input的类型
   type?: string;
-  // input的值
   value?: string;
-  // 前缀
   icon?: string;
-  // input的占位符
   placeholder?: string;
-  // disabled 是否能点击
   disabled?: boolean;
-  // 错误
   error?: boolean;
-  // 最少长度
   minLength?: number;
-  // 最长长度
   maxLength?: number;
-  // 正则不匹配时显示的错误文案
   errorword?: string;
-  // 是否显示清除按钮
   clear?: boolean;
-  // input中的value改变时触发
-  // 不知道写何类型为好，待完善
-  onChange?: any;
-  // 获取焦点时的事件
+  onChange?: () => void;
   onFocus?: () => void;
-  // 失去焦点时的事件
   onBlur?: () => void;
-  // 键盘回车事件
-  onEnter?: (value: any, event: any) => void;
-  // 带前缀图标的 input
   prefix?: React.ReactNode | string;
-  // 带后缀图标的 input
   suffix?: React.ReactNode | string;
   style?: React.CSSProperties;
   size?: (typeof InputSizes)[number];
 }
 
 class Input extends React.Component<InputProps, {}> {
-  // static Password: typeof Password;
-
   static defaultProps = {
     type: 'text',
     disabled: false,
@@ -65,18 +65,21 @@ class Input extends React.Component<InputProps, {}> {
     name: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.any,
-    size: PropTypes.oneOf(InputSizes),
+    icon: PropTypes.string,
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
+    error: PropTypes.bool,
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
+    errorword: PropTypes.string,
+    clear: PropTypes.bool,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     prefix: PropTypes.node,
     suffix: PropTypes.node,
-    allowClear: PropTypes.bool,
-    clear: PropTypes.bool,
+    style: PropTypes.object,
+    size: PropTypes.oneOf(InputSizes),
   };
 
   static Group: typeof Group;

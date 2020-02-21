@@ -5,14 +5,21 @@ menu: 操作反馈
 ---
 
 import { Playground } from 'docz';
-// import Button from '../Button/index.ts';
-import Portal from './index.tsx';
+import Button from '../Button/index.ts';
+// import Portal from './index.tsx';
+import Portal from './test.tsx'
 
 # Portal 传送门(暂时不能用)
 
 ## 使用
 <Playground>
   {() => {
+
+    const demo = (
+      <Portal>
+        <div>我是谁，我来自哪里，我要去哪里</div>
+      </Portal>
+    )
     const Temp = () => {
       const [isShow, setIsShow] = React.useState(false);
       {/* const getContainer = () => {
@@ -20,12 +27,12 @@ import Portal from './index.tsx';
       } */}
       return (
         <div>
-          <button onClick={()=>{
-              setIsShow(true)
-            }}>快点点击我</button>
-          <Portal visible={isShow}>
-            <div>我是谁，我来自哪里，我要去哪里</div>
-          </Portal>
+            <Button.Group>
+              <Button.Self color="blue" onClick={()=>{
+                  setIsShow(true);
+                }} primary>确认</Button.Self>
+            </Button.Group>
+            {isShow && demo}
         </div>
       )
     }
@@ -34,9 +41,9 @@ import Portal from './index.tsx';
 </Playground>
 
 
-## API
+<!-- ## API
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :--- | :--- |
 | children | 内容 | ReactNode | - | - |
 | visible | 是否可见 | Boolean | - | false | 
-| getContainer | 指定 抽屉组件 挂摘的HTML 节点， false 为挂摘当前 dom | HTMLElement | - | document.body |
+| getContainer | 指定 抽屉组件 挂摘的HTML 节点， false 为挂摘当前 dom | HTMLElement | - | document.body | -->

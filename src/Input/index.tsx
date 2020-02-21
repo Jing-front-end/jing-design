@@ -1,7 +1,7 @@
 import './index.less';
 
 import Input from './input';
-// import Password from './password';
+import Password from './password';
 // import PrefixInput from './prefixInput';
 import Group from './group';
 import Textarea from './textarea';
@@ -10,7 +10,7 @@ Input.Group = Group;
 Input.Textarea = Textarea;
 // Input.PrefixInput = PrefixInput
 
-// Input.Password = Password;
+Input.Password = Password;
 // Input.Password = Password;
 
 export default Input;

@@ -1,0 +1,48 @@
+.rc-notification-fade-enter {
+  animation: moveLeft .3s;
+}
+.rc-notification-fade-leave {
+  animation: moveOutLeft .3s;
+}
+.rc-notification-fade-enter.rc-notification-fade-enter-active {
+  animation: moveLeft .3s;
+}
+.rc-notification-fade-leave.rc-notification-fade-leave-active {
+  animation-name: moveOutLeft .3s;
+}
+
+@keyframes moveOutLeft {
+  0% {
+      
+  }
+  100% {
+      right: -200%;
+  }
+}
+@keyframes moveLeft {
+  0% {
+      right: -200%;
+  }
+  100% {
+      right: 0;
+  }
+}
+
+.jqb-notify {
+  // width: 100%;
+  // height: 100%;
+  // background: #ddd;
+  // overflow: auto;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+}
+body {
+  height: 700px!important;
+}
+// #root {
+//   height: 100vh;
+//   min-height: 100%;
+//   overflow: scroll;
+// }
