@@ -10,10 +10,6 @@ export interface PortalProps {
 }
 
 class Portal extends React.Component<PortalProps, {}> {
-  // static defaultProps = {
-  //   children: '',
-  // };
-
   static propsTypes = {
     children: PropTypes.node.isRequired,
   };
