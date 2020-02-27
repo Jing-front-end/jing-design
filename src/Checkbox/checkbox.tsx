@@ -77,6 +77,7 @@ const Checkbox = (props: CheckboxProps) => {
     <div className={classnames('jqb-checkbox-group', className)} style={style}>
       {oList.list.map((item: any) => {
         const isSelected = oData.data.indexOf(item.value) > -1;
+        // console.log('isSelected', isSelected)
         return (
           <Item
             key={item.value}

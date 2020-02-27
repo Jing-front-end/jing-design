@@ -1,6 +1,6 @@
 ---
-name: Checkout
-route: /Checkout
+name: Checkbox
+route: /Checkbox
 menu: 表单组件
 ---
 
@@ -18,7 +18,20 @@ import Checkbox from './index.tsx';
         
         return (
           <div>
-            <Checkbox />
+            <Checkbox 
+              data={[
+                { value: 'option1', disabled: true },
+                { value: 'option2', disabled: false },
+                { value: 'option3', disabled: false }
+              ]}
+              selected={[
+                { value: 'option1', disabled: false },
+                { value: 'option2', disabled: false },
+                { value: 'option3', disabled: true }
+              ]}
+              onChange={(res) => {
+                {/* console.log(res); */}
+              }}/>
           </div>
         )
       }
@@ -30,5 +43,21 @@ import Checkbox from './index.tsx';
 ## API
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :---- | :--- |
-| size | 上下留白的边距 | String | `xs`, `sm`, `md`, `lg`, `xl` | `md` |
+| className | checkbox的样式 | String | - | - |
+| style | checkbox的style | String | - | - |
+| data | 数据源,即Item的数据源 | Object | - | - |
+| selected | 选中的数据 | String | - | - |
 
+## 事件
+| 事件名称 | 说明 | 参数 |
+|  :---   | :--- | :--- |
+| onChange | 点击后回调函数 | - |
+
+
+## Item API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| className | item的样式 | String | - | - |
+| style | item的style | String | - | - |
+| value | 当前Item是否被选中 | Boolean | false | - |
+| disabled | 是否能点击 | Boolean | false | - |

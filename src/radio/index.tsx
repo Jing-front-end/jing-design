@@ -3,6 +3,25 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
+function Item({ data, selected, onSelected }: any) {
+  return (
+    <div
+      className={classnames(
+        'item',
+        { selected: selected === data.value },
+        { disabled: data.disabled },
+      )}
+      onClick={() => {
+        // tslint:disable-next-line:no-unused-expression
+        !data.disabled && onSelected(data);
+      }}
+    >
+      <span className="icon" />
+      <span className="name">{data.label}</span>
+    </div>
+  );
+}
+
 function useRadioList(initialValue: any) {
   const [list, setList] = useState(initialValue);
   const updateData = (res: any) => {
@@ -24,25 +43,6 @@ function useRadioData(initialValue = null) {
   };
 
   return { data, onSelected, updateData };
-}
-
-function Item({ data, selected, onSelected }: any) {
-  return (
-    <div
-      className={classnames(
-        'item',
-        { selected: selected === data.value },
-        { disabled: data.disabled },
-      )}
-      onClick={() => {
-        // tslint:disable-next-line:no-unused-expression
-        !data.disabled && onSelected(data);
-      }}
-    >
-      <span className="icon" />
-      <span className="name">{data.label}</span>
-    </div>
-  );
 }
 
 function Radio(props: any) {
