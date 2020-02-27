@@ -1,21 +1,41 @@
 # jingqb-design
 
-Bite The Bullet!!!
+#### 目前已有组件
 
-鲸钱包UI组件分六大版本，为 **基础组件**，**视图组件**，**表单组件**，**导航组件**，**操作反馈组件**和**业务组件**
+- Button 按钮组件
+- Chart 图表组件
+- Icon 图标组件
+- Layout 布局组件
+- Loading 加载组件（不知道还需不需要）
+- NoticeBar 通告栏组件
+- Notify 消息提示（不知道还需不需要）
+- Panel 面板组件（不知道还需不需要）
+- Popup 弹出层集合组件 
+- Result 结果组件
+- Scroll 滑动组件
+- Space 空格组件
+- TabNav 标签导航组件
+- TagList 标签列表组件
+- Toast 轻提示组件
+- WhiteSpace 上下留白组件
 
-**基础组件**：Button，Icon，Loading，Layout
 
-**视图组件**：Carousel，Chart（待分析，具体用哪一种），List，NoticeBar，Panel，Result，Space，Swiper，TabConent，Tag，TagList，WhiteSpace
 
-**表单组件**：Iput，Radio，Checkout，Form
+#### 待开发开发的组件
 
-**导航组件**：Drawer，TabNav
+- Popup 弹出层大组件
+- Keyboard 键盘大组件
+- MsgList 消息列表组件
+- RecordList 明细列表组件
+- DetailList 详情列表组件
+- DetailHeader 详情头部组件（名字暂议）
+- TabBar 标签栏组件 
+- SortBar 排序栏组件
+- CardList 卡片列表组件（需要改造）
+- Carousel 轮播图组件（需要改造）
+- List 列表集合组件（需要改造）
+- ProductCard 精选产品组件（名字暂定）
+- TabConetent （不知道有什么用组件）
 
-**操作反馈组件**：Scrool，Modal，ModalPromise，Toast
 
-**业务组件**为常见具体业务，暂定有CardList（已有），ProductList（精选产品）
 
-#### 以下为组件开发进度
-
-![UI](./assets/UI.png)

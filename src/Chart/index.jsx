@@ -31,7 +31,7 @@ export default class extends React.Component {
 
     Object.assign(defaultOptions, option);
 
-    console.log('defaultOptions', defaultOptions);
+    // console.log('defaultOptions', defaultOptions);
 
     // 全局配置
     // this.chart.setOptions(defaultOptions)
