@@ -44,5 +44,4 @@ export { default as ProductCard } from './ProductCard';
 export { default as Popup } from './Popup';
 export { default as Toast } from './Toast';
 
-// test
-// export { default as PopupTest } from './ModalPopup';
+export { default as MsgList } from './MsgList';
