@@ -1,0 +1,73 @@
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+.MessageList {
+  .am-card; .am-float-none;
+  position: relative;
+  background-color: #fff;
+  padding: .75rem 1rem .75rem 1rem;
+  margin-bottom: @globalGap;
+  &-sign {
+    color: @globalColorBlack2;
+  }
+  &-read {
+    content: '';
+    position: absolute;
+    left: -.5rem;
+    top: 1.2rem;
+    display: inline-block;
+    margin-left: .5rem;
+    width: 8px;
+    height: 8px;
+    background: @globalColorRed;
+    border-radius: 50%;
+  }
+  strong {
+    .am-g-2;
+    width: 55%;
+    font-size: @am-sm;
+    display: block;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &-check {
+    float: right;
+    width: 45%;
+    text-align: right;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: @am-xxs;
+    color: @globalColorBlue;  
+    position: relative;
+    &__title {
+      position: absolute;
+      right: 1rem;
+    }
+    &__icon {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      height: .9rem;
+      line-height: .9rem;
+      i {
+        width: .9rem;
+        height: .9rem;
+      }
+    }
+  }
+  p {
+    .am-align-justify;
+    clear: both;
+    padding-top: .2rem;
+    font-size: @am-xs;
+    color: @globalColorBlack1;
+    line-height: 1.2rem;
+  }
+}

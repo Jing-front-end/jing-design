@@ -1,12 +1,11 @@
 ---
 name: Notify
 route: /Notify
-menu: 操作反馈
 ---
 
 import { Playground } from 'docz';
 import Button from '../Button/index.ts';
-// import Notify from '../Notify';
+import Notify from '../Notify';
 
 # Notify 消息提示
 
@@ -16,30 +15,34 @@ import Button from '../Button/index.ts';
   <div>
     <Button.Group>
       <Button.Self color="blue" onClick={()=>{
-          {/* console.log('ss') */}
-          {/* Notify.info({ type: 'primary', message: '通知内容' }); */}
+          Notify.success('消息提示-成功');
         }} primary>确认</Button.Self>
+      <Button.Self color="orange" onClick={()=>{
+        Notify.warning('消息提示-警告');
+      }} primary>确认</Button.Self>
+            <Button.Self color="orange" onClick={()=>{
+        Notify.warn('消息提示-警告');
+      }} primary>确认</Button.Self>
+      <Button.Self color="red" onClick={()=>{
+        Notify.error('消息提示-错误');
+      }} primary>确认</Button.Self>
+      <Button.Self color="yellow" onClick={()=>{
+        Notify.info('消息提示-正常', 10);
+      }} primary>确认</Button.Self>
     </Button.Group>
   </div>
 </Playground>
 
 
 ## 静态方法
-
-<!-- - Notify.success(text, [duration], onClose)
-- Notify.error(text, [duration], onClose)
-- Notify.info(text, [duration], onClose)
-- Notify.warning(text, [duration], onClose)
-- Notify.loading(text, [durtion], onClose) -->
-
-- Notify.info(text: node, duration?: number, callback?: () => ()): number
-- Notify.success(text: node, duration?: number, callback?: () => ()): number
-- Notify.warn(text: node, duration?: number, callback?: () => ()): number
-- Notify.error(text: node, duration?: number, callback?: () => ()): number
+- Notify.success(text: node, duration?: number)
+- Notify.warning(text: node, duration?: number)
+- Notify.warn(text: node, duration?: number)
+- Notify.error(text: node, duration?: number)
+- Notify.info(text: node, duration?: number)
 
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :---- | :--- | :---- |
 | text | 提示内容 |  string |  - | - |
 | duration | 持续时间 | number | - | 3 |
-| callback | 关闭时的回调 | func |  |  |
 
