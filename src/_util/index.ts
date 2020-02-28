@@ -1,3 +1,5 @@
+import { number } from 'prop-types';
+
 export default class Util {
   public static language = navigator.language.toLowerCase();
   // 检测操作系统
@@ -279,6 +281,48 @@ export default class Util {
   };
   public static preventDefault = (e: TouchEvent) => {
     e.preventDefault();
+  };
+  /**
+   * 最多字符串文本
+   * @param {str} string 输入的文本
+   * @param {n}  number 最多字符数
+   */
+  public static strSubChar = (str: string, n: number) => {
+    const _len = Util.strLength(str);
+    if (_len > n) {
+      const _newLen = Math.floor(n / 2);
+      const _strLen = str.length;
+      let _newStr = '';
+      for (let i = _newLen; i <= _strLen; i++) {
+        const tmpStr = str.substr(0, i);
+        if (Util.strLength(tmpStr) > n) {
+          return _newStr + '..';
+        }
+        _newStr = tmpStr;
+      }
+    } else {
+      return str;
+    }
+  };
+  /**
+   * 判断字符串长度
+   * @param {str} string 字符串
+   */
+  public static strLength: any = (str: string) => {
+    let sum = 0;
+    if (typeof str !== 'string') {
+      throw new Error(`${str}必须为字符串`);
+    }
+    if (str) {
+      for (let i = 0; i < str.length; i++) {
+        if (str.charCodeAt(i) >= 0 && str.charCodeAt(i) <= 255) {
+          sum = sum + 1;
+        } else {
+          sum = sum + 2;
+        }
+      }
+      return sum;
+    }
   };
 }
 

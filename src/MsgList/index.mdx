@@ -1,0 +1,92 @@
+---
+name: MsgList
+route: /MsgList
+---
+
+import { Playground } from 'docz';
+import MsgList from './index.tsx';
+
+# MsgList 消息列表
+
+## 使用
+<Playground>
+  {
+    () => {
+      const MsgListExample = () => {
+        const data = [
+        {
+          id: 1,
+          createTime: "2012-03-23 04:07:03",
+          messageContent: "尊敬的用户：您的登录密码于2012-03-23 04:07:03修改，如非本人操作，请立即联系客服：jingqb2。",
+          messageRead: false,
+          msgSign: false,
+          messageTypeDesc: "鲸钱包"
+        },
+        {
+          id: 2,
+          createTime: "2019-10-14 10:07:21",
+          messageContent: "尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2。尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2",
+          messageRead: false,
+          msgSign: true,
+          messageTypeDesc: "安全通知"
+        },
+        {
+          id: 3,
+          createTime: "2020-02-28 11:01:09",
+          messageContent: "尊敬的用户：您的登录密码于2020-02-28 11:01:09修改，如非本人操作，请立即联系客服：jingqb2。",
+          messageRead: true,
+          msgSign: true,
+          messageTypeDesc: "平台公告"
+        },
+        {
+          id: 4,
+          createTime: "2011-03-26 14:02:03",
+          messageContent: "尊敬的用户：您的登录密码于2011-03-26 14:02:03修改，如非本人操作，请立即联系客服：jingqb2。",
+          messageRead: true,
+          msgSign: false,
+          messageTypeDesc: "鲸钱包"
+        }]
+        return (
+          <div>
+              {
+                data.map((item) => {
+                  return (
+                    <MsgList 
+                      key={item.id}
+                      msgDate={item.createTime}
+                      isSign={item.msgSign}
+                      isRead={item.messageRead}
+                      msgCheck={item.messageTypeDesc === '平台公告'}
+                      msgContent={item.messageContent}
+                      onCheckClick={() => {
+                        alert('平台点击跳转')
+                      }}
+                    />
+                  )
+                })
+              }
+          </div>
+        )
+      }
+      return <MsgListExample />
+    }
+  }
+</Playground>
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| msgDate | 左上角日期 | String | - | - |
+| msgCheck | 查看详情 | boolean | `true` `false` | `false` |
+| isSign | 标识 | boolean | `true` `false` | `false` |
+| isRead | 已读 | boolean | `true` `false` | `false` |
+| msgContent | 消息内容 | string | `true` `false` | `false` |
+| contentLength | 内容最长字符数 | number | - | 100 |
+
+> contentLength 默认50个中文字符，中文2个字符,英文1个字符
+
+## 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onCheckClick | 点击查看消息的回调 | - |
