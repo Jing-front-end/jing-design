@@ -1,0 +1,34 @@
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+
+.RecordList {
+  position: relative;
+  padding: 0.5rem 1.75rem 0.5rem 0;
+  border-bottom: 1px solid #ebebeb;
+  .clearfix;
+  &-noLink {
+    padding-right: 1rem!important;
+  }
+  &-Action {
+    padding-left: 2.5rem!important;
+  }
+  &-arrowicon {
+    text-align: right;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translate(0, -50%)
+  }
+  &-action {
+    text-align: left;
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translate(0, -50%)
+  }
+  &-centerText {
+    margin-top: @am-sm/2;
+  }
+}
