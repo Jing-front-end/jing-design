@@ -1,0 +1,27 @@
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+
+.DetailList {
+  display: block;
+  min-height: 1px;
+  float: left;
+  width: 100%;
+  position: relative;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  &-left {
+    max-width: 30%;
+    float: left;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  &-right {
+    max-width: 70%;
+    float: right;
+    text-align: right;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+}
