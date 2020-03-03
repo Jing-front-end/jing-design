@@ -1,0 +1,37 @@
+---
+name: DetailTop
+route: /DetailTop
+---
+
+import { Playground } from 'docz';
+import DetailTop from './index.tsx';
+
+# DetailTop 细节页顶部
+
+## 使用
+<Playground>
+  {
+    () => {
+      const DetailTopExample = () => {
+        return (
+          <div>
+            <DetailTop 
+              bigText="+888,888,888.00"
+              text="标题名称(单位)"
+              desc="我是描述"
+              bigTextStyle={{ color: "#f06400" }}
+            />
+          </div>
+        )
+      }
+      return <DetailTopExample />
+    }
+  }
+</Playground>
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| bigText | 第一行大字体文本 | String | - | - |
+| text | 第二行文本文字 | String | - | - |
+| desc | 第三行描述文字 | String | - | - |

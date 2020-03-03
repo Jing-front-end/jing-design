@@ -1,0 +1,142 @@
+---
+name: DetailList
+route: /DetailList
+---
+
+import { Playground } from 'docz';
+import DetailList from './index.tsx';
+
+# DetailList 详情列表
+
+## 使用数据以数组形式展示
+<Playground>
+  {
+    () => {
+      const DetailListExample = () => {
+        const data = [
+          {
+            id: 1,
+            leftText: "订单编号1",
+            orderid: "20190203101243432446",
+            payDate: "2020-01-07 10:12:19",
+            productId: "ZH00VM",
+            productName: "天玑聚富",
+            tradeMoney: 10000,
+          },
+           {
+            id: 2,
+            leftText: "订单编号2",
+            orderid: "20200107101217452271",
+            payDate: "2020-01-07 10:12:19",
+            productId: "ZH00VM",
+            productName: "天玑聚富",
+            tradeMoney: 10000,
+          },
+          {
+            id: 3,
+            leftText: "订单编号3",
+            orderid: "20200107101217452271",
+            payDate: "2020-01-07 10:12:19",
+            productId: "ZH00VM",
+            productName: "天玑聚富",
+            tradeMoney: 10000,
+          },
+        ]
+        return (
+          <div>
+            <DetailList>
+               <DetailList.Header title="我是标题"/>
+               <DetailList.Line />
+               <DetailList.Body>
+                 {
+                    data.map((item) => (
+                      <DetailList.Item
+                        key={item.id}
+                        leftText={item.leftText}
+                        rightChildren={item.orderid}
+                      />
+                    ))
+                 }
+               </DetailList.Body>
+            </DetailList>
+          </div>
+        )
+      }
+      return <DetailListExample />
+    }
+  }
+</Playground>
+
+## 使用数据以对象形式展示
+<Playground>
+  {
+    () => {
+      const DetailListExample = () => {
+        const data = {
+          accountAmount: 5000,
+          accountPay: "2",
+          bankPay: "0",
+          bonusAmount: 5000,
+          bonusStatus: "1",
+          isOfflinePay: "0",
+          ispaid: "1",
+          moneyTo: null,
+          operation: null,
+          orderid: "20200107101217452271",
+          payDate: "2020-01-07 10:12:19",
+          productId: "ZH00VM",
+          productName: "天玑聚富",
+          tradeDate: "2020-01-07 10:12:11",
+          tradeMoney: 10000,
+          tradeSign: "+",
+          tradeStatus: "01",
+          tradeStatusDesc: "确认成功",
+          tradeTypeDesc: "申购",
+          tradeWay: "1",
+        }
+        const rightChildren = (
+          <>
+            <div>
+              账户余额付款：{data.accountAmount} 元
+            </div>
+            <div>
+              鲸贝抵扣：{data.bonusAmount} 元
+            </div>
+          </>
+        )
+        return (
+          <div>
+            <DetailList>
+               <DetailList.Header title="我是标题"/>
+               <DetailList.Line />
+               <DetailList.Body>
+                 <DetailList.Item leftText="订单编号" rightChildren={data.orderid}/>
+                 <DetailList.Item leftText="交易时间" rightChildren={data.payDate}/>
+                 <DetailList.Item leftText="申购" rightChildren={rightChildren}/>
+               </DetailList.Body>
+            </DetailList>
+          </div>
+        )
+      }
+      return <DetailListExample />
+    }
+  }
+</Playground>
+
+## API DetailList.Header
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| title | 标题 | String | - | - |
+
+
+## API DetailList.Item
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| leftText | Item中左边的文字 | String | - | - |
+| rightChildren | Item中右边的Node | Node | - | - |
+
+## DetailList.Line
+展示分割线
+
+## DetailList.Body
+包裹 DetailList.Item

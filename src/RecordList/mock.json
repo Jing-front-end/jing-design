@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "link": true,
+      "active": "1",
+      "detailParams": {
+        "contractNo": "252207",
+        "isFixed": "1",
+        "orgId": "58CB97C22D09440A9E5ED2C092FCF93B",
+        "orgName": "金融信息服务有限公司",
+        "payChannel": "线上交易",
+        "productId": "ZH0L32",
+        "productName": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+        "status": "确认中",
+        "termNum": "0",
+        "tradeDateTime": "2020-02-26 11:02:33",
+        "tradeWay": "申购"
+      },
+      "lb": "2020-02-26 11:02:33",
+      "lbDesc": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+      "lt": "申购",
+      "rt": "1000000.00",
+      "state": "01",
+      "stateDesc": "确认中"
+    },
+    {
+      "id": 2,
+      "link": false,
+      "active": "1",
+      "detailParams": {
+        "contractNo": "252207",
+        "isFixed": "1",
+        "orgId": "58CB97C22D09440A9E5ED2C092FCF93B",
+        "orgName": "金融信息服务有限公司",
+        "payChannel": "线上交易",
+        "productId": "ZH0L32",
+        "productName": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+        "status": "确认中",
+        "termNum": "0",
+        "tradeDateTime": "2020-02-26 11:02:33",
+        "tradeWay": "申购"
+      },
+      "lb": "2020-02-26 11:02:33",
+      "lbDesc": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+      "lt": "申购",
+      "rt": "1000000.00",
+      "state": "01",
+      "stateDesc": "确认中"
+    },
+    {
+      "id": 3,
+      "link": false,
+      "active": "1",
+      "detailParams": {
+        "contractNo": "252207",
+        "isFixed": "1",
+        "orgId": "58CB97C22D09440A9E5ED2C092FCF93B",
+        "orgName": "金融信息服务有限公司",
+        "payChannel": "线上交易",
+        "productId": "ZH0L32",
+        "productName": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+        "status": "确认中",
+        "termNum": "0",
+        "tradeDateTime": "2020-02-26 11:02:33",
+        "tradeWay": "申购"
+      },
+      "lb": "2020-02-26 11:02:33",
+      "lbDesc": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+      "lt": "申购",
+      "rt": "右下角文字为空",
+      "state": "01",
+      "stateDesc": ""
+    },
+    {
+      "id": 4,
+      "link": false,
+      "active": "1",
+      "detailParams": {
+        "contractNo": "252207",
+        "isFixed": "1",
+        "orgId": "58CB97C22D09440A9E5ED2C092FCF93B",
+        "orgName": "金融信息服务有限公司",
+        "payChannel": "线上交易",
+        "productId": "ZH0L32",
+        "productName": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+        "status": "确认中",
+        "termNum": "0",
+        "tradeDateTime": "2020-02-26 11:02:33",
+        "tradeWay": "申购"
+      },
+      "lb": "2020-02-26 11:02:33",
+      "lbDesc": "C类（机构）-天启328号天玑聚富集合资金信托计划",
+      "lt": "申购",
+      "rt": "",
+      "state": "01",
+      "stateDesc": "右上角文字为空"
+    }
+  ]
+}

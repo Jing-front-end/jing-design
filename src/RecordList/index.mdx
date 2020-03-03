@@ -1,0 +1,105 @@
+---
+name: RecordList
+route: /RecordList
+---
+
+import { Playground } from 'docz';
+import RecordList from './index.tsx';
+
+import Data from './mock.json';
+
+
+# RecordList 明细列表
+
+## 使用
+<Playground>
+  {
+    () => {
+      const RecordListExample = () => {
+        return (
+          <div>
+            {
+              Data.data.map((item) => {
+                return (
+                  <RecordList 
+                    key={item.id}
+                    leftTopText={item.lt+ item.lbDesc} 
+                    leftBottomText={item.lb}
+                    rightTopText={item.rt}
+                    rightBottomText={item.stateDesc}
+                    hasLink={item.link} 
+                    hasAction={true}
+                    actionNode= {'申'}
+                    onClick={() => {
+                      alert('hello, world')
+                    }}
+                  />
+                )
+              })
+            }
+          </div>
+        )
+      }
+      return <RecordListExample />
+    }
+  }
+</Playground>
+
+## 控制左右边长度
+<Playground>
+  {
+    () => {
+      const RecordListExample = () => {
+        return (
+          <div>
+            {
+              Data.data.map((item) => {
+                return (
+                  <RecordList 
+                    key={item.id}
+                    leftTopText={item.lt+ item.lbDesc} 
+                    leftBottomText={item.lb}
+                    rightTopText={item.rt}
+                    rightBottomText={item.stateDesc}
+                    hasLink={item.link}
+                    onClick={() => {
+                      alert('hello, world')
+                    }}
+                    colWidth={17}
+                  />
+                )
+              })
+            }
+          </div>
+        )
+      }
+      return <RecordListExample />
+    }
+  }
+</Playground>
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| leftTopText | 左上角文字 | String | - | - |
+| leftBottomText | 左下角文字 | String | - | - |
+| rightTopText | 右上角文字 | String | - | - |
+| leftTopText | 右下角文字 | String | - | - |
+| hasLink | 是否有链接 | Boolean | `true` `false` | `false` |
+| hasAction | 是否有操作文字 | Boolean | `true` `false` | `false` |
+| actionNode | 操作文字 | Node | - | - |
+| colWidth | 控制左半部的col长度，右半边随之变化 | Number | 1-24 | 12 |
+
+
+
+<!-- 如果右边只有一个文字，默认居中 -->
+<!-- 可控制左右侧的长度，但总长为24，假如左侧的长度为12，那么右侧长度就是12 -->
+<!-- 左边两侧是数据固定，右边有可能是一栏，也有可能是两栏 -->
+
+<!-- 根据情况展示不同的布局 -->
+
+## 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClick | 如果`hasLink`为true时的点击回调 | - |

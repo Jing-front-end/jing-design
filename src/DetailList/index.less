@@ -1,0 +1,48 @@
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+
+.DetailList {
+  .am-card; 
+  .am-float-none; 
+  // border: 0;
+  // padding:@globalGap 1rem;
+  &-header {
+    .am-g;
+    padding:.25rem 0; 
+    font-size:@am-sm;
+    font-weight:bold;
+  }
+  &-line {
+    .am-g;
+    margin:.25rem 0; 
+    height:1px; 
+    background-color:@globalColorBorder;
+    &:after {
+      display: table;
+      visibility: hidden;
+      content: "";
+      clear: both;
+      height: 0;
+    }
+  }
+  &-body {
+    &-item {
+      .am-g; 
+      padding:.25rem 0; 
+      font-size:@am-sm;
+      &__left {
+        max-width:30%; 
+        float:left; 
+        .am-break;
+      }
+      &__right {
+        max-width:70%; 
+        float:right; 
+        text-align:right;
+        .am-break;
+      }
+    }
+  }
+}
