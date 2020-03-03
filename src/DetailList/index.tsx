@@ -1,32 +1,47 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import classnames from 'classnames';
+// import classnames from 'classnames';
 
 import './index.less';
 
 export interface DetailProps {
   leftText?: string;
   rightChildren?: string | Node;
+  headerTitle?: string;
+  hasHeader: boolean;
+  title: string;
+  children: any;
 }
 
-const DetailList = (props: DetailProps) => {
-  const { leftText, rightChildren } = props;
-  return (
-    <div className="DetailList">
-      <div className="DetailList-left">{leftText}</div>
-      <div className="DetailList-right"> {rightChildren}</div>
-    </div>
-  );
+const Header = (props: DetailProps) => {
+  return <div className="DetailList-header">{props.title}</div>;
 };
 
-DetailList.defaultProps = {
-  leftText: '',
-  rightChildren: '',
-};
+const Body = (props: DetailProps) => <div className="DetailList-body">{props.children}</div>;
 
-DetailList.propTypes = {
-  leftText: PropTypes.string,
-  rightChildren: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-};
+const Item = (props: DetailProps) => (
+  <div className="DetailList-body-item">
+    <div className="DetailList-body-item__left">{props.leftText}</div>
+    <div className="DetailList-body-item__right"> {props.rightChildren}</div>
+  </div>
+);
 
-export default React.memo(DetailList);
+const Line = () => <div className="DetailList-line" />;
+
+export default class extends React.Component {
+  static defaultProps = {
+    children: '',
+  };
+
+  static propTypes = {
+    children: PropTypes.node,
+  };
+
+  static Header = Header;
+  static Body = Body;
+  static Item = Item;
+  static Line = Line;
+  render() {
+    return <div className="DetailList">{this.props.children}</div>;
+  }
+}

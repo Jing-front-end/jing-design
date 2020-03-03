@@ -47,3 +47,4 @@ export { default as Toast } from './Toast';
 export { default as MsgList } from './MsgList';
 export { default as RecordList } from './RecordList';
 export { default as DetailTop } from './DetailTop';
+export { default as DetailList } from './DetailList';
