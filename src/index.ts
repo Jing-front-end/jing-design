@@ -49,3 +49,4 @@ export { default as RecordList } from './RecordList';
 export { default as DetailTop } from './DetailTop';
 export { default as DetailList } from './DetailList';
 export { default as TabBar } from './TabBar';
+export { default as SortBar } from './SortBar';
