@@ -1,0 +1,199 @@
+---
+name: SortBar
+route: /SortBar
+---
+
+import { Playground } from 'docz';
+import SortBar from './index.tsx';
+
+# SortBar 排序栏
+
+## 一般使用
+<Playground>
+  {
+    () => {
+      const SortBarExample = () => {
+        const data = [
+          {
+            id: 1,
+            createTime: "2012-03-23 04:07:03",
+            messageContent: "尊敬的用户：您的登录密码于2012-03-23 04:07:03修改，如非本人操作，请立即联系客服：jingqb2。",
+            messageRead: false,
+            msgSign: false,
+            messageTypeDesc: "鲸钱包"
+          },
+          {
+            id: 2,
+            createTime: "2019-10-14 10:07:21",
+            messageContent: "尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2。尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2",
+            messageRead: false,
+            msgSign: true,
+            messageTypeDesc: "安全通知"
+          },
+        ]
+        const [value, setValue] = React.useState('sort');
+        const [value1, setValue1] = React.useState('sort');
+        const [value2, setValue2] = React.useState('sort');
+
+        return (
+          <div>
+            <SortBar>
+              <SortBar.Item status={value} onClick={() => {
+                    setValue('sort-up')
+                  if (value === 'sort') {
+                    setValue('sort-up')
+                    setValue1('sort')
+                    setValue2('sort')
+                  } else if (value === 'sort-up') {
+                    setValue('sort-down')
+                    setValue1('sort')
+                    setValue2('sort')
+                  }
+              }}>
+                  年化
+              </SortBar.Item>
+              <SortBar.Item status={value1} onClick={() => {
+                    setValue1('sort-up')
+                  if (value1 === 'sort') {
+                    setValue1('sort-up')
+                    setValue('sort')
+                    setValue2('sort')
+                  } else if (value1 === 'sort-up') {
+                    setValue1('sort-down')
+                    setValue('sort')
+                    setValue2('sort')
+                  }
+              }}>
+                  期限
+              </SortBar.Item>
+               <SortBar.Item status={value2} onClick={() => {
+                    setValue2('sort-up')
+                  if (value2 === 'sort') {
+                    setValue2('sort-up')
+                    setValue('sort')
+                    setValue1('sort')
+                  } else if (value2 === 'sort-up') {
+                    setValue2('sort-down')
+                    setValue('sort')
+                    setValue1('sort')
+                  }
+              }}>
+                  价格
+              </SortBar.Item>
+              <SortBar.Filter onClick={() => {
+                alert('倚天屠龙记')  
+              }}>
+                  筛选
+              </SortBar.Filter>
+            </SortBar>
+          </div>
+        )
+      }
+      return <SortBarExample />
+    }
+  }
+</Playground>
+
+## 拆分使用
+<Playground>
+  {
+    () => {
+      const SortBarExample = () => {
+        const data = [
+          {
+            id: 1,
+            createTime: "2012-03-23 04:07:03",
+            messageContent: "尊敬的用户：您的登录密码于2012-03-23 04:07:03修改，如非本人操作，请立即联系客服：jingqb2。",
+            messageRead: false,
+            msgSign: false,
+            messageTypeDesc: "鲸钱包"
+          },
+          {
+            id: 2,
+            createTime: "2019-10-14 10:07:21",
+            messageContent: "尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2。尊敬的用户：您的登录密码于2019-10-14 10:07:20修改，如非本人操作，请立即联系客服：jingqb2",
+            messageRead: false,
+            msgSign: true,
+            messageTypeDesc: "安全通知"
+          },
+        ]
+        const [value, setValue] = React.useState('sort');
+        const [value1, setValue1] = React.useState('sort');
+        const [value2, setValue2] = React.useState('sort');
+
+        return (
+          <div>
+            <SortBar>
+              <SortBar.Item status={value} onClick={() => {
+                    setValue('sort-up')
+                  if (value === 'sort') {
+                    setValue('sort-up')
+                  } else if (value === 'sort-up') {
+                    setValue('sort-down')
+                  }
+              }}>
+                  年化
+              </SortBar.Item>
+              <SortBar.Item status={value1} onClick={() => {
+                    setValue1('sort-up')
+                  if (value1 === 'sort') {
+                    setValue1('sort-up')
+                  } else if (value1 === 'sort-up') {
+                    setValue1('sort-down')
+                  }
+              }}>
+                  期限
+              </SortBar.Item>
+               <SortBar.Item status={value2} onClick={() => {
+                    setValue2('sort-up')
+                  if (value2 === 'sort') {
+                    setValue2('sort-up')
+                  } else if (value2 === 'sort-up') {
+                    setValue2('sort-down')
+                  }
+              }}>
+                  价格
+              </SortBar.Item>
+              <SortBar.Filter onClick={() => {
+                alert('三分归元气')  
+              }}>
+                  筛选
+              </SortBar.Filter>
+            </SortBar>
+          </div>
+        )
+      }
+      return <SortBarExample />
+    }
+  }
+</Playground>
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| children | children | Node | - | - |
+
+
+## Item API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| status | 状态 | String | `sort` `sort-up` `sort-down` | `sort` |
+| children | children | String | - | - |
+
+## Item 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClick | 点击当前Item后的的回调 | - |
+
+
+## Filter API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| children | children | String | - | - |
+
+## Filter 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onClick | 点击当前Filter后的的回调 | - |

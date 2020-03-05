@@ -1,0 +1,243 @@
+---
+name: TabBar
+route: /TabBar
+---
+
+import { Playground } from 'docz';
+import TabBar from './index.tsx';
+import Icon from '../Icon';
+
+# TabBar 标签栏
+
+暂不支持 纵向排列
+
+## 基础使用
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <TabBar 
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item>标签1</TabBar.Item>
+              <TabBar.Item>标签2</TabBar.Item>
+              <TabBar.Item>标签3</TabBar.Item>
+            </TabBar>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+## 下划线
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <TabBar 
+              value={value}
+              indicator={true}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item>标签1</TabBar.Item>
+              <TabBar.Item>标签2</TabBar.Item>
+              <TabBar.Item>标签3</TabBar.Item>
+              <TabBar.Item>标签4</TabBar.Item>
+            </TabBar>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+## 图标Icon
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <TabBar 
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item icon="back">标签1</TabBar.Item>
+              <TabBar.Item icon="setting">标签2</TabBar.Item>
+              <TabBar.Item icon="clock">标签3</TabBar.Item>
+              <TabBar.Item icon="close">标签4</TabBar.Item>
+            </TabBar>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+## 自定义图标
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <TabBar 
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item>
+                <span>自定义1</span>
+                <Icon kind='eye-on' color="blue" />
+                <Icon kind='eye-off'/>
+              </TabBar.Item>
+              <TabBar.Item icon="setting">
+                <span>自定义2</span>
+                <span style={{ 
+                  backgroundImage: "url('http://test.jingqb.com/images/unify/sprite-icon-common.png')",
+                  backgroundSize: '60rem auto',
+                  backgroundPosition: '-21.25rem -37.35rem',
+                  backgroundRepeat: 'no-repeat',
+                  width: '1.5rem',
+                  height: '1.375rem',
+                  display: 'block',
+                  content: "",
+                  overflow: 'hidden',
+                }} />
+                <span style={{ 
+                  backgroundImage: "url('http://test.jingqb.com/images/unify/sprite-icon-common.png')",
+                  backgroundSize: '60rem auto',
+                  backgroundPosition: '-25.25rem -37.35rem',
+                  backgroundRepeat: 'no-repeat',
+                  width: '1.5rem',
+                  height: '1.375rem',
+                  display: 'block',
+                  content: "",
+                  overflow: 'hidden',
+                }} />
+              </TabBar.Item>
+              <TabBar.Item icon="clock">标签3</TabBar.Item>
+              <TabBar.Item icon="close">标签4</TabBar.Item>
+            </TabBar>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+> 自定义图标，限定传入的child中第一个元素为文字，第二个为未激活状态，第三个为激活状态
+
+
+## 吸附效果
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <div style={{
+              height: '50vh'
+            }}>
+              我是前面的风风雨雨
+            </div>
+            <TabBar 
+              value={value}
+              sticky={true}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item>标签1</TabBar.Item>
+              <TabBar.Item>标签2</TabBar.Item>
+              <TabBar.Item>标签3</TabBar.Item>
+            </TabBar>
+            <div style={{
+              height: '50vh'
+            }}>
+              我是后面的负重前行
+            </div>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+## 自定义样式
+<Playground>
+  {
+    () => {
+      const TabBarExample = () => {
+        const [value, setValue] = React.useState(0);
+        return (
+          <div>
+            <TabBar 
+              value={value}
+              className="zidingyi"
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}>
+              <TabBar.Item>标签1</TabBar.Item>
+              <TabBar.Item>标签2</TabBar.Item>
+              <TabBar.Item tabBarItemStyle={ { fontSize: '14px', fontWeight: 'bold' } }>标签3</TabBar.Item>
+            </TabBar>
+          </div>
+        )
+      }
+      return <TabBarExample />
+    }
+  }
+</Playground>
+
+## TabBar API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| className | 自定义样式名 | String | - | - |
+| children | 排列的TabBarItem | ReactNode | - | - |
+| value | 传给Item的索引值 | Number | - | - |
+| indicator | 是否显示下划线 | Boolean | `true` `false` | `false` |
+| sticky | 是否显示吸附效果 | Boolean | `true` `false` | `false` |
+
+
+## TabBar 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onChange | 传给Item的点击事件 | e: 点击事件event, value: 选中的索引 |
+
+
+## Item API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| icon | 图标 | String | `Icon` 中可选 | - |
+| children | Item中的文本 | Node | - | - |
+| value | 当前Item的索引值 | Number | - | - |
+| selected | 判断当前值是否选择 | Boolean | - | - |
+| tabBarItemStyle | Item 的样式 | object & array | - | - |
+
+
+
+## Item 事件
+
+| 事件名称 | 说明 | 参数 |
+| :--- | :--- | :--- |
+| onChange | 点击Item后的回调 | e: 点击事件event, value: 选中的索引 |

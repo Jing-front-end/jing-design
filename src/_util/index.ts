@@ -311,7 +311,7 @@ export default class Util {
   public static strLength: any = (str: string) => {
     let sum = 0;
     if (typeof str !== 'string') {
-      throw new Error(`${str}必须为字符串`);
+      throw new Error(`sorry, ${str}必须为字符串`);
     }
     if (str) {
       for (let i = 0; i < str.length; i++) {
