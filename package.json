@@ -66,6 +66,7 @@
     "prop-types": "^15.7.2",
     "rc-notification": "^4.0.0-rc.1",
     "react-highcharts": "^16.1.0",
+    "react-id-swiper": "^3.0.0",
     "react-slick": "^0.25.2",
     "rmc-notification": "^1.0.0",
     "slick-carousel": "^1.8.1"
