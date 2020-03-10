@@ -102,6 +102,29 @@ import Toast from '../Toast';
   }
 </Playground>
 
+## 使用KeyboardSymbol
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Symbol 
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
 ## API
 | 参数 | 说明 | 类型 | 可选值 | 默认值 |
 | :--- | :--- | :--- | :---- | :--- |
