@@ -69,6 +69,7 @@
     "react-id-swiper": "^3.0.0",
     "react-slick": "^0.25.2",
     "rmc-notification": "^1.0.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^5.3.6"
   }
 }

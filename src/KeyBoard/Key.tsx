@@ -23,14 +23,25 @@ const Key = (props: KeyProps) => {
 
   let deleteTimer: any = null;
   let deleteInterval: any = null;
+  let isMouseHold: boolean = true;
 
   function onTouchStart(event: TouchEvent) {
     event.stopPropagation();
     startX = event.changedTouches[0].pageX;
     startY = event.changedTouches[0].pageY;
     setIsActive(true);
+    if (deleteTimer) clearTimeout(deleteTimer);
+    // this.isMouseHold = true;
     if (type === 'delete') {
-      valDelete();
+      // valDelete();
+      deleteTimer = setTimeout(() => {
+        if (isMouseHold === true) {
+          // console.log('长按效果')
+          // deleteInterval = setInterval(valDelete, 150);
+          // handleDeleteHold();
+          clearTimeout(deleteTimer);
+        }
+      }, 3500);
       // deleteTimer = setTimeout(function () {
       //   // 长按删除
       //   // deleteInterval = setInterval(valDelete, 150);
@@ -39,7 +50,13 @@ const Key = (props: KeyProps) => {
   }
 
   function valDelete() {
-    // console.log('删除值')
+    if (deleteInterval) clearTimeout(deleteInterval);
+
+    if (isMouseHold) {
+      // console.log('删除值')
+    } else {
+      clearTimeout(deleteInterval);
+    }
   }
 
   function onTouchMove(event: TouchEvent) {
@@ -59,6 +76,8 @@ const Key = (props: KeyProps) => {
   }
 
   function onTouchEnd() {
+    isMouseHold = false;
+    // console.log('isMouseHold', isMouseHold)
     if (type === 'delete') {
       // console.log('释放touch清除定时器')
       clearTimeout(deleteTimer);

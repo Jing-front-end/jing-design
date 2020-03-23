@@ -1,0 +1,26 @@
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+.Switch { 
+    width:3.2rem; 
+    height:2rem; 
+    .am-pos-rc; 
+    right: inherit;
+    // right:@verticalGap; 
+    border-radius:1rem;
+    background-color:@globalColorBorder; 
+    .transition(all .1s ease-out);
+    &:before { display:block; content:""; width:100%; height:100%; border-radius:1rem; border:1.5px solid @globalColorBorder; margin-left:-1.6rem; margin-top:-1rem; position:absolute; left:50%; top:50%; background-color:#fff; .transition(all @globalSpeed cubic-bezier(0,0,.58,1));}
+    &>em { display:block; visibility:visible; width:2rem; height:2rem; position:absolute; left:0; top:0; border:1.5px solid @globalColorBorder; border-radius:1rem; background-color:#fff; box-shadow:0 3px 3px rgba(0,0,0,0.15); .transition(all @globalSpeed cubic-bezier(0.175,0.885,0.320,1.185));}
+    &_state_active>em { width:2.4rem;}
+    &_state_on { border-color:@globalColorGreen; background-color:@globalColorGreen;}
+    &_state_active:not(&_state_on) { border-color:@globalColorBorder!important; background-color:@globalColorBorder!important;}
+    &_state_on:before,
+    &_state_active:before { .transform(translate(25%,0) scale(0.01,0.01)); .transition(all @globalSpeed cubic-bezier(0,0,.38,1));}
+    &_state_on>em { border-color:@globalColorGreen; .transform(translate(1.2rem,0)); .transition-duration(.4s);}
+    &_state_on&_state_active>em { .transform(translate(.8rem,0));}
+    &_state_disabled { 
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
