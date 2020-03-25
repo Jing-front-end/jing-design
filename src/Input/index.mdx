@@ -1,0 +1,112 @@
+---
+name: Input
+route: /Input
+---
+
+import { Playground } from 'docz';
+import Input from './index.tsx';
+
+# Input 输入框
+
+loading 等 UI
+
+## 一般用法
+
+<Playground>
+  {() => {
+    const Temp = () => {
+      const [inputValue, setIsInputValue] = React.useState('');
+      const [inputValue1, setIsInputValue1] = React.useState('');
+      return (
+        <div style={{ display: 'flex', flexDirection: 'column'}}>
+            <span>普通模式</span>
+            <Input
+                style={{ marginBottom: '15px' }}
+                value={inputValue}
+                onChange={value => {
+                    {/* console.log('value', value); */}
+                    setIsInputValue(value);
+                }}
+                />
+            <span>错误框</span>
+            <Input
+                style={{ marginBottom: '15px' }}
+                error
+                value={inputValue1}
+                onChange={value => {
+                    {/* console.log('value', value); */}
+                    setIsInputValue1(value);
+                }}
+            />
+            <span>禁止输入</span>
+            <Input
+                style={{ marginBottom: '15px' }}
+                disabled
+            />
+        </div>
+      );
+    };
+    return <Temp />;
+  }}
+</Playground>
+
+## 组的概念
+<Playground>
+  {()=>{
+    const Temp = () => {
+      const [inputValue, setIsInputValue] = React.useState('');
+      return (
+        <Input.Group>
+          <Input />
+          <Input />
+          <Input />
+          <Input />
+        </Input.Group>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+## Clear的Input 
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Clear onClear={(e)=> {
+            console.log('点击XX后的回调')
+        }}/>
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+## 密码Input 
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Password />
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+
+## 带手机验证码的Input 未完成
+<Playground>
+  {()=>{
+    const Temp = () => {
+      return (
+        <Input.Verify />
+      )
+    }
+
+    return <Temp />
+  }}
+</Playground>
+

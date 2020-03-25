@@ -57,7 +57,7 @@ export interface IconProps {
   size?: string;
   kind: string;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
 }
 
 const Icon = (props: IconProps) => {

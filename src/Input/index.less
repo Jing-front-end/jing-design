@@ -1,0 +1,166 @@
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+// .jqb-input__container {
+//     // position: relative;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: center;
+//     // box-sizing: border-box;
+//     width: 100%;
+//     // padding: 10px 16px;
+//     overflow: hidden;
+//     color: #323233;
+//     font-size: 14px;
+//     line-height: 24px;
+//     background-color: #fff;
+// }
+
+// .jqb-input__clear {
+//     flex-shrink: 0;
+//     display: flex;
+//     align-items: center;
+//     line-height: inherit;
+//     color: #323233;
+//     font-size: 14px;
+//     cursor: pointer;
+// }
+
+// .jqb-input__group {
+//     position: relative;
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: stretch;
+//     width: 100%;
+//     &-prefix {
+//         // flex: none;
+//         // box-sizing: border-box;
+//         // width: 90px;
+//         &-left {
+//             flex: 1;
+//             box-sizing: border-box;
+//             width: 2.5rem;
+//             height: 2.5rem;
+//         }
+//     }
+// }
+
+// .jqb-input {
+//     display: block;
+//     flex: 1;
+//     width: 100%;
+//     min-width: 0;
+//     margin: 0;
+//     padding: 0;
+//     color: #323233;
+//     line-height: inherit;
+//     text-align: left;
+//     background-color: transparent;
+//     border: 0;
+//     resize: none;
+//   }
+  
+//   &__close {
+//     position: absolute;
+//     opacity: 0;
+//     transition: opacity 0.1s;
+//     top: 50%;
+//     margin-top: -6px;
+//     right: 10px;
+//     height: 12px;
+//     line-height: 12px;
+//     cursor: text;
+//     color: rgba(145, 143, 151, 1);
+  
+//     &.show {
+//         cursor: pointer;
+//         opacity: 1;
+//     }
+//   }
+
+.jqb-input {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.432;
+    background-color: #fff;
+    border: 1px solid @input-border-color;
+    color: @input-font-color;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: border-color .2s;
+    outline: none;
+    padding: 8px 10px;
+
+    &.jqb-input__error {
+        border-color: @input-error-border-color;
+
+        &:focus {
+            border-color: @input-error-border-color;
+        }
+    }
+
+    &::-webkit-input-placeholder {
+        color: @input-placeholder-color;
+    }
+}
+
+.jqb-input__group {
+    position: relative;
+    display: inline-flex;
+    font-size: 14px;
+    
+    .jqb-input {
+        flex: 1
+    }
+
+    .clear-btn {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.1s;
+        top: 50%;
+        margin-top: -6px;
+        right: 10px;
+        height: 12px;
+        line-height: 12px;
+        cursor: text;
+        color: rgba(145, 143, 151, 1);
+
+        &.show {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+    
+    .eye-btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        right: 10px;
+        height: 20px;
+        line-height: 20px;
+        cursor: text;
+        color: rgba(145, 143, 151, 1);
+    }
+}
+
+.jqb-input__group-suffix {
+
+    .jqb-input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+}
+
+.jqb-input__group-password {
+    .jqb-input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .clear-btn {
+        right: 40px;
+    }
+}
