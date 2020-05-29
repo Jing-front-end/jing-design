@@ -324,6 +324,35 @@ export default class Util {
       return sum;
     }
   };
+  /**
+   * 生成随机数
+   * @param {min} number 最小值
+   * @param {max} number 最大值
+   */
+  public static random = (min: number, max: number) => {
+    if (max == null) {
+      max = min;
+      min = 0;
+    }
+    return min + Math.floor(Math.random() * (max - min + 1))
+  }
+  /**
+   * 生成随机不重复数
+   * @param {array} array 传入的数组
+   * @param {n} number 返回n个随机数
+   */
+  public static sample = (array: any, n: number) => {
+    const length = array.length;
+    n = Math.max(Math.min(n, length), 0);
+    const last = length - 1;
+    for (let index = 0; index < n; index++) {
+      const rand = Util.random(index, last);
+      const temp = array[index];
+      array[index] = array[rand];
+      array[rand] = temp;
+    }
+    return array.slice(0, n)
+  }
 }
 
 Util.globalSet();

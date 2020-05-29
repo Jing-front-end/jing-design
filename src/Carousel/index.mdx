@@ -7,31 +7,183 @@ import { Playground } from 'docz';
 import Carousel from './index.tsx';
 
 # Carousel 轮播图
+此组件封装 react-id-swiper
+具体请到——> [这里](https://react-id-swiper.ashernguyen.site/)
 
+
+## 普通写法
 <Playground>
-    <Carousel 
-      height="8rem"
-      list={[
-        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000274.jpg', 'onClick': ()=>{alert('ok')}}, 
-        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000264.jpg'},
-        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000217.png'},
-        {'url': 'https://pic.jingqb.com/pic/banner/2019/PIC000000268.png'},
-        {'url': 'https://pic.jingqb.com/pic/banner/2017/PIC000000101.png'},
-      ]}
-    />
+  {
+    () => {
+      const CarouselExample = () => {
+        const params = {
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          },
+          spaceBetween: 30
+        }
+        return (
+          <div>
+            <Carousel {...params}>
+              <div>
+                <img src="https://pic.jingqb.com/pic/banner/2019/PIC000000264.jpg" alt=""/>
+              </div>
+              <div>
+                <img src="https://pic.jingqb.com/pic/banner/2019/PIC000000217.png" alt=""/>
+              </div>
+              <div>
+                <img src="https://pic.jingqb.com/pic/banner/2019/PIC000000268.png" alt=""/>
+              </div>
+              <div>
+                <img src="https://pic.jingqb.com/pic/banner/2017/PIC000000101.png" alt=""/>
+              </div>
+            </Carousel>
+          </div>
+        )
+      }
+      return <CarouselExample />
+    }
+  }
 </Playground>
 
+## 组件写法
+<Playground>
+  {
+    () => {
+      const CarouselExample = () => {
+        const data = [
+          {
+            id: 1,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000274.jpg',
+            title: '我是第一'
+          },
+          {
+            id: 2,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000264.jpg',
+            title: '我是第二'
+          },
+          {
+            id: 3,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000217.png',
+            title: '我是第三'
+          },
+          {
+            id: 4,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000268.png',
+            title: '我是第四'
+          },
+          {
+            id: 5,
+            img: 'https://pic.jingqb.com/pic/banner/2017/PIC000000101.png',
+            title: '我是第五'
+          },
+        ]
+        const [swiper, setSwiper] = React.useState(null);
+          const goNext = () => {
+            if (swiper !== null) {
+              swiper.slideNext();
+            }
+          };
+        
+          const goPrev = () => {
+            if (swiper !== null) {
+              swiper.slidePrev();
+            }
+          };
+        return (
+          <div>
+            <Carousel getSwiper={setSwiper}>
+              {
+                data.map((item) => (
+                  <div key={item.id}>
+                    <img style={{ height: '10rem'}} src={item.img} alt={item.title} />
+                    <span style={{ position: 'absolute', top: '20%', left: '50%', color: 'yellow' }} > { item.title }</span>
+                  </div>
+                ))
+              }
+            </Carousel>
+            <button onClick={goPrev}>Prev</button>
+            <button onClick={goNext}>Next</button>
+          </div>
+        )
+      }
+      return <CarouselExample />
+    }
+  }
+</Playground>
 
-## props
-| 参数 | 说明  |
-| :--- | :---- |
-| list | Array |
-| height | string |
-
-
-
-## list
-|  参数   |   说明   |   类型   |
-| :------ | :------- | :------- |
-| url     | 链接地址 | string   |
-| onClick | 点击事件 | function |
+## 长度85%
+<Playground>
+  {
+    () => {
+      const CarouselExample = () => {
+        const params = {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        }
+        const data = [
+          {
+            id: 1,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000274.jpg',
+            title: '我是第一'
+          },
+          {
+            id: 2,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000264.jpg',
+            title: '我是第二'
+          },
+          {
+            id: 3,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000217.png',
+            title: '我是第三'
+          },
+          {
+            id: 4,
+            img: 'https://pic.jingqb.com/pic/banner/2019/PIC000000268.png',
+            title: '我是第四'
+          },
+          {
+            id: 5,
+            img: 'https://pic.jingqb.com/pic/banner/2017/PIC000000101.png',
+            title: '我是第五'
+          },
+        ]
+          const goNext = () => {
+            if (swiper !== null) {
+              swiper.slideNext();
+            }
+          };
+        
+          const goPrev = () => {
+            if (swiper !== null) {
+              swiper.slidePrev();
+            }
+          };
+        return (
+          <div>
+            <Carousel {...params}>
+              {
+                data.map((item) => (
+                  <div key={item.id} style={{ width: '85%' }}>
+                    <img src={item.img} alt={item.title} />
+                  </div>
+                ))
+              }
+            </Carousel>
+          </div>
+        )
+      }
+      return <CarouselExample />
+    }
+  }
+</Playground>

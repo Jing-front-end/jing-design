@@ -1,0 +1,387 @@
+
+import { Playground } from 'docz';
+import List from './index.ts';
+import Space from '../Space/index.tsx';
+
+# List Component
+
+## List.CardSelect
+
+<Playground>
+    <List.Group>
+        <List.CardSelect
+            icon='bank0308'
+            lt='银行名称(8888)'
+            lb='单笔首次限额888万，单笔后续限额888万，单日限额888万'
+            rc='超出单笔限额'
+            online={true}
+            onClick={()=>{}}
+        />
+    </List.Group>
+</Playground>
+
+### props
+|  参数   |     说明     |   类型   |
+| :------ | :----------- | :------- |
+| icon    | 图标         | string   |
+| href    | 链接路径     | string   |
+| onClick | 链接路径     | function |
+| lt      | 左上文字     | string   |
+| lb      | 左下文字     | string   |
+| rc      | 右中文字     | string   |
+| online  | 是否在线支付 | boolean  |
+
+## List.Checkbox
+
+<Playground>
+    <List.Group>
+        <List.Checkbox
+            list={[
+                {title:'选项名称0', value:'0', checked:true},
+                {title:'选项名称1', value:'1'},
+                {title:'选项名称2', value:'2'},
+                {title:'选项名称3', value:'4'},
+            ]}
+            onClick={(index)=>{alert(index)}}
+        />
+    </List.Group>
+</Playground>
+
+### props
+|  参数   |   说明   |    类型     |
+| :------ | :------- | :---------- |
+| list    | 选项数据 | array       |
+| onClick | 点击方法 | (index)=>{} |
+
+
+### list
+|  参数   |   说明   |  类型   |
+| :------ | :------- | :------ |
+| title   | 选项名称 | string  |
+| value   | 选项值   | string  |
+| checked | 是否选中 | boolean |
+
+## List.Dashboard
+
+<Playground>
+    <List.Group>
+        <List.Dashboard icon='cash' leftTitle='现金管理' rightTitle='最新收益(元)' leftValue={433.12} rightValue={0.00} href='to:123' />
+        <List.Dashboard icon='diamonds' leftTitle='固定收益' rightTitle='预期收益(元)' leftValue={0.00} rightValue={0.00} onClick={()=>{alert('click')}} />
+        <List.Dashboard icon='gold' leftTitle='高端理财' rightTitle='预期收益(元)' leftValue={1800000} rightValue={291999.45} />
+    </List.Group>
+</Playground>
+
+### props
+|    参数    |     说明     |   类型   |
+| :--------- | :----------- | :------- |
+| href       | 链接路径     | string   |
+| onClick    | 点击事件     | function |
+| icon       | 图标         | string   |
+| leftTitle  | 左上标题     | string   |
+| rightTitle | 右上标题     | string   |
+| leftValue  | 左下金额数值 | number   |
+| rightValue | 右下金额数值 | number   |
+
+## List.Desc
+
+<Playground>
+    <List.Group>
+        <List.Desc>
+            <span className='am-color-black1 am-float-left'>左边文字</span>
+            <a className='am-float-right'>右边链接</a>
+        </List.Desc>
+    </List.Group>
+</Playground>
+
+### props
+|   参数   | 说明 | 类型 |
+| :------- | :--- | :--- |
+| children | 内容 | any  |
+
+## List.input
+
+<Playground>
+    <List.Group>
+        <List.Input icon='phone' title='手机号' type='mobile' setValue={()=>{}} />
+        <List.Input icon='password' title='密码' type='password' setValue={()=>{}} />
+        <List.Input icon='money' title='金额' type='price' setValue={()=>{}} />
+        <List.Input icon='user' title='请输入验证吗' type='verifycode' setValue={()=>{}} onMessageSend={()=>{alert('发送验证吗')}} />
+        <List.Input icon='user' title='请输入数字' type='number' setValue={()=>{}} />
+        <List.Input title='请输入姓名' type='text' setValue={()=>{}} />
+        <List.Desc>
+            <span className='am-color-black1 am-float-left'>左边文字</span>
+            <a className='am-float-right'>右边链接</a>
+        </List.Desc>
+    </List.Group>
+</Playground>
+
+### props
+|     参数      |                说明                |  类型   | 默认值 |
+| :------------ | :--------------------------------- | :------ | :----- |
+| value         | 值                                 | string  |        |
+| type          | 种类                               | string  |        |
+| icon          | 图标                               | string  |        |
+| title         | 输入提示                           | string  |        |
+| isEyeOn       | type为password下，是否打开眼睛     | boolean |        |
+| length        | 限制字符串长度                     | number  |        |
+| disabled      | 是否禁用                           | boolean |        |
+| setValue      | 设值方法                           | func    |        |
+| onMessageSend | type为verifycode下，发送验证吗方法 | func    |        |
+| minVal        | type为price下，最小值              | number  |        |
+| maxVal        | type为price下，最大值              | number  |        |
+
+## List.Radio
+
+<Playground>
+    <List.Group>
+        <List.Radio
+            list={[
+                {title:'选项名称0', value:0},
+                {title:'选项名称1', value:1, checked: true},
+                {title:'选项名称2', value:2},
+                {title:'选项名称3', value:3},
+            ]}
+            onClick={(index)=>{alert(index)}}
+        />
+    </List.Group>
+    <Space />
+    <List.Group>
+        <List.Radio
+            type='payment'
+            list={[
+                {title:'选项名称选项名称选项名称选项名称', value:0, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万', rc:'超出单笔限额', disable:true},
+                {title:'选项名称1', value:1, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万', checked: true},
+                {title:'选项名称2', value:2, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万'},
+                {title:'选项名称3', value:3, icon:'bank0308', desc:'单笔首次限额888万，单笔后续限额888万，单日限额888万'},
+            ]}
+            onClick={(index)=>{alert(index)}}
+        />
+    </List.Group>
+</Playground>
+
+### props
+|    参数    |         说明          |    类型     | 默认值 |
+| ---------- | --------------------- | ----------- | ------ |
+| type       | 类型                  | strong      | custom |
+| secondType | 当类型为payment的时候 | strong      |        |
+| list       | 选项数据              | array       |        |
+| onClick    | 点击方法              | (index)=>{} |        |
+
+
+### type
+|  参数   |         说明         |
+| ------- | -------------------- |
+| custom  | 普通样式             |
+| payment | 支付方式选择         |
+| coupon  | 优惠券选择(暂未实现) |
+
+### secondType
+| 参数      | 说明                                      |
+|-----------|-------------------------------------------|
+| online | 在线支付 |
+| offline | 线下汇款 |
+
+### list
+|   参数    |   说明   |  类型   | 默认值 |       说明        |
+| --------- | -------- | ------- | ------ | ----------------- |
+| title     | 选项名称 | string  |        |                   |
+| value     | 选项值   | number  |        |                   |
+| icon      | 图标     | string  |        | 在type=bank时有效 |
+| titleDesc | 标题描述 | string  |        |                   |
+| desc      | 选项描述 | string  |        | 在type=bank时有效 |
+| rc        | 右侧状态 | string  |        | 在type=bank时有效 |
+| type      | 支付类型 | string  |        |                   |
+| disable   | 是否禁用 | boolean |        |                   |
+| checked   | 是否选中 | boolean |        |                   |
+
+## List.Row
+
+<Playground>
+    <List.Group>
+        <List.Row icon='card' title='银行卡' onClick={()=>{alert(1)}} />
+        <List.Row icon='loop' title='我的转让' href='#' />
+        <List.Row icon='paper' title='交易明细' href='#' />
+        <List.Row icon='coupon' title='优惠券' href='#' />
+    </List.Group>
+    <Space />
+    <List.Group>
+        <List.Row icon='friend' title='邀请亲友' desc='瞎几把描述1' descColor='orange' />
+        <List.Row icon='friend' title='邀请亲友' desc='瞎几把描述2' />
+        <List.Row icon='callcenter' title='客服中心' desc='瞎几把描述3' href='#' />
+        <List.Row icon='about' title='关于很长自动换行自动换行自动换行自动换行' autoBreak={true} href='link' />
+    </List.Group>
+</Playground>
+
+### props
+|   参数    |   说明   |  类型  | 默认值 |
+| --------- | -------- | ------ | ------ |
+| href      | 链接路径 | string |        |
+| icon      | 图标     | string |        |
+| title     | 左侧标题 | string |        |
+| desc      | 右侧描述 | string |        |
+| descColor | 描述颜色 | string |        |
+| autoBreak | 自动换行 | boole  | false  |
+| onClick   | 点击事件 | func   |        |
+
+## List.Select
+
+<Playground>
+    <List.Group>
+        <List.Select
+            title='请选择证件类型'
+            icon='card'
+            onSelected={(index)=>{alert(index)}}
+            list={[
+                {title:'选项名称0', value:'a'},
+                {title:'选项名称1', value:'b', selected: true},
+                {title:'选项名称2', value:'c'},
+                {title:'选项名称3', value:'d'},
+            ]}
+        />
+    </List.Group>
+</Playground>
+
+### props
+|    参数    |    说明     |   类型   |   默认值    |
+| :--------- | :---------- | :------- | :---------- |
+| title      | placeholder | string   |             |
+| icon       | 图标        | array    |             |
+| list       | 选项数据    | array    |             |
+| onSelected | 执行回调    | function | (index)=>{} |
+
+
+### list
+|   参数   |   说明   |  类型   | 默认值 |
+| :------- | :------- | :------ | :----- |
+| title    | 选项名称 | string  |        |
+| value    | 选项值   | number  |        |
+| selected | 是否选中 | boolean |        |
+
+## List.Verifymobile
+
+<Playground>
+  <List.Group>
+        {/*验证码组合使用，手机号码不可更改*/}
+        <List.Verifymobile
+            type='input'
+            hasIcon={true}
+            title='手机号码'
+            mobileValue=''
+            verifyValue=''
+            setMobileValue={(value)=>{console.log(value)}}
+            bankName='工行银行'
+            pkid={'abc'}
+            phoneCallShow={true}
+            onMessageSend={()=>{console.log('ok')}}
+            setVerifyValue={(value)=>{console.log(value)}}
+        />
+    </List.Group>
+</Playground>
+
+### props
+|      参数      |         说明         |  类型   | 默认值 |                               描述                               |
+| :------------- | :------------------- | :------ | :----- | :--------------------------------------------------------------- |
+| mobileValue    | 手机号码值           | string  |        |                                                                  |
+| verifyValue    | 验证码值             | string  |        |                                                                  |
+| type           | 验证模式             | string  | text   |                                                                  |
+| hasIcon        | 显示图标             | bool    | false  |                                                                  |
+| title          | 左侧标题             | string  |        |                                                                  |
+| bankName       | 银行名称             | string  |        | 传此参数时为签约短信将由bankname银行发送，不传则为鲸钱包平台发送 |
+| setMobileValue | 方法                 | string  |        |                                                                  |
+| pkid           | 短信编号             | string  |        |                                                                  |
+| phoneCallShow  | 是否显示语音短信提示 | boolean |        |                                                                  |
+| onMessageSend  | 方法                 | string  |        |                                                                  |
+| setVerifyValue | 方法                 | string  |        |                                                                  |
+
+### type
+| 参数  |                说明                |
+| :---- | :--------------------------------- |
+| text  | 文本框，用于验证指定的手机号码     |
+| input | 输入框，用于验证用户输入的手机号码 |
+
+
+## List.Switch
+
+<Playground>
+
+    {()=>{
+      const Temp = () => {
+        const [isTurnedOn1, setIsTurnedOn1] = React.useState(false);
+        const [isTurnedOn2, setIsTurnedOn2] = React.useState(false);
+
+        return (
+          <List.Group>
+            <List.Switch
+                title='我是标题标题标题标题标题标题标题标题标题标题标题'
+                desc='我是描述描述描述描述描述描述描述描述描述描述描述'
+                isTurnedOn={isTurnedOn1}
+                turn={(isTurnedOn1)=>{
+                  setIsTurnedOn1(isTurnedOn1)
+                }}
+            />
+            <List.Switch
+                title='我是标题'
+                isTurnedOn={isTurnedOn2}
+                turn={(isTurnedOn2)=>{
+                  setIsTurnedOn2(isTurnedOn2)
+                }}
+            />
+          </List.Group>
+        );
+      };
+
+      return <Temp/>;
+    }}
+
+</Playground>
+
+### props
+| 参数      | 说明                                      | 类型         | 默认值 |
+|-----------|-------------------------------------------|--------------|--------|
+| title | 标题 | string |  |
+| desc | 描述 | string |  |
+| icon | 图标 | string |  |
+| onSwitch | 切换回调 | function |  |
+
+## List.Button
+
+<Playground>
+    <List.Group>
+      <List.Button
+          title='我是标题标题标题标题标题标题标题标题标题标题标题'
+          desc='我是描述描述描述描述描述描述描述描述描述描述描述'
+          buttonArray={[
+            {name: '大', color: 'green', primary: true},
+            {name: '小', color: 'green', primary: false}
+          ]}
+      />
+      <List.Button
+          title='我是标题'
+          desc='我是描述描述描述描述描述'
+          buttonArray={[
+            {name: '小', color: 'green', primary: true},
+            {name: '中', color: 'green', primary: false},
+            {name: '大', color: 'green', primary: false},
+            {name: '超大', color: 'green', primary: false}
+          ]}
+      />
+    </List.Group>
+</Playground>
+
+### props
+|    参数     |   说明   |  类型  | 默认值 |
+| ----------- | -------- | ------ | ------ |
+| title       | 标题     | string |        |
+| desc        | 描述     | string |        |
+| buttonArray | 按钮数组 | string |        |
+| icon        | 图标     | string |        |
+
+### buttonArray
+|  参数   |    说明    |   类型   | 默认值 |
+| ------- | ---------- | -------- | ------ |
+| name    | 名称       | string   |        |
+| color   | 颜色       | string   |        |
+| primary | 是否填充色 | boolean  |        |
+| onClick | 点击事件   | function |        |
+
+## List.Datetime 未完成

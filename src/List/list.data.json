@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "text": "CSS权威指南"
+    },
+    {
+      "id": 2,
+      "text": "JavaScript启示录"
+    },
+    {
+      "id": 3,
+      "text": "CSS世界"
+    },
+    {
+      "id": 4,
+      "text": "JavaScript语言精粹"
+    },
+    {
+      "id": 5,
+      "text": "你不知道的JS"
+    },
+    {
+      "id": 6,
+      "text": "JavaScript大全"
+    },
+    {
+      "id": 7,
+      "text": "代码大全"
+    },
+    {
+      "id": 8,
+      "text": "编译原理"
+    }
+  ]
+}

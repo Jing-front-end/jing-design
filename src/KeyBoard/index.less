@@ -1,0 +1,199 @@
+
+
+@import (reference) '../_style/index.less';
+@import (reference) '../_style/public.less';
+
+.KeyBoardNumber {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(200,200,205,.8);
+  width: 100%;
+  height: 200px;
+  &__box {
+    flex: 0 0 33.33%;
+    position: relative;
+    height: 50px;
+    &-span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: .15rem;
+      left: .15rem;
+      right: .15rem;
+      bottom: .15rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(0,0,0,.5);
+      background-color: #fff;
+      border-radius: .25rem;
+      color: #000;
+      padding-bottom: .2rem;
+      &-active {
+        background-color: #f2f3f5;
+      }
+    }
+  }
+}
+
+.KeyBoardLetter {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(200,200,205,.8);
+  width: 100%;
+  height: 200px;
+  &__box {
+    flex: 0 0 10%;
+    position: relative;
+    height: 25%;
+    display: block;
+    float: left;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    background: 0 0;
+    color: #000;
+    overflow: visible;
+    &-span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: .25rem;
+      left: .2rem;
+      right: .2rem;
+      bottom: .25rem;
+      font-size: 1.375rem;
+      border-bottom: 1px solid rgba(0,0,0,.5);
+      background-color: #fff;
+      border-radius: .25rem;
+      color: #000;
+      padding-bottom: .2rem;
+      &-active {
+        background-color: #f2f3f5;
+      }
+    }
+    &:nth-child(11) {
+      margin-left: 5%;
+    }
+    &:nth-child(20) {
+      flex: 0 0 13%;
+      margin-right: 2%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(28) {
+      flex: 0 0 13%;
+      margin-right: 0;
+      margin-left: 2%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(29) {
+      flex: 0 0 25%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(30) {
+      flex: 0 0 50%;
+      span {
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(31) {
+      flex: 0 0 25%;
+      span {
+        background-color: #1496ff;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+ 
+.KeyBoardSymbol {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(200,200,205,.8);
+  width: 100%;
+  height: 200px;
+  &__box {
+    flex: 0 0 10%;
+    position: relative;
+    height: 25%;
+    display: block;
+    float: left;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    background: 0 0;
+    color: #000;
+    overflow: visible;
+    &-span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: .25rem;
+      left: .2rem;
+      right: .2rem;
+      bottom: .25rem;
+      font-size: 1.375rem;
+      border-bottom: 1px solid rgba(0,0,0,.5);
+      background-color: #fff;
+      border-radius: .25rem;
+      color: #000;
+      padding-bottom: .2rem;
+      &-active {
+        background-color: #f2f3f5;
+      }
+    }
+    &:nth-child(11) {
+      margin-left: 5%;
+    }
+    &:nth-child(20) {
+      margin-left: 5%;  
+      // flex: 0 0 13%;
+      // margin-right: 2%;
+      // span {
+      //   background-color: #adb4be;
+      //   color: #fff;
+      //   font-size: 1rem;
+      // }
+    }
+    &:nth-child(28) {
+      flex: 0 0 13%;
+      margin-right: 0;
+      margin-left: 2%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(29) {
+      flex: 0 0 25%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    &:nth-child(35) {
+      flex: 0 0 25%;
+      span {
+        background-color: #adb4be;
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,75 +1,16 @@
 @import (reference) '../_style/index.less';
 @import (reference) '../_style/public.less';
 
-
-.jqb-list {
-    position: relative;
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px 16px;
-    overflow: hidden;
-    color: #323233;
-    font-size: 14px;
-    line-height: 24px;
-    background-color: #fff;
-    &:after {
-        position: absolute;
-        box-sizing: border-box;
-        content: ' ';
-        pointer-events: none;
-        right: 0;
-        bottom: 0;
-        left: 16px;
-        border-bottom: 1px solid @globalColorBlack2;
-        transform: scaleY(0.5);
-    }
+.List { .am-card; padding-right:0; padding-left:@verticalGap;
+    &>div:not(.am-group),
+    &>.am-group>div,
+    &>.am-group>a,
+    &>a { border-top:1px solid @globalColorBorder; padding-right:@verticalGap;}
+    &>div:not(.am-group):first-child,
+    &>.am-group>div:first-child,
+    &>.am-group>a:first-child,
+    &>a:first-child { border-top-width:0;}
 }
-
-.jqb-list__group {
-    .am-card; 
-    padding-right: 0; 
-    padding-left: @verticalGap;
-    position: relative;
-    display: inline-flex;
-    font-size: 14px;
-
-    .jqb-list {
-        flex: 1
-    }
-
-    .link-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10px;
-        cursor: text;
-    }
-}
-
-
-.jqb-list__group-link {
-    width: 100%;
-    
-    .jqb-list {
-        padding: 10px 0;
-        &:after {
-            border-bottom: 0;
-        }
-    }
-
-}
-
-// .List { .am-card; padding-right:0; padding-left:@verticalGap;
-//     &>div:not(.am-group),
-//     &>.am-group>div,
-//     &>.am-group>a,
-//     &>a { border-top:1px solid @globalColorBorder; padding-right:@verticalGap;}
-//     &>div:not(.am-group):first-child,
-//     &>.am-group>div:first-child,
-//     &>.am-group>a:first-child,
-//     &>a:first-child { border-top-width:0;}
-// }
 
 .ListDesc { .am-g; height:1.875rem; line-height:1.875rem; padding-right:@verticalGap; font-size:@am-xs; color:@globalColorBlack1;}
 

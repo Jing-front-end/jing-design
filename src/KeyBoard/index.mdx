@@ -1,0 +1,132 @@
+---
+name: KeyBoard
+route: /KeyBoard
+---
+
+import { Playground } from 'docz';
+import KeyBoard from './index.tsx';
+import Toast from '../Toast';
+
+# KeyBoard 键盘
+
+## 使用 KeyBoardNumber
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Number 
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
+## 随机数
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Number 
+                isRandom={true}
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
+## 使用KeyboardPrice
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Price 
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
+## 使用KeyboardLetter
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Letter 
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
+## 使用KeyboardSymbol
+<Playground>
+  {
+    () => {
+      const KeyBoardExample = () => {
+
+        return (
+          <div>
+              <KeyBoard.Symbol 
+                onHandleValue={(value) => {
+                  Toast.show(value)
+                }}
+                onHandleDelete={() => {
+                  Toast.show('刪除')
+                }}/>
+          </div>
+        )
+      }
+      return <KeyBoardExample />
+    }
+  }
+</Playground>
+
+## API
+| 参数 | 说明 | 类型 | 可选值 | 默认值 |
+| :--- | :--- | :--- | :---- | :--- |
+| msgDate | 左上角日期 | String | - | - |
+
